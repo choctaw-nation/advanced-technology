@@ -25,9 +25,11 @@ wp-config.php
 /.htaccess
 local-xdebuginfo.php
 /.vscode
+/_wpeprivate
 
 # WP Content
 /wp-content/.htaccess
+/wp-content/.DS_Store
 /wp-content/cache
 /wp-content/mu-plugins
 /wp-content/plugins/
