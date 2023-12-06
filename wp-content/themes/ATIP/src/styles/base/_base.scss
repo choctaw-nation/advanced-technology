@@ -1,0 +1,49 @@
+@use "../abstracts/variables" as v;
+
+:root {
+	--color-primary: #{v.$color-primary};
+	--color-primary--light: #{v.$color-primary--light};
+	--color-grey: #{v.$color-grey};
+	--color-black: #{v.$color-black};
+
+	--font-headings: #{v.$font-headings};
+	--font-body: #{v.$font-body};
+}
+
+body {
+	overflow-x: hidden;
+}
+
+.site-content {
+	padding-top: 7rem !important;
+}
+
+#content {
+	min-height: 60rem;
+}
+
+::selection {
+	color: #fff;
+	text-shadow: none;
+	background-color: var(--bs-primary);
+}
+
+pre {
+	background-color: var(--bs-light);
+}
+
+blockquote {
+	background-color: var(--bs-light);
+}
+
+q {
+	background-color: var(--bs-light);
+}
+
+:focus {
+	outline: none !important;
+	outline: -webkit-focus-ring-color none !important;
+	outline-color: -webkit-focus-ring-color none !important;
+	outline-style: none !important;
+	outline-width: 0 !important;
+}

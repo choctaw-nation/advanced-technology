@@ -20,12 +20,13 @@
 # Configuration
 wp-config.php
 .wpe-*
-/node_modules/*
-/vendor/*
 /.htaccess
 local-xdebuginfo.php
 /.vscode
 /_wpeprivate
+node_modules/
+vendor/
+.DS_Store
 
 # WP Content
 /wp-content/.htaccess

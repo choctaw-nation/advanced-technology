@@ -1,0 +1,15 @@
+@media (max-width: 991px) {
+	.breadcrumb {
+		display: block !important;
+		white-space: nowrap;
+		overflow-x: scroll;
+		overflow-y: hidden;
+		-ms-overflow-style: none;
+		overflow: -moz-scrollbars-none;
+		scrollbar-width: none;
+	}
+
+	.breadcrumb::-webkit-scrollbar {
+		display: none;
+	}
+}

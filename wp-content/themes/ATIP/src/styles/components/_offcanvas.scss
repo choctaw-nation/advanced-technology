@@ -1,0 +1,257 @@
+/*--------------------------------------------------------------
+1. Temporary Offcanvas
+--------------------------------------------------------------*/
+
+.modal-backdrop {
+	cursor: pointer;
+
+	&.fade {
+		transition: opacity 0.4s ease-in-out;
+	}
+}
+
+.offcanvas {
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.offcanvas-end {
+	width: 80%;
+}
+
+.navbar-dark .navbar-nav {
+	%active {
+		background-color: var(--color-primary--light) !important;
+	}
+	.active {
+		.nav-link {
+			color: var(--color-primary--light);
+		}
+	}
+	.nav-link {
+		color: white;
+
+		&.active {
+			@extend %active;
+		}
+	}
+	.show > .nav-link {
+		@extend %active;
+	}
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+	background-color: var(--color-primary--light) !important;
+}
+
+/* Expand-sm */
+@media (min-width: 576px) {
+	.navbar-expand-sm {
+		.offcanvas-top {
+			border-bottom: none;
+			height: auto;
+		}
+		.offcanvas-bottom {
+			border-top: none;
+			height: auto;
+		}
+
+		.offcanvas {
+			position: inherit;
+			bottom: 0;
+			flex-grow: 1;
+			visibility: visible !important;
+			transition: none;
+			transform: none;
+			border-left: none;
+			border-right: none;
+			z-index: inherit;
+
+			.offcanvas-header {
+				display: none;
+			}
+
+			.offcanvas-body {
+				flex-grow: 0;
+				padding: 0;
+				overflow-y: visible;
+				display: flex;
+			}
+		}
+	}
+
+	/* Override background-color in case bg-* color classes are used */
+	.navbar-expand-sm .offcanvas,
+	.navbar-expand-sm .offcanvas .offcanvas-body {
+		background-color: transparent !important;
+	}
+}
+
+/* Expand-md */
+@media (min-width: 768px) {
+	.navbar-expand-md .offcanvas .offcanvas-header {
+		display: none;
+	}
+
+	.navbar-expand-md .offcanvas {
+		position: inherit;
+		bottom: 0;
+		flex-grow: 1;
+		visibility: visible !important;
+		transition: none;
+		transform: none;
+		border-left: none;
+		border-right: none;
+		z-index: inherit;
+	}
+
+	.navbar-expand-md .offcanvas .offcanvas-body {
+		flex-grow: 0;
+		padding: 0;
+		overflow-y: visible;
+		display: flex;
+	}
+
+	.navbar-expand-md .offcanvas-top {
+		border-bottom: none;
+		height: auto;
+	}
+
+	.navbar-expand-md .offcanvas-bottom {
+		border-top: none;
+		height: auto;
+	}
+
+	/* Override background-color in case bg-* color classes are used */
+	.navbar-expand-md .offcanvas,
+	.navbar-expand-md .offcanvas .offcanvas-body {
+		background-color: transparent !important;
+	}
+}
+
+/* Expand-lg */
+@media (min-width: 992px) {
+	.navbar-expand-lg .offcanvas .offcanvas-header {
+		display: none;
+	}
+
+	.navbar-expand-lg .offcanvas {
+		position: inherit;
+		bottom: 0;
+		flex-grow: 1;
+		visibility: visible !important;
+		transition: none;
+		transform: none;
+		border-left: none;
+		border-right: none;
+		z-index: inherit;
+	}
+
+	.navbar-expand-lg .offcanvas .offcanvas-body {
+		flex-grow: 0;
+		padding: 0;
+		overflow-y: visible;
+		display: flex;
+	}
+
+	.navbar-expand-lg .offcanvas-top {
+		border-bottom: none;
+		height: auto;
+	}
+
+	.navbar-expand-lg .offcanvas-bottom {
+		border-top: none;
+		height: auto;
+	}
+
+	/* Override background-color in case bg-* color classes are used */
+	.navbar-expand-lg .offcanvas,
+	.navbar-expand-lg .offcanvas .offcanvas-body {
+		background-color: transparent !important;
+	}
+}
+
+/* Expand-xl */
+@media (min-width: 1200px) {
+	.navbar-expand-xl .offcanvas .offcanvas-header {
+		display: none;
+	}
+
+	.navbar-expand-xl .offcanvas {
+		position: inherit;
+		bottom: 0;
+		flex-grow: 1;
+		visibility: visible !important;
+		transition: none;
+		transform: none;
+		border-left: none;
+		border-right: none;
+		z-index: inherit;
+	}
+
+	.navbar-expand-xl .offcanvas .offcanvas-body {
+		flex-grow: 0;
+		padding: 0;
+		overflow-y: visible;
+		display: flex;
+	}
+
+	.navbar-expand-xl .offcanvas-top {
+		border-bottom: none;
+		height: auto;
+	}
+
+	.navbar-expand-xl .offcanvas-bottom {
+		border-top: none;
+		height: auto;
+	}
+
+	/* Override background-color in case bg-* color classes are used */
+	.navbar-expand-xl .offcanvas,
+	.navbar-expand-xl .offcanvas .offcanvas-body {
+		background-color: transparent !important;
+	}
+}
+
+/* Expand-xxl */
+@media (min-width: 1400px) {
+	.navbar-expand-xxl .offcanvas .offcanvas-header {
+		display: none;
+	}
+
+	.navbar-expand-xxl .offcanvas {
+		position: inherit;
+		bottom: 0;
+		flex-grow: 1;
+		visibility: visible !important;
+		background-color: transparent;
+		transition: none;
+		transform: none;
+		border-left: none;
+		border-right: none;
+		z-index: inherit;
+	}
+
+	.navbar-expand-xxl .offcanvas .offcanvas-body {
+		flex-grow: 0;
+		padding: 0;
+		overflow-y: visible;
+		display: flex;
+	}
+
+	.navbar-expand-xxl .offcanvas-top {
+		border-bottom: none;
+		height: auto;
+	}
+
+	.navbar-expand-xxl .offcanvas-bottom {
+		border-top: none;
+		height: auto;
+	}
+
+	/* Override background-color in case bg-* color classes are used */
+	.navbar-expand-xxl .offcanvas,
+	.navbar-expand-xxl .offcanvas .offcanvas-body {
+		background-color: transparent !important;
+	}
+}

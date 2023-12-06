@@ -1,0 +1,12 @@
+/*--------------------------------------------------------------
+Single News
+--------------------------------------------------------------*/
+
+.single-news .entry-header {
+	background-color: var(--color-black);
+	color: white;
+}
+
+.news-subtitle {
+	text-transform: none;
+}

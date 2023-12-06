@@ -1,0 +1,98 @@
+/*--------------------------------------------------------------
+3. Header
+--------------------------------------------------------------*/
+
+.nav-container {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+
+.navbar-brand span {
+	font-weight: 100;
+	margin-left: 1.6rem;
+}
+
+@media (max-width: 782px) {
+	.logged-in.admin-bar .fixed-top,
+	.logged-in.admin-bar .offcanvas:not(.offcanvas-bottom),
+	.logged-in.admin-bar .modal {
+		top: 4.6rem;
+	}
+
+	.logged-in.admin-bar .dropdown-search {
+		top: 10rem !important;
+	}
+
+	#wpadminbar {
+		position: fixed;
+	}
+}
+
+@media (min-width: 783px) {
+	.logged-in.admin-bar .fixed-top,
+	.logged-in.admin-bar .offcanvas:not(.offcanvas-bottom),
+	.logged-in.admin-bar .modal {
+		top: 3.2rem;
+	}
+
+	.logged-in.admin-bar .dropdown-search {
+		top: 8.6rem !important;
+	}
+}
+
+#nav-main .menu-item:last-child .nav-link {
+	padding-right: 0;
+}
+
+.dropdown-search.dropdown-menu[data-bs-popper] {
+	top: 5.4px;
+	margin-top: 0;
+}
+
+.dropdown-menu {
+	padding: 0;
+	border-radius: 0;
+	border: 1px solid #000;
+}
+
+.top-nav-search-md.hide,
+.top-nav-search-lg.hide {
+	display: none !important;
+}
+
+.dropdown-search .searchform {
+	opacity: 0;
+	transition: opacity 0.8s;
+	transition-delay: 0.3s;
+}
+
+.dropdown-search.show .searchform {
+	opacity: 1;
+}
+
+@media (max-width: 991px) {
+	.btn-dropdown.right {
+		padding-right: 0;
+		border: none;
+	}
+
+	#dropdown-search:hover {
+		color: currentColor;
+		background-color: transparent;
+		border-color: transparent;
+	}
+
+	#dropdown-search:focus {
+		box-shadow: none;
+	}
+}
+
+@media (min-width: 979px) {
+	.navbar-dark .navbar-nav .nav-link {
+		color: rgba(255, 255, 255, 1);
+	}
+	ul.nav li.dropdown:hover > ul.dropdown-menu {
+		display: block !important;
+		visibility: visible !important;
+	}
+}
