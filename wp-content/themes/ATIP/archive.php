@@ -1,79 +1,50 @@
 <?php
 /**
  * The template for displaying archive pages
+ * 
+ * @package ChoctawNation
  */
 
-if ( is_post_type_archive( 'staff' ) ) {
-	get_template_part( 'page-templates/archive', 'staff' );
-}
 get_header();
 ?>
 
-<div id="content" class="site-content container py-5 mt-5">
+<div id="content" class="site-content">
 	<div id="primary" class="content-area">
-
-		<div class="row">
-			<div class="col">
-
-				<main id="main" class="site-main">
-
+		<main id="main" class="site-main">
+			<div class="container">
+				<div class="row mt-5 pt-4">
 					<!-- Title & Description -->
 					<header class="page-header mb-4">
 						<h1><?php post_type_archive_title(); ?></h1>
 					</header>
-
-					<!-- Grid Layout -->
-					<?php if ( have_posts() ) : ?>
-					<?php $even = true; ?>
-					<div class="container g-0">
+				</div>
+			</div>
+			<?php
+			if ( is_post_type_archive( 'staff' ) ) :
+				get_template_part( 'template-parts/archive', 'staff-preview' );
+			elseif ( is_post_type_archive( 'news' ) ) :
+				get_template_part( 'template-parts/archive', 'news-preview' );
+			else :
+				?>
+			<div class="container">
+				<div class="row row-cols-lg-2 row-cols-xl-3">
+					<div class="col">
 						<?php
-						while ( have_posts() ) :
-							the_post();
-							?>
-						<?php $archive_content = get_field( 'archive_content' ); ?>
-						<div class="row pb-4 aos-init aos-animate" data-aos="zoom-out-
-							<?php
-							if ( $even ) {
-								echo 'left';
-							} else {
-								echo 'right';}
-							?>
-						">
-							<!-- Featured Image-->
-							<?php if ( has_post_thumbnail() ) { ?>
-							<div class="col-lg-5 mb-3"><?php the_post_thumbnail( 'news-thumb' ); ?></div>
-							<?php } ?>
-							<div class="col">
-								<div class="text-body">
-									<!-- Title -->
-									<h2 class="blog-post-title news-content-preview">
-										<a href="<?php the_permalink(); ?>">
-											<?php the_title(); ?>
-										</a>
-									</h2>
-									<!-- Excerpt & Read more -->
-									<div class="mt-auto">
-										<?php echo $archive_content; ?>
-										<div><a class="read-more btn btn-primary btn-lg mt-3" href="<?php the_permalink(); ?>">Read More</a></div>
-									</div>
-								</div>
-							</div>
-
-						</div>
-						<?php $even = ! $even; ?>
-						<?php endwhile; ?>
+						the_title( '<h1>', '</h1>' );
+						the_post_thumbnail( 'news-thumb' );
+						$post_excerpt = empty( get_field( 'archive_content' ) ) ? get_the_excerpt() : get_field( 'archive_content' );
+						?>
+						<p><?php echo $post_excerpt; ?></p>
 					</div>
-					<?php endif; ?>
+				</div>
+			</div>
+			<?php endif; ?>
+			<!-- Pagination -->
+			<div>
+				<?php bootscore_pagination(); ?>
+			</div>
 
-					<!-- Pagination -->
-					<div>
-						<?php bootscore_pagination(); ?>
-					</div>
-
-				</main><!-- #main -->
-
-			</div><!-- col -->
-		</div><!-- row -->
+		</main><!-- #main -->
 
 	</div><!-- #primary -->
 </div><!-- #content -->

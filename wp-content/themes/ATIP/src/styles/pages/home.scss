@@ -1,47 +1,50 @@
+@use "../abstracts/mixins" as m;
 /*--------------------------------------------------------------
 Home
 --------------------------------------------------------------*/
 #particles-js {
-	position: relative;
-	z-index: 0;
-	width: 100%;
-	height: calc(100% + 200px);
-	background-color: #0f0f0f;
-	background-image: url("");
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50% 50%;
+	height: calc(100% + 20rem);
 }
 
 .particles-js-canvas-el {
 	position: absolute;
 	top: 0;
-	width: 100%;
 	z-index: -1;
 }
 
-.block-sub-title {
-	font-size: 2.4rem;
-	margin-bottom: 1.6rem;
-	font-family: var(--font-headings);
-	font-weight: 500;
-}
-
 .block-title {
-	font-size: 4.4rem;
-	line-height: 4rem;
-	font-family: var(--font-headings);
-	font-weight: 600;
 	max-width: 280px;
 }
 
-.news-area {
-	background: var(--color-grey);
-}
+.news {
+	.grid {
+		@include m.media-breakpoint-up(lg) {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			gap: 2rem;
+		}
 
-@media (max-width: 991px) {
-	.news-list > div {
-		padding-left: 3rem;
-		padding-right: 3rem;
+		&__title {
+			align-self: flex-start;
+			@include m.media-breakpoint-up(lg) {
+				grid-column: 1 / 2;
+				grid-row: 1 / 2;
+			}
+		}
+
+		&__more {
+			align-self: flex-end;
+			@include m.media-breakpoint-up(lg) {
+				grid-column: 1 / 2;
+				grid-row: 2 / 3;
+			}
+		}
+
+		&__content {
+			@include m.media-breakpoint-up(lg) {
+				grid-column: 2 / 3;
+				grid-row: 1 / 3;
+			}
+		}
 	}
 }

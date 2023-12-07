@@ -18,7 +18,7 @@ $video         = get_field( 'video' );
 		<div class="row">
 			<div class="col-12">
 				<main id="main" class="site-main">
-					<header class="entry-header pt-5">
+					<header class="entry-header pt-5 text-bg-dark">
 						<div class="container">
 							<div class="row">
 								<?php
@@ -43,8 +43,9 @@ $video         = get_field( 'video' );
 						<div class="row">
 							<div class="col-12">
 								<p>
-									<small><a href="<?php echo esc_url( home_url() ); ?>">Advanced Technology Initiatives</a> <i class="fas fa-caret-right"></i> <a
-											href="/news/">News</a></small>
+									<small>
+										<a href="<?php echo esc_url( home_url() ); ?>">Advanced Technology Initiatives</a> <i class="fas fa-caret-right"></i> <a href="/news/">News</a>
+									</small>
 								</p>
 								<p class="entry-meta mb-5">
 									<small>
@@ -55,7 +56,7 @@ $video         = get_field( 'video' );
 								<?php echo $article; ?>
 
 								<?php if ( have_rows( 'full_article' ) ) : ?>
-									<?php
+								<?php
 									while ( have_rows( 'full_article' ) ) :
 										the_row();
 										$article_name   = get_sub_field( 'article_name' );
@@ -63,7 +64,7 @@ $video         = get_field( 'video' );
 										$article_author = get_sub_field( 'article_author' );
 										$article_date   = get_sub_field( 'article_date' );
 										?>
-										<?php if ( $article_name ) : ?>
+								<?php if ( $article_name ) : ?>
 								<div class="col-12 col-lg-6 p-4 mt-4 mb-5 full-article position-relative">
 									<a class="stretched-link" href="<?php echo $article_link; ?>" target="_blank" rel="noopener noreferrer">
 										<div class="container g-0">
@@ -130,7 +131,7 @@ $video         = get_field( 'video' );
 										in the southeast corner of Oklahoma, covering 10,923 square miles. The Choctaw Nation's vision, "Living out the Chahta Spirit of faith, family and
 										culture," is evident as it continues to focus on providing opportunities for growth and prosperity. For more information about the Choctaw Nation, its
 										culture, heritage, and traditions, please visit <a href="https://www.choctawnation.com/" target="_blank"
-											rel="noreferrer noopener">choctawnation.com</a>.</p>
+										   rel="noreferrer noopener">choctawnation.com</a>.</p>
 
 									<h3>Inquiries</h3>
 									<p>Contact Kristina Humenesky for any media relations needs at <a href="mailto:khumensky@choctwnation.com">khumensky@choctwnation.com</a></p>
@@ -148,7 +149,7 @@ $video         = get_field( 'video' );
 									?>
 							<hr />
 							<div class="row py-3">
-									<?php
+								<?php
 									echo "<h3>About {$boilerplate_title}</h3>";
 									echo "<p>{$about_company}</p>";
 									echo $media_inquiry ? "<h3>Media Inquiries</h3><p>{$media_inquiry}</p>" : '';

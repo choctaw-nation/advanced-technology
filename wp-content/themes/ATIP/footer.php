@@ -2,23 +2,19 @@
 /**
  * The template for displaying the footer
  *
- * Contains the closing of the #content div and all content after.
- *
- * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package Bootscore
+ * @package ChoctawNation
  */
 
 ?>
 
 <footer>
-
-	<div class="bootscore-footer bg-light pt-5 bg-lightgreen">
+	<div class="bootscore-footer pt-5 bg-lightgreen">
 		<div class="container-fluid px-4">
 			<div class="row justify-content-between">
 				<div class="col-md-3 text-center mb-5">
-					<a class="navbar-brand footer-logo" href="<?php echo esc_url( home_url() ); ?>"><img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/logo/ati-logo.svg"
-							 alt="logo" class="logo md"></a>
+					<a class="navbar-brand footer-logo" href="<?php echo esc_url( home_url() ); ?>">
+						<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/logo/ati-logo.svg" alt="logo" class="logo md">
+					</a>
 				</div>
 				<div class="col-md-8 footer-nav mb-3">
 					<!-- Footer Menu -->
@@ -49,9 +45,6 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
-		crossorigin="anonymous" async></script>
-
 </body>
 
 </html>

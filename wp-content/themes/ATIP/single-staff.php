@@ -6,7 +6,6 @@
  */
 
 get_header();
-$bio = get_field( 'bio' );
 ?>
 
 <div id="content" class="site-content container py-5 mt-4">
@@ -22,10 +21,17 @@ $bio = get_field( 'bio' );
 						<div class="container-fluid g-0">
 							<div class="row">
 								<div class="col-12 col-xl-4 staff-img">
-									<?php the_post_thumbnail( 'staff-single-thumb' ); ?>
+									<?php
+									the_post_thumbnail(
+										'staff-single-thumb',
+										array(
+											'class' => 'object-fit-cover',
+										)
+									);
+									?>
 								</div>
 								<div class="col-12 col-xl-8">
-									<?php echo $bio; ?>
+									<?php the_field( 'bio' ); ?>
 								</div>
 							</div>
 						</div>

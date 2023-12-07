@@ -119,33 +119,6 @@ class CNO_Theme_Init {
 			null, // phpcs:ignore
 		);
 
-		// News Single CSS
-		if ( is_singular( 'news' ) ) {
-			wp_enqueue_style(
-				'news-single',
-				get_template_directory_uri() . '/src/styles/pages/single-news.css',
-				array( 'global' )
-			);
-		}
-
-		// Staff Single CSS
-		if ( is_singular( 'staff' ) ) {
-			wp_enqueue_style(
-				'staff-single',
-				get_template_directory_uri() . '/src/styles/pages/single-staff.css',
-				array( 'global' )
-			);
-		}
-
-		// Staff Archive CSS
-		if ( is_archive( 'staff' ) ) {
-			wp_enqueue_style(
-				'staff-archive',
-				get_template_directory_uri() . '/src/styles/pages/archive-staff.css',
-				array( 'global' )
-			);
-		}
-
 		$this->remove_wordpress_styles(
 			array(
 				'classic-theme-styles',
@@ -157,26 +130,22 @@ class CNO_Theme_Init {
 			)
 		);
 
+		$gallery = require_once get_template_directory() . '/dist/pages/gallery.asset.php';
 		wp_register_script(
-			'particles',
-			get_template_directory_uri() . '/src/js/vendors/particles.js',
+			'gallery',
+			get_template_directory_uri() . '/dist/pages/gallery.js',
 			array(),
-			'20151215',
+			$gallery['version'],
 			array( 'strategy' => 'defer' )
 		);
+
 		$front_page = require_once get_template_directory() . '/dist/pages/frontPage.asset.php';
 		wp_register_script(
 			'home',
 			get_template_directory_uri() . '/dist/pages/frontPage.js',
-			array( 'particles' ),
+			array(),
 			$front_page['version'],
 			array( 'strategy' => 'defer' )
-		);
-		wp_register_style(
-			'home',
-			get_template_directory_uri() . '/dist/pages/frontPage.css',
-			array( 'global' ),
-			$front_page['version']
 		);
 	}
 

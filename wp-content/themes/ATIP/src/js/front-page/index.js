@@ -1,7 +1,6 @@
-import '../../styles/pages/home.scss';
+import { particlesJS } from '../vendors/particles';
 
-//ParticlesJS Settings
-particlesJS('particles-js', {
+new particlesJS( 'particles-js', {
 	particles: {
 		number: {
 			value: 80,
@@ -110,4 +109,4 @@ particlesJS('particles-js', {
 		},
 	},
 	retina_detect: true,
-});
+} );
