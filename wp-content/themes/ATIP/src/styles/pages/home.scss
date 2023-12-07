@@ -1,0 +1,50 @@
+@use "../abstracts/mixins" as m;
+/*--------------------------------------------------------------
+Home
+--------------------------------------------------------------*/
+#particles-js {
+	height: calc(100% + 20rem);
+}
+
+.particles-js-canvas-el {
+	position: absolute;
+	top: 0;
+	z-index: -1;
+}
+
+.block-title {
+	max-width: 280px;
+}
+
+.news {
+	.grid {
+		@include m.media-breakpoint-up(lg) {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			gap: 2rem;
+		}
+
+		&__title {
+			align-self: flex-start;
+			@include m.media-breakpoint-up(lg) {
+				grid-column: 1 / 2;
+				grid-row: 1 / 2;
+			}
+		}
+
+		&__more {
+			align-self: flex-end;
+			@include m.media-breakpoint-up(lg) {
+				grid-column: 1 / 2;
+				grid-row: 2 / 3;
+			}
+		}
+
+		&__content {
+			@include m.media-breakpoint-up(lg) {
+				grid-column: 2 / 3;
+				grid-row: 1 / 3;
+			}
+		}
+	}
+}

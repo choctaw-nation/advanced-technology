@@ -1,0 +1,8 @@
+/*
+Remove auto <p> (WP 5.7 bug near shortcode)
+https://wordpress.org/support/topic/how-to-stop-wp-from-adding-p-tag-automatically/
+*/
+
+p:empty:before {
+	content: none;
+}

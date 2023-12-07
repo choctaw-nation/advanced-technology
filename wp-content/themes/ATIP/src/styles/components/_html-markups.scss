@@ -1,0 +1,230 @@
+/*--------------------------------------------------------------
+14. HTML Markups (Includes WP Resets)
+--------------------------------------------------------------*/
+
+/*
+pre
+*/
+pre {
+	padding: 1.6rem;
+	border-radius: 0.4rem;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+.wp-post-image {
+	width: 100%;
+}
+
+iframe {
+	max-width: 100%;
+}
+
+pre {
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 1.6rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+	border-radius: 0.25rem;
+}
+
+blockquote {
+	border-radius: 0.25rem;
+	padding: 1.25rem;
+
+	&:before {
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		content: "\f10d";
+		font-size: xx-large;
+		float: left;
+		margin: -0.1rem 2rem 0 0;
+	}
+}
+
+.wp-block-quote.is-style-large {
+	margin: 0 0 1.6rem;
+	padding: 2rem;
+}
+
+figure.wp-block-pullquote blockquote:before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f10d";
+	font-size: xx-large;
+	display: block;
+	float: none;
+}
+
+q {
+	padding: 0.32rem 0.64rem;
+	font-size: 87.5%;
+	border-radius: 0.32rem;
+
+	&:before {
+		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
+		content: "\f10d";
+		font-size: 87.5%;
+		margin-right: 0.8rem;
+	}
+}
+
+.comment-content.card-block {
+	blockquote {
+		padding: 0;
+	}
+
+	q {
+		padding: 0;
+		font-size: 100%;
+	}
+}
+
+/* Button Reset */
+
+.wp-block-button {
+	margin-bottom: none;
+
+	&__link {
+		background-color: none !important;
+		border: none;
+		border-radius: none;
+		box-shadow: none;
+		color: inherit;
+		cursor: pointer;
+		display: inline-block;
+		font-size: none;
+		margin: 0;
+		padding: none;
+		text-align: center;
+		text-decoration: none;
+		white-space: normal;
+		overflow-wrap: break-word;
+	}
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+## Galleries
+--------------------------------------------------------------*/
+
+.gallery {
+	margin-bottom: 1.5em;
+}
+
+.gallery-caption {
+	display: block;
+}
+
+.gallery-item {
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+
+	.gallery-columns-2 & {
+		max-width: 50%;
+	}
+
+	.gallery-columns-3 & {
+		max-width: 33.33%;
+	}
+
+	.gallery-columns-4 & {
+		max-width: 25%;
+	}
+
+	.gallery-columns-5 & {
+		max-width: 20%;
+	}
+
+	.gallery-columns-6 & {
+		max-width: 16.66%;
+	}
+
+	.gallery-columns-7 & {
+		max-width: 14.28%;
+	}
+
+	.gallery-columns-8 & {
+		max-width: 12.5%;
+	}
+
+	.gallery-columns-9 & {
+		max-width: 11.11%;
+	}
+}
+
+/*--------------------------------------------------------------
+## Captions
+--------------------------------------------------------------*/
+
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+
+	img[class*="wp-image-"] {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.wp-caption-text {
+		margin: 0.8075em 0;
+	}
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.blocks-gallery-grid .blocks-gallery-image figcaption,
+.blocks-gallery-grid .blocks-gallery-item figcaption,
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption {
+	overflow: auto;
+	padding: 0.5rem;
+	font-size: 1rem;
+	background: rgba(0, 0, 0, 0.5);
+}
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
+.bypostauthor {
+	display: block;
+}
