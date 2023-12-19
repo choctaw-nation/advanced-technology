@@ -90,7 +90,7 @@ $video         = get_field( 'video' );
 								</div>
 								<?php endif; ?>
 								<?php endwhile; ?>
-								<?php endif; ?>
+								<?php endif; 2
 								<?php if ( $video ) : ?>
 								<div class="embed-container">
 									<?php echo $video; ?>
@@ -126,7 +126,7 @@ $video         = get_field( 'video' );
 							<div class="row g-0">
 								<div class="col-12">
 									<h3>About the Choctaw Nation of Oklahoma</h3>
-									<p>The Choctaw Nation is the third-largest Indian Nation in the United States with more than 212,000 tribal members and 12,000-plus associates. This
+									<p>The Choctaw Nation is the third-largest Indian Nation in the United States with more than 225,000 tribal members and 12,000-plus associates. This
 										ancient people has an oral tradition dating back over 13,000 years. The first tribe over the Trail of Tears, its historic reservation boundaries are
 										in the southeast corner of Oklahoma, covering 10,923 square miles. The Choctaw Nation's vision, "Living out the Chahta Spirit of faith, family and
 										culture," is evident as it continues to focus on providing opportunities for growth and prosperity. For more information about the Choctaw Nation, its
