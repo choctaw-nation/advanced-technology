@@ -90,7 +90,7 @@ $video         = get_field( 'video' );
 								</div>
 								<?php endif; ?>
 								<?php endwhile; ?>
-								<?php endif; 2
+								<?php endif; ?>
 								<?php if ( $video ) : ?>
 								<div class="embed-container">
 									<?php echo $video; ?>
