@@ -23,20 +23,6 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="theme-color" content="#ffffff">
 	<?php wp_head(); ?>
-
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-H9VPD8C63D"></script>
-	<script>
-	window.dataLayer = window.dataLayer || [];
-
-	function gtag() {
-		dataLayer.push(arguments);
-	}
-	gtag('js', new Date());
-
-	gtag('config', 'G-H9VPD8C63D');
-	</script>
-
 </head>
 
 <body <?php body_class(); ?> data-aos-easing="ease-out-back" data-aos-duration="1000" data-aos-delay="0">
