@@ -29,13 +29,9 @@ $images          = get_field( 'images' );
 				<?php
 				foreach ( $images as $image ) {
 					$gallery_content  = '<div class="col-md-6 col-xl-4 mb-4">';
-					$gallery_content .= '<a href="' . $image['url'] . '">';
 					$gallery_content .= wp_get_attachment_image( $image['ID'], 'gallery-thumbnail' );
 					$gallery_content .= '</a>';
 					$gallery_content .= '</div>';
-					if ( function_exists( 'slb_activate' ) ) {
-						$gallery_content = slb_activate( $gallery_content );
-					}
 					echo $gallery_content;
 				}
 				?>
