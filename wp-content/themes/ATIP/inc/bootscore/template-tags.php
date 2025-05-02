@@ -13,16 +13,18 @@ if ( ! function_exists( 'bootscore_category_badge' ) ) :
 	function bootscore_category_badge() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
-            echo '<div class="category-badge mb-2">';
-            $thelist = '';
-			$i = 0;
-            foreach( get_the_category() as $category ) {
-		      if ( 0 < $i ) $thelist .= ' ';
-						    $thelist .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="badge bg-secondary">' . $category->name.'</a>';
-						    $i++;
-            }
-            echo $thelist;	
-            echo '</div>';
+			echo '<div class="category-badge mb-2">';
+			$thelist = '';
+			$i       = 0;
+			foreach ( get_the_category() as $category ) {
+				if ( 0 < $i ) {
+					$thelist .= ' ';
+				}
+							$thelist .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" class="badge bg-secondary">' . $category->name . '</a>';
+							++$i;
+			}
+			echo $thelist;
+			echo '</div>';
 		}
 	}
 endif;
@@ -38,8 +40,8 @@ if ( ! function_exists( 'bootscore_category' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'bootscore' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links"></span>', $categories_list ); // WPCS: XSS OK.	
-			}		
+				printf( '<span class="cat-links"></span>', $categories_list ); // WPCS: XSS OK.
+			}
 		}
 	}
 endif;
@@ -57,7 +59,8 @@ if ( ! function_exists( 'bootscore_date' ) ) :
 			$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time> <span class="time-updated-separator">/</span> <time class="updated" datetime="%3$s">%4$s</time>';
 		}
 
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			$time_string,
 			esc_attr( get_the_date( DATE_W3C ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( DATE_W3C ) ),
@@ -71,7 +74,6 @@ if ( ! function_exists( 'bootscore_date' ) ) :
 		);
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
-
 	}
 endif;
 // Date End
@@ -87,7 +89,6 @@ if ( ! function_exists( 'bootscore_author' ) ) :
 		);
 
 		echo '<span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
 	}
 endif;
 // Author End
@@ -99,7 +100,6 @@ if ( ! function_exists( 'bootscore_comments' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function bootscore_comments() {
-
 
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo ' | <i class="far fa-comments"></i> <span class="comments-link">';
@@ -119,7 +119,6 @@ if ( ! function_exists( 'bootscore_comments' ) ) :
 			);
 			echo '</span>';
 		}
-	
 	}
 endif;
 // Comments End
@@ -151,7 +150,7 @@ if ( ! function_exists( 'bootscore_edit' ) ) :
 	}
 endif;
 // Edit Link End
-		
+
 
 // Single Comments Count
 if ( ! function_exists( 'bootscore_comment_count' ) ) :
@@ -162,10 +161,10 @@ if ( ! function_exists( 'bootscore_comment_count' ) ) :
 		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo ' | <i class="far fa-comments"></i> <span class="comments-link">';
 
-			/* translators: %s: Name of current post. Only visible to screen readers. */
+			/*
+			translators: %s: Name of current post. Only visible to screen readers. */
 			// comments_popup_link( sprintf( __( 'Leave a comment<span class="screen-reader-text"> on %s</span>', 'bootscore' ), get_the_title() ) );
 			comments_popup_link( sprintf( __( 'Leave a comment', 'bootscore' ), get_the_title() ) );
-
 
 			echo '</span>';
 		}
@@ -183,7 +182,6 @@ if ( ! function_exists( 'bootscore_tags' ) ) :
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
 
-
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', ' ' );
 			if ( $tags_list ) {
@@ -195,10 +193,10 @@ if ( ! function_exists( 'bootscore_tags' ) ) :
 endif;
 
 
-add_filter( "term_links-post_tag", 'add_tag_class');
+add_filter( 'term_links-post_tag', 'add_tag_class' );
 
-function add_tag_class($links) {
-    return str_replace('<a href="', '<a class="badge bg-secondary" href="', $links);
+function add_tag_class( $links ) {
+	return str_replace( '<a href="', '<a class="badge bg-secondary" href="', $links );
 }
 // Tags End
 
@@ -220,22 +218,27 @@ if ( ! function_exists( 'bootscore_post_thumbnail' ) ) :
 			?>
 
 			<div class="post-thumbnail">
-				<?php the_post_thumbnail('full', array('class' => 'rounded mb-3')); ?>
+				<?php the_post_thumbnail( 'full', array( 'class' => 'rounded mb-3' ) ); ?>
 			</div><!-- .post-thumbnail -->
 
 		<?php else : ?>
 
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
 			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				) ),
-			) );
+			the_post_thumbnail(
+				'post-thumbnail',
+				array(
+					'alt' => the_title_attribute(
+						array(
+							'echo' => false,
+						)
+					),
+				)
+			);
 			?>
 		</a>
 
-		<?php
+			<?php
 		endif; // End is_singular().
 	}
 endif;
@@ -248,9 +251,9 @@ if ( ! function_exists( 'bootscore_ie_alert' ) ) :
 	 * Displays an alert if page is browsed by Internet Explorer
 	 */
 	function bootscore_ie_alert() {
-            $ua = htmlentities($_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8');
-            if (preg_match('~MSIE|Internet Explorer~i', $ua) || (strpos($ua, 'Trident/7.0') !== false && strpos($ua, 'rv:11.0') !== false)) {
-                echo '
+			$ua = htmlentities( $_SERVER['HTTP_USER_AGENT'], ENT_QUOTES, 'UTF-8' );
+		if ( preg_match( '~MSIE|Internet Explorer~i', $ua ) || ( strpos( $ua, 'Trident/7.0' ) !== false && strpos( $ua, 'rv:11.0' ) !== false ) ) {
+			echo '
                     <div class="container pt-5">
                         <div class="alert alert-warning alert-dismissible fade show mt-4" role="alert">
                             <h1>' . esc_html__( 'Internet Explorer detected', 'bootscore' ) . '</h1>
@@ -259,8 +262,7 @@ if ( ! function_exists( 'bootscore_ie_alert' ) ) :
                         </div>
                     </div>
                ';
-            }
-        
+		}
 	}
 endif;
 

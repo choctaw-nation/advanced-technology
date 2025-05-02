@@ -1,9 +1,7 @@
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config.js' );
+const RemoveEmptyScriptsPlugin = require( 'webpack-remove-empty-scripts' );
 
-/** The name of the theme. Alter me! */
 const THEME_NAME = 'ATIP';
-
-/** The location of your theme. */
 const THEME_DIR = `/wp-content/themes/${ THEME_NAME }`;
 
 /**
@@ -37,6 +35,12 @@ module.exports = {
 			path: __dirname + `${ THEME_DIR }/dist`,
 			filename: `[name].js`,
 		},
+		plugins: [
+			...defaultConfig.plugins,
+			new RemoveEmptyScriptsPlugin( {
+				stage: RemoveEmptyScriptsPlugin.STAGE_AFTER_PROCESS_PLUGINS,
+			} ),
+		],
 	},
 };
 
