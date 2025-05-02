@@ -12,7 +12,7 @@ $is_even_index = true; ?>
 <div class="container">
 	<div class="row justify-content-center row-cols-lg-2 row-cols-xl-3 mb-5 ">
 		<?php while ( have_posts() ) : ?>
-		<?php the_post(); ?>
+			<?php the_post(); ?>
 		<div class="mb-4 staff-archive" data-aos="<?php echo $is_even_index ? 'zoom-out-left' : 'zoom-out-right'; ?>">
 			<?php if ( has_post_thumbnail() ) : ?>
 			<a href="<?php the_permalink(); ?>">
@@ -40,7 +40,7 @@ $is_even_index = true; ?>
 				<a class="read-more btn btn-green btn-lg text-light mt-auto" href="<?php the_permalink(); ?>">Read Full Bio</a>
 			</div>
 		</div>
-		<?php $is_even_index = ! $is_even_index; ?>
+			<?php $is_even_index = ! $is_even_index; ?>
 		<?php endwhile; ?>
 	</div>
 </div>
