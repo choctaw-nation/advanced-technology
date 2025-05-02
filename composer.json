@@ -13,7 +13,7 @@
 		}
 	],
 	"scripts": {
-		"phpcs": "phpcs wp-content/themes/ATIP/ --extensions=php --ignore=wp-content/themes/ATIP/dist/",
+		"phpcs": "phpcs wp-content/themes/ATIP/ --extensions=php --ignore=wp-content/themes/ATIP/dist/,wp-content/themes/ATIP/inc/bootscore/",
 		"phpcbf": "phpcbf wp-content/themes/ATIP/ --extensions=php --ignore=wp-content/themes/ATIP/dist/"
 	},
 	"config": {
