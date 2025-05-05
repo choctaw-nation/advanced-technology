@@ -86,19 +86,9 @@
 						</div>
 					</div>
 
-					<!-- Top Nav Search Large -->
-					<div class="top-nav-search-lg d-none d-lg-block order-lg-3 ms-2">
-						<?php if ( is_active_sidebar( 'top-nav-search' ) ) : ?>
-						<div>
-							<?php dynamic_sidebar( 'top-nav-search' ); ?>
-						</div>
-						<?php endif; ?>
-					</div>
 
 				</div><!-- container -->
 
 			</nav>
 
 		</header><!-- #masthead -->
-
-		<?php bootscore_ie_alert(); ?>

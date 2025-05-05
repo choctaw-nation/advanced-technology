@@ -31,6 +31,11 @@ class CNO_Navwalker extends Walker_Nav_Menu {
 	 */
 	protected $current_item;
 
+	/**
+	 * Bootstrap alignment values
+	 *
+	 * @var array $dropdown_menu_alignment_values
+	 */
 	protected $dropdown_menu_alignment_values = array(
 		'dropdown-menu-start',
 		'dropdown-menu-end',
@@ -63,7 +68,7 @@ class CNO_Navwalker extends Walker_Nav_Menu {
 	/**
 	 * Optional. ID of the current menu item. Default 0.
 	 *
-	 * @param int $id
+	 * @var int $id
 	 */
 	protected int $id;
 

@@ -12,7 +12,12 @@ $init_theme = new CNO_Theme_Init();
 
 
 
-function dl_oembed( $provider, $url, $args ) {
+/**
+ * Add dnt flag to Vimeo oEmbed URL
+ *
+ * @param string $provider The oEmbed provider URL.
+ */
+function dl_oembed( $provider ) {
 	if ( strpos( $provider, 'vimeo.com' ) !== false ) {
 		return add_query_arg( array( 'dnt' => false ), $provider );
 	}
