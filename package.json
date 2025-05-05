@@ -1,32 +1,33 @@
 {
-  "name": "advanced-technology",
-  "version": "2.1.0",
-  "description": "Custom WP theme for CNO sites",
-  "main": "wp-content/themes/ATIP/src/index.js",
-  "prettier": "@wordpress/prettier-config",
-  "browserslist": [
-    "extends @wordpress/browserslist-config"
-  ],
-  "scripts": {
-    "build": "wp-scripts build",
-    "check-engines": "wp-scripts check-engines",
-    "packages-update": "wp-scripts packages-update",
-    "start": "wp-scripts start"
-  },
-  "author": "Choctaw Nation of Oklahoma",
-  "license": "ISC",
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.7.2",
-    "@fortawesome/free-brands-svg-icons": "^6.7.2",
-    "@fortawesome/free-regular-svg-icons": "^6.7.2",
-    "@fortawesome/free-solid-svg-icons": "^6.7.2",
-    "aos": "^2.3.4",
-    "bootstrap": "^5.3.5",
-    "masonry-layout": "^4.2.2",
-    "swiper": "^11.2.6"
-  },
-  "devDependencies": {
-    "@wordpress/scripts": "^30.15.0",
-    "webpack-remove-empty-scripts": "^1.0.4"
-  }
+	"name": "advanced-technology",
+	"version": "2.2.0",
+	"description": "Custom WP theme for CNO sites",
+	"main": "wp-content/themes/ATIP/src/index.js",
+	"prettier": "@wordpress/prettier-config",
+	"browserslist": [
+		"extends @wordpress/browserslist-config"
+	],
+	"scripts": {
+		"build": "wp-scripts build",
+		"check-engines": "wp-scripts check-engines",
+		"packages-update": "wp-scripts packages-update",
+		"start": "wp-scripts start"
+	},
+	"author": "Choctaw Nation of Oklahoma",
+	"license": "ISC",
+	"dependencies": {
+		"@choctawnationofoklahoma/lite-vimeo": "^1.2.2",
+		"@fortawesome/fontawesome-svg-core": "^6.7.2",
+		"@fortawesome/free-brands-svg-icons": "^6.7.2",
+		"@fortawesome/free-regular-svg-icons": "^6.7.2",
+		"@fortawesome/free-solid-svg-icons": "^6.7.2",
+		"aos": "^2.3.4",
+		"bootstrap": "^5.3.5",
+		"masonry-layout": "^4.2.2",
+		"swiper": "^11.2.6"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^30.15.0",
+		"webpack-remove-empty-scripts": "^1.0.4"
+	}
 }
