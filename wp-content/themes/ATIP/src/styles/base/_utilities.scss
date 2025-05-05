@@ -118,27 +118,10 @@ Hover
 	}
 }
 
-.bg-dark {
-	background-color: black !important;
-}
-
-.bg-green {
-	background-color: var(--color-primary) !important;
-}
-
-.bg-lightgreen {
-	background-color: var(--color-primary--light) !important;
-}
-
-.bg-tan {
-	background-color: var(--color-grey) !important;
-}
-
 .btn-green {
 	color: white;
 	background-color: var(--color-primary--light);
 	border-color: var(--color-primary--light);
-	transition: 0.3s;
 
 	&:hover,
 	&:focus {
@@ -146,25 +129,17 @@ Hover
 	}
 }
 
-.text-green {
-	color: var(--color-primary--light) !important;
-}
-
-.text-lightgreen {
-	color: var(--color-primary--light) !important;
-}
-
 .text-sm {
-	font-size: 1.6rem;
+	font-size: 1rem;
 }
 
 .folded-block {
 	position: relative;
-	width: 48rem;
+	width: 30rem;
 	padding: 1em 1.5em;
 	margin: 2em auto;
 	color: white;
-	background: var(--color-primary);
+	background: var(--bs-primary);
 	overflow: hidden;
 
 	&:before {
@@ -172,10 +147,10 @@ Hover
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		border-width: 0 3rem 3rem 0;
+		border-width: 0 1.875rem 1.875rem 0;
 		border-style: solid;
-		border-color: var(--color-primary) var(--color-primary) white white;
-		background: var(--color-primary);
+		border-color: var(--bs-primary) var(--bs-primary) white white;
+		background: var(--bs-primary);
 		display: block;
 		width: 0;
 	}
@@ -183,17 +158,17 @@ Hover
 
 .tab-top {
 	padding: 1rem;
-	width: 20rem;
-	height: 3rem;
+	width: 12.5rem;
+	height: 1.875rem;
 	margin-bottom: -1px;
 	clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 0 100%, 30px 0);
 }
 
 .tab-bottom {
 	padding: 1rem;
-	width: 20rem;
-	height: 3rem;
+	width: 12.5rem;
+	height: 1.875rem;
 	margin-top: -1px;
 	clip-path: polygon(100% 0, 100% 0, 170px 100%, 0 100%, 0 0);
-	background-color: var(--color-black);
+	background-color: var(--bs-black);
 }

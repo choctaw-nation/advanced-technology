@@ -25,15 +25,13 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> data-aos-easing="ease-out-back" data-aos-duration="1000" data-aos-delay="0">
+<body <?php body_class( 'overflow-x-hidden position-relative' ); ?> data-aos-easing="ease-out-back" data-aos-duration="1000" data-aos-delay="0">
 	<?php wp_body_open(); ?>
-	<div id="to-top"></div>
-
+	<div id="to-top" class="position-absolute top-0"></div>
 	<div id="page" class="site">
-
 		<header id="masthead" class="site-header">
 
-			<nav id="nav-main" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-0">
+			<nav id="nav-main" class="navbar navbar-expand-lg navbar-dark bg-black sticky-top py-0">
 
 				<div class="container nav-container">
 
@@ -64,7 +62,7 @@
 					</button>
 
 					<div class="offcanvas offcanvas-end" tabindex="-1" data-bs-hideresize="true" id="offcanvas-navbar">
-						<div class="offcanvas-header hover cursor-pointer bg-dark text-light" data-bs-dismiss="offcanvas">
+						<div class="offcanvas-header hover cursor-pointer bg-black text-light" data-bs-dismiss="offcanvas">
 							<i class="fas fa-chevron-left"></i> <?php esc_html_e( 'Close menu', 'bootscore' ); ?>
 						</div>
 						<div class="offcanvas-body">

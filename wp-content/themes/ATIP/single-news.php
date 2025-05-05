@@ -18,7 +18,7 @@ $video         = get_field( 'video' );
 		<div class="row">
 			<div class="col-12">
 				<main id="main" class="site-main">
-					<header class="entry-header pt-5 text-bg-dark">
+					<header class="entry-header pt-5 text-bg-black">
 						<div class="container">
 							<div class="row">
 								<?php

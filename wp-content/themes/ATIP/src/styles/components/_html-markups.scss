@@ -6,8 +6,8 @@
 pre
 */
 pre {
-	padding: 1.6rem;
-	border-radius: 0.4rem;
+	padding: 1rem;
+	border-radius: 0.25rem;
 }
 
 img {
@@ -25,54 +25,54 @@ iframe {
 
 pre {
 	font-family: "Courier 10 Pitch", Courier, monospace;
-	font-size: 1.6rem;
-	line-height: 1.6;
-	margin-bottom: 1.6em;
+	font-size: 1rem;
+	line-height: 1rem;
+	margin-bottom: 1rem;
 	max-width: 100%;
 	overflow: auto;
-	padding: 1.6em;
-	border-radius: 0.25rem;
+	padding: 1rem;
+	border-radius: 0.15625rem;
 }
 
 blockquote {
-	border-radius: 0.25rem;
-	padding: 1.25rem;
+	border-radius: 0.15625rem;
+	padding: 0.78125rem;
 
 	&:before {
 		font-family: "Font Awesome 5 Free";
 		font-weight: 900;
 		content: "\f10d";
-		font-size: xx-large;
+		font-size: 1.25rem;
 		float: left;
-		margin: -0.1rem 2rem 0 0;
+		margin: -0.0625rem 1.25rem 0 0;
 	}
 }
 
 .wp-block-quote.is-style-large {
-	margin: 0 0 1.6rem;
-	padding: 2rem;
+	margin: 0 0 1rem;
+	padding: 1.25rem;
 }
 
 figure.wp-block-pullquote blockquote:before {
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
 	content: "\f10d";
-	font-size: xx-large;
+	font-size: 1.25rem;
 	display: block;
 	float: none;
 }
 
 q {
-	padding: 0.32rem 0.64rem;
-	font-size: 87.5%;
-	border-radius: 0.32rem;
+	padding: 0.2rem 0.4rem;
+	font-size: 0.546875rem;
+	border-radius: 0.2rem;
 
 	&:before {
 		font-family: "Font Awesome 5 Free";
 		font-weight: 900;
 		content: "\f10d";
-		font-size: 87.5%;
-		margin-right: 0.8rem;
+		font-size: 0.546875rem;
+		margin-right: 0.5rem;
 	}
 }
 
@@ -83,7 +83,7 @@ q {
 
 	q {
 		padding: 0;
-		font-size: 100%;
+		font-size: 0.625rem;
 	}
 }
 
@@ -117,13 +117,13 @@ q {
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	margin-right: 0.9375rem;
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin-left: 0.9375rem;
 }
 
 .aligncenter {
@@ -138,7 +138,7 @@ q {
 --------------------------------------------------------------*/
 
 .gallery {
-	margin-bottom: 1.5em;
+	margin-bottom: 0.9375rem;
 }
 
 .gallery-caption {
@@ -189,7 +189,7 @@ q {
 --------------------------------------------------------------*/
 
 .wp-caption {
-	margin-bottom: 1.5em;
+	margin-bottom: 0.9375rem;
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
@@ -199,7 +199,7 @@ q {
 	}
 
 	.wp-caption-text {
-		margin: 0.8075em 0;
+		margin: 0.5046875rem 0;
 	}
 }
 
@@ -212,8 +212,8 @@ q {
 .wp-block-gallery .blocks-gallery-image figcaption,
 .wp-block-gallery .blocks-gallery-item figcaption {
 	overflow: auto;
-	padding: 0.5rem;
-	font-size: 1rem;
+	padding: 0.3125rem;
+	font-size: 0.625rem;
 	background: rgba(0, 0, 0, 0.5);
 }
 

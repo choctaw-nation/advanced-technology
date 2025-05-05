@@ -8,7 +8,7 @@
 ?>
 
 <footer>
-	<div class="bootscore-footer pt-5 bg-lightgreen">
+	<div class="bootscore-footer pt-5 bg-success">
 		<div class="container-fluid px-4">
 			<div class="row justify-content-between">
 				<div class="col-md-3 text-center mb-5">
@@ -38,7 +38,7 @@
 
 </footer>
 
-<div class="top-button">
+<div class="top-button position-fixed">
 	<a href="#to-top" class="btn btn-green shadow" aria-label="Go to the top of the page"><i class="fas fa-chevron-up"></i></a>
 </div>
 
