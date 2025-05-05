@@ -8,7 +8,7 @@
 get_header();
 ?>
 
-<div id="content" class="site-content container py-5 mt-4">
+<div id="content" class="site-content container my-5">
 	<div id="primary" class="content-area">
 		<div class="row">
 			<nav class="col col-sm-6 col-md-7 my-5" aria-label="breadcrumb">
@@ -27,25 +27,24 @@ get_header();
 			<header class="entry-header">
 				<?php the_title( '<h1>', '</h1>' ); ?>
 			</header>
-			<div class="entry-content">
-				<div class="container-fluid g-0">
-					<div class="row">
-						<div class="col-12 col-xl-4 staff-img">
-							<?php
-							the_post_thumbnail(
-								'staff-single-thumb',
-								array(
-									'class' => 'object-fit-cover',
-								)
-							);
-							?>
-						</div>
-						<div class="col-12 col-xl-8">
-							<?php the_field( 'bio' ); ?>
-						</div>
-					</div>
+			<article class="row">
+				<div class="col-12 col-xl-4">
+					<figure class="ratio ratio-16x9 mb-0">
+						<?php
+						the_post_thumbnail(
+							'staff-single-thumb',
+							array(
+								'class' => 'object-fit-cover w-100 h-100',
+							)
+						);
+						?>
+
+					</figure>
 				</div>
-			</div>
+				<div class="col">
+					<?php the_field( 'bio' ); ?>
+				</div>
+			</article>
 		</main> <!-- #main -->
 	</div><!-- #primary -->
 </div><!-- #content -->
