@@ -172,3 +172,7 @@ Hover
 	clip-path: polygon(100% 0, 100% 0, 170px 100%, 0 100%, 0 0);
 	background-color: var(--bs-black);
 }
+
+.text-transform-none {
+	text-transform: none !important;
+}

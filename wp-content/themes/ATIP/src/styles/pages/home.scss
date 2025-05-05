@@ -12,10 +12,6 @@ Home
 	z-index: -1;
 }
 
-.block-title {
-	max-width: 280px;
-}
-
 .news {
 	.grid {
 		@include m.media-breakpoint-up(lg) {
@@ -25,7 +21,6 @@ Home
 		}
 
 		&__title {
-			align-self: flex-start;
 			@include m.media-breakpoint-up(lg) {
 				grid-column: 1 / 2;
 				grid-row: 1 / 2;
@@ -33,7 +28,6 @@ Home
 		}
 
 		&__more {
-			align-self: flex-end;
 			@include m.media-breakpoint-up(lg) {
 				grid-column: 1 / 2;
 				grid-row: 2 / 3;
