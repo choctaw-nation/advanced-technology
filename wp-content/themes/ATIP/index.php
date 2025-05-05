@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The main template file
  *
@@ -10,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package Bootscore
+ * @package ChoctawNation
  */
 
 get_header();

@@ -164,6 +164,15 @@ class CNO_Theme_Init {
 	public function cno_theme_support() {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'title-tag' );
+		add_theme_support(
+			'html5',
+			array(
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 		add_image_size( 'home-block', 720, 1200, false );
 		add_image_size( 'news-thumb', 696, 392, true ); // (cropped)
 		add_image_size( 'staff-archive-thumb', 1200, 400, false );

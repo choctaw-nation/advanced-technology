@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Preload functions and definitions
  *
@@ -10,6 +9,11 @@
 
 /**
  * Add preload to css
+ *
+ * @param string $html The HTML markup for the stylesheet link tag.
+ * @param string $handle The handle of the stylesheet.
+ * @param string $href The URL of the stylesheet.
+ * @param string $media The media attribute of the stylesheet.
  */
 function preload_for_css( $html, $handle, $href, $media ) {
 

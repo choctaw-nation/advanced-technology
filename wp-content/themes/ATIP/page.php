@@ -1,32 +1,26 @@
 <?php
-	/**
-	 * The template for displaying all pages
-	 *
-	 * This is the template that displays all pages by default.
-	 * Please note that this is the WordPress construct of pages
-	 * and that other 'pages' on your WordPress site may use a
-	 * different template.
-	 *
-	 * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
-	 *
-	 * @package Bootscore
-	 */
+/**
+ * The template for displaying all pages
+ *
+ * This is the template that displays all pages by default.
+ * Please note that this is the WordPress construct of pages
+ * and that other 'pages' on your WordPress site may use a
+ * different template.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package ChoctawNation
+ */
 
-	get_header();
+get_header();
+$page_content = get_field( 'page_content' );
 ?>
-	<?php $page_content = get_field( 'page_content' ); ?>
 
 <div id="content" class="site-content container py-5 mt-5">
 	<div id="primary" class="content-area">
-
-		<!-- Hook to add something nice -->
-		<?php bs_after_primary(); ?>
-
 		<div class="row">
 			<div class="col-12">
-
 				<main id="main" class="site-main">
-
 					<div class="entry-content">
 						<!-- Featured Image -->
 						<?php bootscore_post_thumbnail(); ?>
@@ -36,10 +30,8 @@
 						<?php echo $page_content; ?>
 						
 						<?php
-
 						// Check value exists.
 						if ( have_rows( 'content' ) ) :
-
 							// Loop through rows.
 							while ( have_rows( 'content' ) ) :
 								the_row();
