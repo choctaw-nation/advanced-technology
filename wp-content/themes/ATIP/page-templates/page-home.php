@@ -11,8 +11,8 @@ wp_enqueue_script( 'particles' );
 wp_enqueue_script( 'home' );
 get_header();
 
-$intro_paragraph = get_field( 'intro_paragraph' );
-$video_or_image  = get_field( 'video_or_image' );
+
+$video_or_image = get_field( 'video_or_image' );
 if ( 'image' === $video_or_image ) {
 	$image = new Image( get_field( 'image' ) );
 } elseif ( 'video' === $video_or_image ) {
@@ -20,11 +20,11 @@ if ( 'image' === $video_or_image ) {
 }
 
 $featured_content_group = get_field( 'featured_content' );
-$featured_subtitle      = $featured_content_group['subtitle'];
-$featured_title         = $featured_content_group['title'];
-$featured_content       = $featured_content_group['content'];
+$featured_subtitle      = esc_textarea( $featured_content_group['subtitle'] );
+$featured_title         = esc_textarea( $featured_content_group['title'] );
+$featured_content       = esc_textarea( $featured_content_group['content'] );
 $featured_image         = new Image( $featured_content_group['image'] );
-$featured_link_text     = $featured_content_group['link_text'];
+$featured_link_text     = esc_textarea( $featured_content_group['link_text'] );
 $featured_link          = $featured_content_group['link'];
 ?>
 
@@ -33,26 +33,42 @@ $featured_link          = $featured_content_group['link'];
 		<main id="main" class="site-main">
 			<!-- Header Hero -->
 			<section class="header-hero">
-				<?php echo do_shortcode( '[smartslider3 slider="1"]' ); ?>
+				<?php
+				the_post_thumbnail(
+					'full',
+					array(
+						'class'           => 'w-100 h-100 object-fit-cover',
+						'loading'         => 'eager',
+						'data-spai-eager' => 'true',
+					)
+				);
+				?>
 			</section>
 			<!-- Video -->
-			<section class="home-video" data-aos="zoom-out-left">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col gx-0">
-							<div id="particles-js" class="w-100 position-relative z-0 bg-black">
-								<div class="container py-5">
-									<p class="text-light my-5">
-										<?php echo $intro_paragraph; ?>
-									</p>
-									<?php
-									echo ( 'video' === $video_or_image ) ? "<div class='embed-container'>{$video}</div>" : $image->get_the_image( 'w-100' );
-									?>
-								</div>
-							</div><!-- particles.js container -->
+			<section class="d-flex" data-aos="zoom-out-left">
+				<div class="flex-grow-1">
+					<div id="particles-js" class="w-100 position-relative z-0 bg-black">
+						<div class="container py-5">
+							<p class="text-light my-5">
+								<?php the_field( 'intro_paragraph' ); ?>
+							</p>
+							<?php
+							if ( 'video' === $video_or_image ) {
+								echo '<div class="ratio ratio-16x9">';
+								$video = get_field( 'video', false, false );
+								echo cno_extract_vimeo_id( $video );
+								if ( false === $video ) {
+									the_field( 'video' );
+								}
+								echo '</div>';
+							} else {
+								$image->the_image( 'w-100' );
+							}
+							?>
 						</div>
-					</div>
+					</div><!-- particles.js container -->
 				</div>
+
 			</section>
 			<!-- Test Site -->
 			<section class='test-site-area z-2' data-aos="zoom-out-right">
@@ -93,15 +109,13 @@ $featured_link          = $featured_content_group['link'];
 							<div class="grid__content">
 								<div class="container">
 									<?php
-										$post_in_feed    = 2;
-										$news_posts_args = array(
+										$post_in_feed        = 2;
+										$news_posts_args     = array(
 											'post_type' => array( 'news' ),
 											'posts_per_page' => $post_in_feed,
 											'order'     => 'DESC',
 											'orderby'   => 'date',
 										);
-
-
 										$featured_news_posts = new WP_Query(
 											array(
 												...$news_posts_args,
@@ -123,7 +137,6 @@ $featured_link          = $featured_content_group['link'];
 											}
 										}
 										wp_reset_postdata();
-
 										$remaining_posts = $post_in_feed - $featured_count;
 										if ( $remaining_posts > 0 ) {
 											$news_posts = new WP_Query(
