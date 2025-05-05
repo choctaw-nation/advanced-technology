@@ -15,13 +15,11 @@
  * @param string $href The URL of the stylesheet.
  * @param string $media The media attribute of the stylesheet.
  */
-function preload_for_css( $html, $handle, $href, $media ) {
-
+function preload_for_css( $html, $handle, $href, $media ) { // phpcs:ignore Generic.CodeAnalysis.UnusedFunctionParameter.FoundAfterLastUsed
 	if ( is_admin() ) {
 		return $html;
 	}
-
-	echo '<link rel="stylesheet preload" as="style" href="' . $href . '" media="all" lazyload>';
+	echo '<link rel="stylesheet preload" as="style" href="' . $href . '" media="all" lazyload>'; // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedStylesheet
 }
 
 add_filter( 'style_loader_tag', 'preload_for_css', 10, 4 );

@@ -6,10 +6,7 @@
  */
 
 get_header();
-?>
-
-<?php
 if ( is_search() ) {
-	wp_redirect( home_url( '/' ) );
-	die;
+	wp_safe_redirect( home_url( '/' ) );
+	exit;
 }

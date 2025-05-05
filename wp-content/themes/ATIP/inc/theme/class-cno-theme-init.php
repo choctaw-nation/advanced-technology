@@ -174,7 +174,7 @@ class CNO_Theme_Init {
 			)
 		);
 		add_image_size( 'home-block', 720, 1200, false );
-		add_image_size( 'news-thumb', 696, 392, true ); // (cropped)
+		add_image_size( 'news-thumb', 696, 392, true );
 		add_image_size( 'staff-archive-thumb', 1200, 400, false );
 		add_image_size( 'staff-single-thumb', 1200, 500, false );
 		add_image_size( 'gallery-thumbnail', 516, 920, false );
@@ -202,7 +202,6 @@ class CNO_Theme_Init {
 	 */
 	private function disable_post_type_support( string $post_type ) {
 		$supports = array( 'editor', 'comments' );
-		// $supports = array( 'editor', 'comments', 'trackbacks', 'revisions', 'author' );
 		foreach ( $supports as $support ) {
 			if ( post_type_supports( $post_type, $support ) ) {
 				remove_post_type_support( $post_type, $support );
