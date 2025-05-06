@@ -47,7 +47,7 @@ get_header();
 				<h2 class="mt-5">Videos</h2>
 				<div class="row mt-4" data-masonry='{"percentPosition": true }'>
 					<?php while ( have_rows( 'videos' ) ) : ?>
-					<?php the_row(); ?>
+						<?php the_row(); ?>
 					<div class="col-md-6 mb-4">
 						<div class="ratio ratio-16x9">
 							<?php the_sub_field( 'video' ); ?>

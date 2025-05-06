@@ -49,7 +49,7 @@
 		<section class="py-3">
 			<h3>About <?php echo get_the_title( $additional_boilerplate->ID ); ?></h3>
 			<p><?php the_field( 'about_company', $additional_boilerplate->ID ); ?></p>
-			<?php echo $media_inquiry ? "<h3>Media Inquiries</h3><p>{$media_inquiry}</p>" : ''; ?>
+				<?php echo $media_inquiry ? "<h3>Media Inquiries</h3><p>{$media_inquiry}</p>" : ''; ?>
 		</section>
 		<?php endforeach; ?>
 		<?php endif; ?>
