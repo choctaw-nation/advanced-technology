@@ -4,6 +4,10 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v3.0.1
+
+-   Fixed: Font families are now declared properly, fixing the font display on Webkit
+
 ## v3.0.0
 
 -   Added: JS handles interaction states on footer links with href === '#'
