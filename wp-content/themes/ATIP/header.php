@@ -38,24 +38,6 @@
 					<a class="navbar-brand" href="<?php echo esc_url( home_url() ); ?>"><strong>Choctaw Nation</strong> <span class="d-none d-md-inline">Advanced Technology
 							Initiatives</span><span class="d-inline d-md-none">ATI</span></a>
 
-					<!-- Top Nav Search Mobile -->
-					<div class="top-nav-search-md d-lg-none ms-2">
-						<div class="dropdown">
-							<button class="btn btn-outline-secondary btn-dropdown right" type="button" id="dropdown-search" data-bs-toggle="dropdown" aria-expanded="false">
-								<i class="fas fa-search"></i>
-							</button>
-							<div class="dropdown-search dropdown-menu position-fixed border-0 bg-light rounded-0 start-0 end-0" aria-labelledby="dropdown-search">
-								<div class="container">
-									<?php if ( is_active_sidebar( 'top-nav-search' ) ) : ?>
-									<div class="mb-2">
-										<?php dynamic_sidebar( 'top-nav-search' ); ?>
-									</div>
-									<?php endif; ?>
-								</div>
-							</div>
-						</div>
-					</div>
-
 					<button class="navbar-toggler border-0 focus-0 py-2 pe-0 ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar"
 							aria-controls="offcanvas-navbar" aria-label="Menu">
 						<i class="text-secondary fas fa-bars"></i>

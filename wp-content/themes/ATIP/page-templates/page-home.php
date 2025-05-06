@@ -79,7 +79,7 @@ $featured_link          = $featured_content_group['link'];
 								<p class="h4 mb-3 fw-medium">
 									<?php echo $featured_subtitle; ?>
 								</p>
-								<p class="mb-0 h1 fw-semibold">
+								<p class="mb-0 h1 fw-semibold text-white">
 									<?php echo $featured_title; ?>
 								</p>
 							</div>

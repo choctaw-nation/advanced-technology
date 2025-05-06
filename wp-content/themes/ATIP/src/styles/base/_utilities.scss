@@ -118,18 +118,8 @@ Hover
 	}
 }
 
-.btn-green {
-	color: white;
-	background-color: var(--color-primary--light);
-	border-color: var(--color-primary--light);
-
-	&:hover,
-	&:focus {
-		background-color: var(--bs-link-hover-color);
-	}
-}
-
-.text-sm {
+.text-sm,
+.fs-root {
 	font-size: 1rem;
 }
 

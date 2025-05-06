@@ -9,7 +9,7 @@ wp_enqueue_script( 'gallery' );
 get_header();
 ?>
 
-<div id="content" class="site-content py-5 mt-5">
+<div id="content" class="site-content my-5">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main container">
 			<header class="entry-header">
