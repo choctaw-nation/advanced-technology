@@ -4,6 +4,21 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v3.0.0
+
+-   Added: JS handles interaction states on footer links with href === '#'
+-   Added: Above-the-fold images are now eagerly loaded and ready for SPAI plugin
+-   Added: Homepage now uses `lite-vimeo` package
+-   Updated: Typography now matches Minor Third type scale
+-   Updated: Links now have text-decoration by default (A11y)
+-   Updated: Refactored CSS to use 1rem = 16px base
+-   Updated: Tightened up spacing and html on elements
+    -   removed / de-duplicated `.container`, `.row` declarations,
+    -   consolidated page spacing to `.my-5`,
+    -   Used more semantic html (a11y)
+-   Updated: Refactored `single-news.php` into template parts
+-   Removed: Header no longer has search icon (was previously broken)
+
 ## v2.1.0
 
 -   Added: Github Actions now handles deploy of site
