@@ -12,7 +12,7 @@ $is_even_index = true; ?>
 <div class="container">
 	<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 justify-content-center align-items-stretch mb-5 row-gap-4">
 		<?php while ( have_posts() ) : ?>
-		<?php the_post(); ?>
+			<?php the_post(); ?>
 		<div class="col d-flex flex-column align-items-stretch position-relative" data-aos="<?php echo $is_even_index ? 'zoom-out-left' : 'zoom-out-right'; ?>">
 			<?php if ( has_post_thumbnail() ) : ?>
 			<figure class="mb-2 ratio ratio-16x9">
@@ -33,7 +33,7 @@ $is_even_index = true; ?>
 			</p>
 			<a class="btn btn-primary btn-lg mt-auto align-self-start stretched-link" href="<?php the_permalink(); ?>">Read Full Bio</a>
 		</div>
-		<?php $is_even_index = ! $is_even_index; ?>
+			<?php $is_even_index = ! $is_even_index; ?>
 		<?php endwhile; ?>
 	</div>
 </div>
