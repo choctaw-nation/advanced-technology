@@ -10,37 +10,30 @@ if ( ! have_posts() ) {
 }
 $is_even_index = true; ?>
 <div class="container">
-	<div class="row justify-content-center row-cols-lg-2 row-cols-xl-3 mb-5 ">
+	<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 justify-content-center align-items-stretch mb-5 row-gap-4">
 		<?php while ( have_posts() ) : ?>
-			<?php the_post(); ?>
-		<div class="mb-4 staff-archive" data-aos="<?php echo $is_even_index ? 'zoom-out-left' : 'zoom-out-right'; ?>">
+		<?php the_post(); ?>
+		<div class="col d-flex flex-column align-items-stretch position-relative" data-aos="<?php echo $is_even_index ? 'zoom-out-left' : 'zoom-out-right'; ?>">
 			<?php if ( has_post_thumbnail() ) : ?>
-			<a href="<?php the_permalink(); ?>">
+			<figure class="mb-2 ratio ratio-16x9">
 				<?php
-							the_post_thumbnail(
-								'staff-archive-thumb',
-								array(
-									'class'   => 'mb-3 object-fit-cover',
-									'loading' => 'lazy',
-									'height'  => '400',
-								)
-							);
+				the_post_thumbnail(
+					'staff-archive-thumb',
+					array(
+						'class'   => 'object-fit-cover h-100 w-100',
+						'loading' => 'lazy',
+					)
+				);
 				?>
-			</a>
+			</figure>
 			<?php endif; ?>
-			<div class="col">
-				<h2 class="blog-post-title news-content-preview">
-					<a href="<?php the_permalink(); ?>">
-						<?php the_title(); ?>
-					</a>
-				</h2>
-				<p class="text-body mb-3">
-					<?php the_field( 'archive_content' ); ?>
-				</p>
-				<a class="read-more btn btn-green btn-lg text-light mt-auto" href="<?php the_permalink(); ?>">Read Full Bio</a>
-			</div>
+			<?php the_title( '<h2 class="text-decoration-none text-transform-none">', '</h2>' ); ?>
+			<p>
+				<?php the_field( 'archive_content' ); ?>
+			</p>
+			<a class="btn btn-primary btn-lg mt-auto align-self-start stretched-link" href="<?php the_permalink(); ?>">Read Full Bio</a>
 		</div>
-			<?php $is_even_index = ! $is_even_index; ?>
+		<?php $is_even_index = ! $is_even_index; ?>
 		<?php endwhile; ?>
 	</div>
 </div>

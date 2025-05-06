@@ -3,17 +3,13 @@
 Home
 --------------------------------------------------------------*/
 #particles-js {
-	height: calc(100% + 20rem);
+	height: calc(100% + 12.5rem);
 }
 
 .particles-js-canvas-el {
 	position: absolute;
 	top: 0;
 	z-index: -1;
-}
-
-.block-title {
-	max-width: 280px;
 }
 
 .news {
@@ -25,7 +21,6 @@ Home
 		}
 
 		&__title {
-			align-self: flex-start;
 			@include m.media-breakpoint-up(lg) {
 				grid-column: 1 / 2;
 				grid-row: 1 / 2;
@@ -33,7 +28,6 @@ Home
 		}
 
 		&__more {
-			align-self: flex-end;
 			@include m.media-breakpoint-up(lg) {
 				grid-column: 1 / 2;
 				grid-row: 2 / 3;

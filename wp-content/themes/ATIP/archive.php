@@ -12,9 +12,9 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 			<div class="container">
-				<div class="row mt-5 pt-4">
+				<div class="row my-5 pt-4">
 					<!-- Title & Description -->
-					<header class="page-header mb-4">
+					<header class="col">
 						<h1><?php post_type_archive_title(); ?></h1>
 					</header>
 				</div>
@@ -30,9 +30,9 @@ get_header();
 				<div class="row row-cols-lg-2 row-cols-xl-3">
 					<div class="col">
 						<?php
-						the_title( '<h1>', '</h1>' );
+						the_title( '<h2 class="h1">', '</h2>' );
 						the_post_thumbnail( 'news-thumb' );
-						$post_excerpt = empty( get_field( 'archive_content' ) ) ? get_the_excerpt() : get_field( 'archive_content' );
+						$post_excerpt = empty( get_field( 'archive_content' ) ) ? get_the_excerpt() : esc_textarea( get_field( 'archive_content' ) );
 						?>
 						<p><?php echo $post_excerpt; ?></p>
 					</div>

@@ -32,13 +32,15 @@ get_header();
 						<div class="container py-5">
 							<div class="row pb-4">
 								<div class="col-12 text-light">
-									<p class="text-light">The department of Advanced Technology Iniatives (ATI) serves the Choctaw Nation by focusing on emerging technology opportunies that have the potential for a positive impact on the Choctaw Nation and the region.</p>
+									<p class="text-light">The department of Advanced Technology Iniatives (ATI) serves the Choctaw Nation by focusing on emerging technology opportunies that
+										have the potential for a positive impact on the Choctaw Nation and the region.</p>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-12 text-light">
 									<div class="embed-container">
-										<iframe title="vimeo-player" src="https://player.vimeo.com/video/710795263?h=c1a209975a" width="100%" height="700" frameborder="0" allowfullscreen></iframe>
+										<iframe title="vimeo-player" src="https://player.vimeo.com/video/710795263?h=c1a209975a" width="100%" height="700" frameborder="0"
+												allowfullscreen></iframe>
 									</div>
 								</div>
 							</div>
@@ -48,15 +50,16 @@ get_header();
 
 				<!-- Test Site -->
 				<div class="col-12 test-site-area" style="z-index: 2;">
-					<div class="container p-0 bg-dark h-100">
+					<div class="container p-0 bg-black h-100">
 						<div class="row g-0">
 							<div class="col-lg-6 text-light">
-								<div class="w-100 bg-dark py-3 px-5 g-0" style="height: 200px;">
-									<div class="text-lightgreen block-sub-title">TEST SITE</div>
+								<div class="w-100 bg-black py-3 px-5 g-0" style="height: 200px;">
+									<div class="text-success block-sub-title">TEST SITE</div>
 									<div class="text-light block-title">$4 million grant from EDA</div>
 								</div>
 								<div class="w-100 p-5 folded-block m-0" style="height: 450px; padding-top: 5rem !important;">
-									<div class="text-light">The CNO ATI program was awarded a $500K matching grant from USDA to develop a new "MakerSpace" at the test site. The USDA grant was matched with an additional $500K for $1,000,000 facility.</div>
+									<div class="text-light">The CNO ATI program was awarded a $500K matching grant from USDA to develop a new "MakerSpace" at the test site. The USDA grant
+										was matched with an additional $500K for $1,000,000 facility.</div>
 								</div>
 							</div>
 							<div class="col-lg-6 text-light">
@@ -69,7 +72,8 @@ get_header();
 											<div class="col-4">
 											</div>
 											<div class="col-6">
-												<a href="#" class="d-flex"><i class="far fa-2x fa-arrow-alt-circle-right text-lightgreen w-25"></i><span class="text-light text-sm w-75 px-2">Learn more about the test site operations center.</span></a>
+												<a href="#" class="d-flex"><i class="far fa-2x fa-arrow-alt-circle-right text-success w-25"></i><span
+															class="text-light text-sm w-75 px-2">Learn more about the test site operations center.</span></a>
 											</div>
 										</div>
 									</div>
@@ -81,7 +85,7 @@ get_header();
 
 				<!-- News -->
 				<div class="pt-5 mt-5 w-100 d-flex flex-row-reverse">
-					<div class="tab-top bg-tan"></div>
+					<div class="tab-top bg-secondary"></div>
 				</div>
 				<div class="col-12 news-area py-5">
 					<div class="container p-0 h-100">
@@ -90,11 +94,11 @@ get_header();
 								<div class="container h-100">
 									<div class="row h-100 flex-column justify-content-between">
 										<div class="col-12">
-											<div class="text-lightgreen block-sub-title">NEWS</div>
+											<div class="text-success block-sub-title">NEWS</div>
 										</div>
 										<div class="col-12 d-none d-lg-block">
 											<a href="/news/">
-												<i class="far fa-2x fa-arrow-alt-circle-right text-lightgreen"></i>
+												<i class="far fa-2x fa-arrow-alt-circle-right text-success"></i>
 												<div class="text-sm text-dark">Read more news</div>
 											</a>
 										</div>
@@ -136,16 +140,16 @@ get_header();
 
 												<?php $archive_content = get_field( 'archive_content' ); ?>
 
-												<div class="col-lg-3 mb-3 news-img">
-													<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'feed-side', array( 'class' => 'news-archive-img' ) ); ?></a></a>
-												</div>
-												<div class="col-lg-9 mb-3 news-detail news-content-preview">
-													<a href="<?php the_permalink(); ?>">
-														<div class="text-lightgreen"><b><?php the_title(); ?></b></div>
-													</a>
-													<p><?php echo $archive_content; ?></p>
-												</div>
-											<?php endwhile; ?>
+										<div class="col-lg-3 mb-3 news-img">
+											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'feed-side', array( 'class' => 'news-archive-img' ) ); ?></a></a>
+										</div>
+										<div class="col-lg-9 mb-3 news-detail news-content-preview">
+											<a href="<?php the_permalink(); ?>">
+												<div class="text-success"><b><?php the_title(); ?></b></div>
+											</a>
+											<p><?php echo $archive_content; ?></p>
+										</div>
+										<?php endwhile; ?>
 										<?php endif; ?>
 
 										<?php wp_reset_postdata(); ?>
@@ -187,16 +191,16 @@ get_header();
 												?>
 												<?php $archive_content = get_field( 'archive_content' ); ?>
 
-												<div class="col-lg-3 mb-3 news-img">
-													<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'feed-side', array( 'class' => 'news-archive-img' ) ); ?></a></a>
-												</div>
-												<div class="col-lg-9 mb-3 news-detail news-content-preview">
-													<a href="<?php the_permalink(); ?>">
-														<div class="text-lightgreen"><b><?php the_title(); ?></b></div>
-													</a>
-													<p><?php echo $archive_content; ?></p>
-												</div>
-											<?php endwhile; ?>
+										<div class="col-lg-3 mb-3 news-img">
+											<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail( 'feed-side', array( 'class' => 'news-archive-img' ) ); ?></a></a>
+										</div>
+										<div class="col-lg-9 mb-3 news-detail news-content-preview">
+											<a href="<?php the_permalink(); ?>">
+												<div class="text-success"><b><?php the_title(); ?></b></div>
+											</a>
+											<p><?php echo $archive_content; ?></p>
+										</div>
+										<?php endwhile; ?>
 										<?php endif; ?>
 
 										<?php wp_reset_postdata(); ?>
@@ -206,7 +210,7 @@ get_header();
 							</div>
 							<div class="col-12 d-lg-none text-center">
 								<a href="/news/">
-									<i class="far fa-2x fa-arrow-alt-circle-right text-lightgreen"></i>
+									<i class="far fa-2x fa-arrow-alt-circle-right text-success"></i>
 									<div class="text-sm">Read more news</div>
 								</a>
 							</div>
