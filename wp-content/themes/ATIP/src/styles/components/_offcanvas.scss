@@ -20,11 +20,11 @@
 
 .navbar-dark .navbar-nav {
 	%active {
-		background-color: var(--color-primary--light) !important;
+		background-color: var(--bs-success) !important;
 	}
 	.active {
 		.nav-link {
-			color: var(--color-primary--light);
+			color: var(--bs-success);
 		}
 	}
 	.nav-link {
@@ -41,7 +41,7 @@
 
 .dropdown-item.active,
 .dropdown-item:active {
-	background-color: var(--color-primary--light) !important;
+	background-color: var(--bs-success) !important;
 }
 
 /* Expand-sm */
