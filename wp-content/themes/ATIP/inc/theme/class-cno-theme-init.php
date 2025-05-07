@@ -34,6 +34,7 @@ class CNO_Theme_Init {
 		require_once __DIR__ . '/navwalkers/class-cno-navwalker.php';
 		require_once __DIR__ . '/theme-functions.php';
 		require_once __DIR__ . '/preload-fix.php';
+		require_once get_template_directory() . '/inc/bootscore/class-wp-bootstrap-navwalker.php';
 	}
 
 	/** Takes an array of file names to load
@@ -164,6 +165,7 @@ class CNO_Theme_Init {
 	public function cno_theme_support() {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'title-tag' );
+		add_post_type_support( 'page', 'excerpt' );
 		add_image_size( 'home-block', 720, 1200, false );
 		add_image_size( 'news-thumb', 696, 392, true ); // (cropped)
 		add_image_size( 'staff-archive-thumb', 1200, 400, false );
@@ -175,6 +177,16 @@ class CNO_Theme_Init {
 				'primary_menu' => __( 'Primary Menu', 'cno' ),
 				'mobile_menu'  => __( 'Mobile Menu', 'cno' ),
 				'footer_menu'  => __( 'Footer Menu', 'cno' ),
+			)
+		);
+
+		add_theme_support(
+			'html5',
+			array(
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
 			)
 		);
 	}
@@ -193,7 +205,6 @@ class CNO_Theme_Init {
 	 */
 	private function disable_post_type_support( string $post_type ) {
 		$supports = array( 'editor', 'comments' );
-		// $supports = array( 'editor', 'comments', 'trackbacks', 'revisions', 'author' );
 		foreach ( $supports as $support ) {
 			if ( post_type_supports( $post_type, $support ) ) {
 				remove_post_type_support( $post_type, $support );

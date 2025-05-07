@@ -4,6 +4,11 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v2.1.1
+
+-   Chore: Removed unused code, flattened files (aka moved bootscore setup to theme-init file)
+-   Chore: Replace bootscore functions with default WordPress functions
+
 ## v2.1.0
 
 -   Added: Github Actions now handles deploy of site
