@@ -15,7 +15,7 @@ $archive_content = get_field( 'archive_content' );
 		</a>
 	</div>
 	<div class="col-lg-9 news-detail news-content-preview">
-		<a href="<?php the_permalink(); ?>">
+		<a href="<?php the_permalink(); ?>" class="text-decoration-none">
 			<?php the_title( '<h3 class="text-success fw-bold">', '</h3>' ); ?>
 		</a>
 		<p><?php echo $archive_content; ?></p>

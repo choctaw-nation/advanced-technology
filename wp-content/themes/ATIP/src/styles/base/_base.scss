@@ -1,7 +1,7 @@
 @use "../abstracts/variables" as v;
 
 :root {
-	--transition-standard: v.$transition-standard;
+	--transition-standard: #{v.$transition-standard};
 
 	--font-headings: #{v.$font-headings};
 	--font-body: #{v.$font-body};
