@@ -16,7 +16,7 @@ $video_or_image  = get_field( 'video_or_image' );
 if ( 'image' === $video_or_image ) {
 	$image = new Image( get_field( 'image' ) );
 } elseif ( 'video' === $video_or_image ) {
-	$video = get_field( 'video' );
+	$video = get_field( 'video', false, false );
 }
 
 $featured_content_group = get_field( 'featured_content' );
@@ -46,7 +46,14 @@ $featured_link          = $featured_content_group['link'];
 										<?php echo $intro_paragraph; ?>
 									</p>
 									<?php
-									echo ( 'video' === $video_or_image ) ? "<div class='ratio ratio-16x9'>{$video}</div>" : $image->get_the_image( 'w-100' );
+									if ( 'video' === $video_or_image ) {
+										echo "<div class='ratio ratio-16x9'>";
+										$video = cno_extract_vimeo_id( $video );
+										echo $video ?: get_field( 'video' ); // phpcs:ignore Universal.Operators.DisallowShortTernary.Found
+										echo '</div>';
+									} else {
+										$image->get_the_image( 'w-100' );
+									}
 									?>
 								</div>
 							</div><!-- particles.js container -->
