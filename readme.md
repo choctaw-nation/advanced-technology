@@ -4,6 +4,12 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v2.1.0
+
+-   Added: Github Actions now handles deploy of site
+-   Updated: Webpack now removes empty js files
+-   Chore: Updated packages
+
 ## v2.0
 
 -   Total refactor of Theme Asset Loading to make in conform to CNO Template theme.

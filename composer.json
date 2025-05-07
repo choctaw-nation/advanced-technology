@@ -18,6 +18,10 @@
 			"dealerdirect/phpcodesniffer-composer-installer": true
 		}
 	},
+	"scripts": {
+		"phpcs": "phpcs wp-content/themes/ATIP/ --extensions=php --ignore=wp-content/themes/ATIP/dist/,wp-content/themes/ATIP/inc/bootscore/",
+		"phpcbf": "phpcbf wp-content/themes/ATIP/ --extensions=php --ignore=wp-content/themes/ATIP/dist/"
+	},
 	"require-dev": {
 		"wp-coding-standards/wpcs": "*"
 	}
