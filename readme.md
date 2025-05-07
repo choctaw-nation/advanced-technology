@@ -7,6 +7,7 @@ The Repo for the theme (based on bootscore).
 ## v2.1.1
 
 -   Chore: Removed unused code, flattened files (aka moved bootscore setup to theme-init file)
+-   Chore: Replace bootscore functions with default WordPress functions
 
 ## v2.1.0
 
