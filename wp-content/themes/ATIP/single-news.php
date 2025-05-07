@@ -22,7 +22,7 @@ $video         = get_field( 'video' );
 						<div class="container">
 							<div class="row">
 								<?php
-								the_title( '<h1>', '</h1>' );
+								the_title( '<h1 class="text-white text-transform-none">', '</h1>' );
 								echo $subheading ? "<h2>{$subheading}</h2>" : '';
 								the_post_thumbnail(
 									'full',
@@ -33,7 +33,7 @@ $video         = get_field( 'video' );
 									)
 								);
 								?>
-								<div class="photoby mb-4">
+								<div class="mb-4">
 									<?php
 									echo $photo_credit ? "<p class='caption-title text-uppercase fs-6 mb-1'>{$photo_credit}</p>" : '';
 									echo $photo_caption ? "<p class='fs-6 lh-sm'>{$photo_caption}</p>" : '';

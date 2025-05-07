@@ -4,6 +4,13 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v3.1.1
+
+-   Fixed: Spacing is tightened up
+-   Fixed: ACF fields are properly escaped
+-   Fixed: Links now use `stretched-link` pattern (a11y)
+-   Updated: Text now uses `text-wrap:pretty` by default
+
 ## v3.1.0
 
 -   Updated: Above-the-fold images are loaded eagerly
