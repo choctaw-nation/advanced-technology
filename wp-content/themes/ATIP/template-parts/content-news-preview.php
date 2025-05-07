@@ -11,7 +11,15 @@ $archive_content = get_field( 'archive_content' );
 <div class="row news-list my-5 my-lg-3">
 	<div class="col-lg-3">
 		<a href="<?php the_permalink(); ?>">
-			<?php echo the_post_thumbnail( 'home-block', array( 'class' => 'news-archive-img mb-3' ) ); ?>
+			<?php
+			the_post_thumbnail(
+				'home-block',
+				array(
+					'class'   => 'news-archive-img mb-3',
+					'loading' => 'lazy',
+				)
+			);
+			?>
 		</a>
 	</div>
 	<div class="col-lg-9 news-detail news-content-preview">

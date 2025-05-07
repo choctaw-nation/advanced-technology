@@ -4,6 +4,10 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v3.1.0
+
+-   Updated: Above-the-fold images are loaded eagerly
+
 ## v3.0.1
 
 -   Fixed: Type scale added for headings

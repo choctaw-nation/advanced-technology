@@ -16,7 +16,16 @@ $page_content = get_field( 'page_content' );
 				<main id="main" class="site-main">
 					<div class="entry-content">
 						<!-- Featured Image -->
-						<?php the_post_thumbnail(); ?>
+						<?php
+						the_post_thumbnail(
+							'full',
+							array(
+								'class'           => 'w-100 h-auto object-fit-cover mb-3',
+								'loading'         => 'eager',
+								'data-spai-eager' => 'true',
+							)
+						);
+						?>
 						<!-- Title -->
 						<?php the_title( '<h1>', '</h1>' ); ?>
 						<!-- Content -->
