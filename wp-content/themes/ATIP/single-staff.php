@@ -25,7 +25,9 @@ get_header();
 									the_post_thumbnail(
 										'staff-single-thumb',
 										array(
-											'class' => 'object-fit-cover',
+											'class'   => 'object-fit-cover w-100 h-auto mb-3',
+											'loading' => 'eager',
+											'data-spai-eager' => 'true',
 										)
 									);
 									?>
