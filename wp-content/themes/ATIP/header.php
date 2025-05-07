@@ -35,7 +35,7 @@
 
 			<nav id="nav-main" class="navbar navbar-expand-lg container">
 
-				<a class="navbar-brand text-white mx-0" href="<?php echo esc_url( home_url() ); ?>"><strong>Choctaw Nation</strong> <span class="ms-3 d-none d-md-inline">Advanced
+				<a class="navbar-brand mx-0" href="<?php echo esc_url( home_url() ); ?>"><strong>Choctaw Nation</strong> <span class="ms-3 d-none d-md-inline">Advanced
 						Technology
 						Initiatives</span><span class="ms-3 d-inline d-md-none">ATI</span></a>
 

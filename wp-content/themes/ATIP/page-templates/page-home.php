@@ -73,7 +73,7 @@ $featured_link          = $featured_content_group['link'];
 						</div>
 						<div class="col-lg-6 text-bg-black d-flex flex-column align-items-stretch">
 							<?php $featured_image->the_image( 'w-100' ); ?>
-							<a href="<?php echo $featured_link; ?>" class="align-self-center w-auto d-flex justify-content-center m-auto p-5">
+							<a href="<?php echo $featured_link; ?>" class="align-self-center w-auto d-flex justify-content-center m-auto p-5 text-decoration-none">
 								<i class="far fa-2x fa-arrow-alt-circle-right text-success"></i>
 								<span class="text-light fs-root w-50 ps-4"><?php echo $featured_link_text; ?></span>
 							</a>
@@ -155,7 +155,7 @@ $featured_link          = $featured_content_group['link'];
 										?>
 								</div>
 							</div>
-							<a class='grid__more d-flex flex-column justify-content-center text-center' href="/news/">
+							<a class='grid__more d-flex flex-column justify-content-center text-center text-decoration-none' href="/news/">
 								<i class="far fa-2x fa-arrow-alt-circle-right text-success"></i>
 								<div class="fs-root text-dark">Read more news</div>
 							</a>
