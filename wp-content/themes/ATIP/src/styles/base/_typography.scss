@@ -3,9 +3,7 @@
 --------------------------------------------------------------*/
 
 body {
-	position: relative;
-	word-break: break-word;
-	font-size: 2.16rem;
+	font-size: 1.35rem; // Converted from 2.16rem (10px base) to 1.35rem (16px base)
 }
 
 .single-news h1 {
@@ -13,23 +11,9 @@ body {
 	text-transform: none;
 }
 
-.entry-content ul,
+ul,
 ol,
 dl {
-	margin-left: 3rem;
+	margin-left: 1.875rem; // Converted from 3rem (10px base) to 1.875rem (16px base)
 	padding-left: 0;
-}
-
-h2 {
-	text-transform: uppercase;
-}
-
-a {
-	color: var(--color-primary--light);
-	transition: opacity 0.3s ease;
-
-	&:hover,
-	&:focus {
-		opacity: 0.8;
-	}
 }

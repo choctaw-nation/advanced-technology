@@ -20,7 +20,7 @@ get_header();
 					<h1 class="mb-3">404</h1>
 					<!-- Remove this line and place some widgets -->
 					<p class="alert alert-info mb-4"><?php esc_html_e( 'Page not found.', 'bootscore' ); ?></p>
-					<a class="btn btn-green" href="<?php echo esc_url( home_url() ); ?>" role="button"><?php esc_html_e( 'Back Home &raquo;', 'bootscore' ); ?></a>
+					<a class="btn btn-primary" href="<?php echo esc_url( home_url() ); ?>" role="button"><?php esc_html_e( 'Back Home &raquo;', 'bootscore' ); ?></a>
 				</div>
 			</section><!-- .error-404 -->
 

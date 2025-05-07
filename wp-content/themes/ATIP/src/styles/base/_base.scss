@@ -1,25 +1,10 @@
 @use "../abstracts/variables" as v;
 
 :root {
-	--color-primary: #{v.$color-primary};
-	--color-primary--light: #{v.$color-primary--light};
-	--color-grey: #{v.$color-grey};
-	--color-black: #{v.$color-black};
+	--transition-standard: v.$transition-standard;
 
 	--font-headings: #{v.$font-headings};
 	--font-body: #{v.$font-body};
-}
-
-body {
-	overflow-x: hidden;
-}
-
-.site-content {
-	padding-top: 7rem !important;
-}
-
-#content {
-	min-height: 60rem;
 }
 
 ::selection {
@@ -28,14 +13,8 @@ body {
 	background-color: var(--bs-primary);
 }
 
-pre {
-	background-color: var(--bs-light);
-}
-
-blockquote {
-	background-color: var(--bs-light);
-}
-
+pre,
+blockquote,
 q {
 	background-color: var(--bs-light);
 }
