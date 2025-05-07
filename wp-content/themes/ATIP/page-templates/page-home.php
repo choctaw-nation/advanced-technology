@@ -11,8 +11,8 @@ wp_enqueue_script( 'particles' );
 wp_enqueue_script( 'home' );
 get_header();
 
-$intro_paragraph = get_field( 'intro_paragraph' );
-$video_or_image  = get_field( 'video_or_image' );
+
+$video_or_image = get_field( 'video_or_image' );
 if ( 'image' === $video_or_image ) {
 	$image = new Image( get_field( 'image' ) );
 } elseif ( 'video' === $video_or_image ) {
@@ -20,19 +20,19 @@ if ( 'image' === $video_or_image ) {
 }
 
 $featured_content_group = get_field( 'featured_content' );
-$featured_subtitle      = $featured_content_group['subtitle'];
-$featured_title         = $featured_content_group['title'];
-$featured_content       = $featured_content_group['content'];
+$featured_subtitle      = esc_textarea( $featured_content_group['subtitle'] );
+$featured_title         = esc_textarea( $featured_content_group['title'] );
+$featured_content       = esc_textarea( $featured_content_group['content'] );
 $featured_image         = new Image( $featured_content_group['image'] );
-$featured_link_text     = $featured_content_group['link_text'];
-$featured_link          = $featured_content_group['link'];
+$featured_link_text     = esc_textarea( $featured_content_group['link_text'] );
+$featured_link          = esc_url( $featured_content_group['link'] );
 ?>
-
+<h1 class="visually-hidden">Choctaw Nation Advanced Technology Initiatives</h1>
 <div id="content" class="site-content">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 			<!-- Header Hero -->
-			<section class="header-hero">
+			<header class="header-hero">
 
 				<?php
 				if ( ! is_plugin_active( 'smart-slider-3/smart-slider-3.php' ) ) {
@@ -48,35 +48,33 @@ $featured_link          = $featured_content_group['link'];
 					echo do_shortcode( '[smartslider3 slider="1"]' );
 				}
 				?>
-			</section>
+			</header>
 			<!-- Video -->
-			<section class="home-video" data-aos="zoom-out-left">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col gx-0">
-							<div id="particles-js" class="w-100 position-relative z-0 bg-black">
-								<div class="container py-5">
-									<p class="text-light my-5">
-										<?php echo $intro_paragraph; ?>
-									</p>
-									<?php
-									if ( 'video' === $video_or_image ) {
-										echo "<div class='ratio ratio-16x9'>";
-										$video = cno_extract_vimeo_id( $video );
-										echo $video ?: get_field( 'video' ); // phpcs:ignore Universal.Operators.DisallowShortTernary.Found
-										echo '</div>';
-									} else {
-										$image->get_the_image( 'w-100' );
-									}
-									?>
-								</div>
-							</div><!-- particles.js container -->
-						</div>
+			<section data-aos="zoom-out-left">
+				<div class="d-flex">
+					<div class="col">
+						<div id="particles-js" class="w-100 position-relative text-bg-black z-0">
+							<div class="container py-5">
+								<p class="my-5">
+									<?php the_field( 'intro_paragraph' ); ?>
+								</p>
+								<?php
+								if ( 'video' === $video_or_image ) {
+									echo "<div class='ratio ratio-16x9'>";
+									$video = cno_extract_vimeo_id( $video );
+									echo $video ?: get_field( 'video' ); // phpcs:ignore Universal.Operators.DisallowShortTernary.Found
+									echo '</div>';
+								} else {
+									$image->get_the_image( 'w-100' );
+								}
+								?>
+							</div>
+						</div><!-- particles.js container -->
 					</div>
 				</div>
 			</section>
 			<!-- Test Site -->
-			<section class='test-site-area z-2' data-aos="zoom-out-right">
+			<section class="z-2" data-aos="zoom-out-right">
 				<div class="container">
 					<div class="row g-0">
 						<div class="col-lg-6 text-light">
@@ -84,7 +82,7 @@ $featured_link          = $featured_content_group['link'];
 								<span class="h4 mb-3 d-block fw-medium">
 									<?php echo $featured_subtitle; ?>
 								</span>
-								<p class="block-title text-light h1 fw-semibold">
+								<p class="text-light h1 mb-0">
 									<?php echo $featured_title; ?>
 								</p>
 							</div>
@@ -103,26 +101,24 @@ $featured_link          = $featured_content_group['link'];
 				</div>
 			</section>
 			<!-- News -->
-			<section class="news">
-				<div class="pt-5 mt-5 w-100 d-flex flex-row-reverse">
+			<section class="news mt-5">
+				<div class="w-100 d-flex flex-row-reverse">
 					<div class="tab-top bg-secondary"></div>
 				</div>
 				<div class="bg-secondary py-5">
 					<div class="container">
 						<div class="grid" data-aos="zoom-out-left">
-							<h2 class="grid__title text-success h4 fw-medium text-center">NEWS</h2>
+							<h2 class="grid__title text-success fs-4 fw-medium text-center mb-0 text-uppercase">NEWS</h2>
 							<div class="grid__content">
 								<div class="container">
 									<?php
-										$post_in_feed    = 2;
-										$news_posts_args = array(
+										$post_in_feed        = 2;
+										$news_posts_args     = array(
 											'post_type' => array( 'news' ),
 											'posts_per_page' => $post_in_feed,
 											'order'     => 'DESC',
 											'orderby'   => 'date',
 										);
-
-
 										$featured_news_posts = new WP_Query(
 											array(
 												...$news_posts_args,

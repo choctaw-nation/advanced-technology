@@ -22,7 +22,7 @@ function bootscore_pagination( $pages = '', $range = 2 ) {
 
 	if ( 1 != $pages ) {
 		echo '<nav aria-label="Page navigation" role="navigation">';
-		echo '<span class="sr-only">Page navigation</span>';
+		echo '<span class="visually-hidden">Page navigation</span>';
 		echo '<ul class="pagination justify-content-center ft-wpbs mb-4">';
 
 		if ( $paged > 2 && $paged > $range + 1 && $showitems < $pages ) {
