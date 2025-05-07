@@ -28,35 +28,14 @@
 <body <?php body_class( 'overflow-x-hidden' ); ?> data-aos-easing="ease-out-back" data-aos-duration="1000" data-aos-delay="0">
 	<?php wp_body_open(); ?>
 	<div id="to-top"></div>
-
 	<div id="page" class="site position-relative">
-
-		<header id="masthead" class="site-header text-bg-black z-2 position-sticky sticky-top start-0 end-0">
-
+		<header id="masthead" class="site-header text-bg-black z-2 position-sticky sticky-top start-0 end-0 py-3">
 			<nav id="nav-main" class="navbar navbar-expand-lg container">
-
-				<a class="navbar-brand mx-0" href="<?php echo esc_url( home_url() ); ?>"><strong>Choctaw Nation</strong> <span class="ms-3 d-none d-md-inline">Advanced
-						Technology
-						Initiatives</span><span class="ms-3 d-inline d-md-none">ATI</span></a>
-
-				<!-- Top Nav Search Mobile -->
-				<div class="top-nav-search-md d-lg-none ms-2">
-					<div class="dropdown">
-						<button class="btn btn-outline-secondary btn-dropdown right" type="button" id="dropdown-search" data-bs-toggle="dropdown" aria-expanded="false">
-							<i class="fas fa-search"></i>
-						</button>
-						<div class="dropdown-search dropdown-menu position-fixed border-0 bg-light rounded-0 start-0 end-0" aria-labelledby="dropdown-search">
-							<div class="container">
-								<?php if ( is_active_sidebar( 'top-nav-search' ) ) : ?>
-								<div class="mb-2">
-									<?php dynamic_sidebar( 'top-nav-search' ); ?>
-								</div>
-								<?php endif; ?>
-							</div>
-						</div>
-					</div>
-				</div>
-
+				<a class="navbar-brand mx-0" href="<?php echo esc_url( home_url() ); ?>">
+					<strong>Choctaw Nation</strong>
+					<span class="ms-3 d-none d-md-inline">Advanced Technology Initiatives</span>
+					<span class="ms-3 d-inline d-md-none">ATI</span>
+				</a>
 				<button class="navbar-toggler border-0 focus-0 py-2 pe-0 ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar"
 						aria-label="Menu">
 					<i class="text-secondary fas fa-bars"></i>
@@ -84,16 +63,5 @@
 								?>
 					</div>
 				</div>
-
-				<!-- Top Nav Search Large -->
-				<div class="top-nav-search-lg d-none d-lg-block order-lg-3 ms-2">
-					<?php if ( is_active_sidebar( 'top-nav-search' ) ) : ?>
-					<div>
-						<?php dynamic_sidebar( 'top-nav-search' ); ?>
-					</div>
-					<?php endif; ?>
-				</div>
-
 			</nav>
-
 		</header><!-- #masthead -->
