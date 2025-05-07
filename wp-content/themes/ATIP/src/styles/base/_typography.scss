@@ -4,11 +4,7 @@
 
 body {
 	font-size: 1.35rem; // Converted from 2.16rem (10px base) to 1.35rem (16px base)
-}
-
-.single-news h1 {
-	color: #ffffff;
-	text-transform: none;
+	text-wrap: pretty;
 }
 
 ul,
