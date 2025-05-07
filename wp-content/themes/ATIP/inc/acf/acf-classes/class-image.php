@@ -63,20 +63,46 @@ class Image {
 	/**
 	 * Generates the img element
 	 *
-	 * @param string $img_class the class to add
+	 * @param string         $img_class the class to add
+	 * @param 'lazy'|'eager' $loading the loading attribute
 	 * @return string the HTML
 	 */
-	public function get_the_image( string $img_class = '' ): string {
-		$markup = "<img class='{$img_class}' src='{$this->src}' srcset='{$this->srcset}' alt='{$this->alt}'/>";
+	public function get_the_image( string $img_class = '', string $loading = 'lazy' ): string {
+		if ( 'lazy' !== $loading && 'eager' !== $loading ) {
+			wp_die( "Invalid loading attribute: expected “lazy” or “eager”, got: {$loading}" );
+		}
+		$attr = array(
+			'src'     => $this->src,
+			'srcset'  => $this->srcset,
+			'alt'     => $this->alt,
+			'class'   => $img_class,
+			'loading' => $loading,
+		);
+		if ( 'eager' === $loading ) {
+			$attr['data-spai-eager'] = 'true';
+		}
+		$attr   = array_map(
+			function ( $key, $value ) {
+				if ( is_string( $value ) ) {
+					return sprintf( '%s="%s" ', esc_attr( $key ), esc_attr( $value ) );
+				} else {
+					return '';
+				}
+			},
+			array_keys( $attr ),
+			$attr
+		);
+		$markup = '<img ' . implode( '', $attr ) . ' />';
 		return $markup;
 	}
 
 	/**
 	 * Echoes the Image element
 	 *
-	 * @param string $img_class the html class to give the image
+	 * @param string         $img_class the html class to give the image
+	 * @param 'lazy'|'eager' $loading the loading attribute
 	 */
-	public function the_image( string $img_class = '' ) {
-		echo $this->get_the_image( $img_class );
+	public function the_image( string $img_class = '', $loading = 'lazy' ) {
+		echo $this->get_the_image( $img_class, $loading );
 	}
 }
