@@ -4,6 +4,10 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v3.1.2
+
+-   Fixed: Breadcrumbs are now properly accessible
+
 ## v3.1.1
 
 -   Fixed: Spacing is tightened up
