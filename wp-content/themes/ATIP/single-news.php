@@ -24,7 +24,14 @@ $video         = get_field( 'video' );
 								<?php
 								the_title( '<h1>', '</h1>' );
 								echo $subheading ? "<h2>{$subheading}</h2>" : '';
-								the_post_thumbnail( 'full', array( 'class' => 'rounded mb-3' ) );
+								the_post_thumbnail(
+									'full',
+									array(
+										'class'           => 'w-100 h-auto object-fit-cover mb-3',
+										'loading'         => 'eager',
+										'data-spai-eager' => 'true',
+									)
+								);
 								?>
 								<div class="photoby mb-4">
 									<?php
@@ -45,7 +52,7 @@ $video         = get_field( 'video' );
 								<p>
 									<small>
 										<a class="fs-6 text-decoration-none" href="<?php echo esc_url( home_url() ); ?>">Advanced Technology Initiatives</a> <i
-										   class="fas fa-caret-right"></i> <a class="fs-6 text-decoration-none" href="/news/">News</a>
+											class="fas fa-caret-right"></i> <a class="fs-6 text-decoration-none" href="/news/">News</a>
 									</small>
 								</p>
 								<p class="entry-meta mb-5">

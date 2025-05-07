@@ -33,7 +33,21 @@ $featured_link          = $featured_content_group['link'];
 		<main id="main" class="site-main">
 			<!-- Header Hero -->
 			<section class="header-hero">
-				<?php echo do_shortcode( '[smartslider3 slider="1"]' ); ?>
+
+				<?php
+				if ( ! is_plugin_active( 'smart-slider-3/smart-slider-3.php' ) ) {
+					the_post_thumbnail(
+						'full',
+						array(
+							'class'           => 'w-100',
+							'loading'         => 'eager',
+							'data-spai-eager' => 'true',
+						)
+					);
+				} else {
+					echo do_shortcode( '[smartslider3 slider="1"]' );
+				}
+				?>
 			</section>
 			<!-- Video -->
 			<section class="home-video" data-aos="zoom-out-left">
