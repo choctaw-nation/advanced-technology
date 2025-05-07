@@ -42,8 +42,8 @@ $images          = get_field( 'images' );
 			<h2 class="mt-5">Videos</h2>
 			<div class="row mt-4" data-masonry='{"percentPosition": true }'>
 				<?php while ( have_rows( 'videos' ) ) : ?>
-				<?php the_row(); ?>
-				<?php $video = get_sub_field( 'video' ); ?>
+					<?php the_row(); ?>
+					<?php $video = get_sub_field( 'video' ); ?>
 				<div class="col-md-6 mb-4">
 					<div class="embed-container">
 						<?php echo $video; ?>

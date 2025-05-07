@@ -4,6 +4,10 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v2.1.2
+
+-   Chore: PHPCS checks pass
+
 ## v2.1.1
 
 -   Chore: Removed unused code, flattened files (aka moved bootscore setup to theme-init file)

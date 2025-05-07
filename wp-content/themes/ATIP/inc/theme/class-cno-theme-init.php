@@ -167,7 +167,7 @@ class CNO_Theme_Init {
 		add_theme_support( 'title-tag' );
 		add_post_type_support( 'page', 'excerpt' );
 		add_image_size( 'home-block', 720, 1200, false );
-		add_image_size( 'news-thumb', 696, 392, true ); // (cropped)
+		add_image_size( 'news-thumb', 696, 392, true );
 		add_image_size( 'staff-archive-thumb', 1200, 400, false );
 		add_image_size( 'staff-single-thumb', 1200, 500, false );
 		add_image_size( 'gallery-thumbnail', 516, 920, false );

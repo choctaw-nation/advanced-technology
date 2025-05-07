@@ -11,8 +11,12 @@ require_once get_template_directory() . '/inc/theme/class-cno-theme-init.php';
 $init_theme = new CNO_Theme_Init();
 
 
-
-function dl_oembed( $provider, $url, $args ) {
+/**
+ * Adds dnt parameter to Vimeo oEmbed
+ *
+ * @param string $provider The provider URL.
+ */
+function dl_oembed( $provider ) {
 	if ( strpos( $provider, 'vimeo.com' ) !== false ) {
 		return add_query_arg( array( 'dnt' => false ), $provider );
 	}
