@@ -35,7 +35,7 @@ $page_content = get_field( 'page_content' );
 										echo wp_get_attachment_image( $image, 'full', '', array( 'class' => 'mb-3' ) );
 									} elseif ( 'video_content' === get_row_layout() ) {
 										$video = get_sub_field( 'video' );
-										echo '<div class="embed-container mb-3">';
+										echo '<div class="ratio ratio-16x9 mb-3">';
 										echo $video;
 										echo '</div>';
 									}

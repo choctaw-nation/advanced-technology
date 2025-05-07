@@ -46,7 +46,7 @@ $featured_link          = $featured_content_group['link'];
 										<?php echo $intro_paragraph; ?>
 									</p>
 									<?php
-									echo ( 'video' === $video_or_image ) ? "<div class='embed-container'>{$video}</div>" : $image->get_the_image( 'w-100' );
+									echo ( 'video' === $video_or_image ) ? "<div class='ratio ratio-16x9'>{$video}</div>" : $image->get_the_image( 'w-100' );
 									?>
 								</div>
 							</div><!-- particles.js container -->
@@ -59,7 +59,7 @@ $featured_link          = $featured_content_group['link'];
 				<div class="container">
 					<div class="row g-0">
 						<div class="col-lg-6 text-light">
-							<div class="text-bg-dark py-3 px-5" style="height: 200px;">
+							<div class="text-bg-black py-3 px-5" style="height: 200px;">
 								<span class="h4 mb-3 d-block fw-medium">
 									<?php echo $featured_subtitle; ?>
 								</span>
@@ -71,11 +71,11 @@ $featured_link          = $featured_content_group['link'];
 								<p class="text-light"><?php echo $featured_content; ?></p>
 							</div>
 						</div>
-						<div class="col-lg-6 text-bg-dark d-flex flex-column align-items-stretch">
+						<div class="col-lg-6 text-bg-black d-flex flex-column align-items-stretch">
 							<?php $featured_image->the_image( 'w-100' ); ?>
 							<a href="<?php echo $featured_link; ?>" class="align-self-center w-auto d-flex justify-content-center m-auto p-5">
-								<i class="far fa-2x fa-arrow-alt-circle-right text-lightgreen"></i>
-								<span class="text-light text-sm w-50 ps-4"><?php echo $featured_link_text; ?></span>
+								<i class="far fa-2x fa-arrow-alt-circle-right text-success"></i>
+								<span class="text-light fs-root w-50 ps-4"><?php echo $featured_link_text; ?></span>
 							</a>
 						</div>
 					</div>
@@ -89,7 +89,7 @@ $featured_link          = $featured_content_group['link'];
 				<div class="bg-secondary py-5">
 					<div class="container">
 						<div class="grid" data-aos="zoom-out-left">
-							<h2 class="grid__title text-lightgreen h4 fw-medium text-center">NEWS</h2>
+							<h2 class="grid__title text-success h4 fw-medium text-center">NEWS</h2>
 							<div class="grid__content">
 								<div class="container">
 									<?php
@@ -156,8 +156,8 @@ $featured_link          = $featured_content_group['link'];
 								</div>
 							</div>
 							<a class='grid__more d-flex flex-column justify-content-center text-center' href="/news/">
-								<i class="far fa-2x fa-arrow-alt-circle-right text-lightgreen"></i>
-								<div class="text-sm text-dark">Read more news</div>
+								<i class="far fa-2x fa-arrow-alt-circle-right text-success"></i>
+								<div class="fs-root text-dark">Read more news</div>
 							</a>
 						</div>
 					</div>

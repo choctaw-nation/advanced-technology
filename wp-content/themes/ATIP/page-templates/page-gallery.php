@@ -45,7 +45,7 @@ $images          = get_field( 'images' );
 					<?php the_row(); ?>
 					<?php $video = get_sub_field( 'video' ); ?>
 				<div class="col-md-6 mb-4">
-					<div class="embed-container">
+					<div class="ratio ratio-16x9">
 						<?php echo $video; ?>
 					</div>
 				</div>

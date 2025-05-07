@@ -31,7 +31,7 @@ $is_even_index = true;
 		</div>
 		<?php endif; ?>
 		<div class="col">
-			<h2 class="blog-post-title fs-1 news-content-preview">
+			<h2 class="text-transform-none fs-1 news-content-preview">
 				<a href="<?php the_permalink(); ?>">
 					<?php the_title(); ?>
 				</a>
@@ -39,7 +39,7 @@ $is_even_index = true;
 			<p class="text-body mb-3">
 				<?php the_field( 'archive_content' ); ?>
 			</p>
-			<a class="read-more btn btn-green btn-lg text-light mt-auto" href="<?php the_permalink(); ?>">Read More</a>
+			<a class="read-more btn btn-primary btn-lg text-light mt-auto" href="<?php the_permalink(); ?>">Read More</a>
 		</div>
 	</li>
 		<?php $is_even_index = ! $is_even_index; ?>

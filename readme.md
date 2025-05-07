@@ -4,6 +4,17 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v3.0.0
+
+-   Breaking: Updated Bootstrap CSS
+    -   1rem = 16px instead of 1rem = 10px
+    -   Updated Typography (type scale, text decoration on links)
+    -   Updated Bootstrap colors
+    -   Used namespaced sass modules instead of deprecated global modules (e.g. `map.get()` instead of `map-get()`)
+-   Breaking: Removed unused Bootscore scss partials
+-   Breaking: Swapped custom utilities (e.g. `text-lightgreen`) with Bootstrap native utilities
+-   Updated: Swapped custom css for CSS utilities where possible
+
 ## v2.1.2
 
 -   Chore: PHPCS checks pass
