@@ -49,12 +49,7 @@ $video         = get_field( 'video' );
 					<div class="entry-content container">
 						<div class="row">
 							<div class="col-12">
-								<p>
-									<small>
-										<a class="fs-6 text-decoration-none" href="<?php echo esc_url( home_url() ); ?>">Advanced Technology Initiatives</a> <i
-											class="fas fa-caret-right"></i> <a class="fs-6 text-decoration-none" href="/news/">News</a>
-									</small>
-								</p>
+								<?php get_template_part( 'template-parts/nav-breadcrumbs' ); ?>
 								<p class="entry-meta mb-5">
 									<small>
 										Published <?php the_date(); ?>
