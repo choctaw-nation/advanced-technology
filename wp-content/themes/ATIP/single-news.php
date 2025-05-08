@@ -44,7 +44,8 @@ $video         = get_field( 'video' );
 							<div class="col-12">
 								<p>
 									<small>
-										<a href="<?php echo esc_url( home_url() ); ?>">Advanced Technology Initiatives</a> <i class="fas fa-caret-right"></i> <a href="/news/">News</a>
+										<a class="fs-6 text-decoration-none" href="<?php echo esc_url( home_url() ); ?>">Advanced Technology Initiatives</a> <i
+										   class="fas fa-caret-right"></i> <a class="fs-6 text-decoration-none" href="/news/">News</a>
 									</small>
 								</p>
 								<p class="entry-meta mb-5">

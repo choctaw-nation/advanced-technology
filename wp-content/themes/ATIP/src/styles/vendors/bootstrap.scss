@@ -33,16 +33,44 @@ $font-family-monospace:
 
 $font-size-base: 1rem; // Sets the base font size to 16px
 
-$dropdown-font-size: 2.16rem;
+$dropdown-font-size: 1.35rem;
 
-$link-color: v.$color-primary--light;
-$link-hover-color: rgba(v.$color-primary--light, 0.8);
+$link-color: $success;
+$link-hover-color: rgba($success, 0.8);
 
 $headings-font-family: v.$font-headings;
 $headings-font-weight: 600;
-$headings-color: v.$color-primary--light;
+$headings-color: $success;
 
-$body-color: v.$color-copy-black;
+/**
+* Minor Third Type Scale
+* @see https://typescale.com/
+*/
+$h1-font-size: $font-size-base * 2.986;
+$h2-font-size: $font-size-base * 2.488;
+$h3-font-size: $font-size-base * 2.074;
+$h4-font-size: $font-size-base * 1.728;
+$h5-font-size: $font-size-base * 1.44;
+$h6-font-size: $font-size-base * 1.2;
+
+/**
+* Display Type Scale
+* Perfect Fourth Typescale
+* @see https://typescale.com
+*/
+$display-font-sizes: (
+	1: 5.61rem,
+	2: 4.209rem,
+	3: 3.157rem,
+	4: 2.369rem,
+	5: 1.777rem,
+	6: 1.333rem,
+);
+
+$display-font-family: v.$font-headings;
+$display-font-weight: 600;
+
+$body-color: $dark;
 
 $btn-transition: all var(--transition-standard);
 

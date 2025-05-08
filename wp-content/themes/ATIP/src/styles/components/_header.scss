@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
 /*--------------------------------------------------------------
 3. Header
 --------------------------------------------------------------*/
@@ -21,7 +23,6 @@
 		transition: opacity 0.8s;
 		transition-delay: 0.3s;
 	}
-}
 
 .dropdown-menu {
 	padding: 0;
@@ -51,10 +52,30 @@
 	}
 }
 
-@media (min-width: 979px) {
-	.nav-link {
-		color: rgba(255, 255, 255, 1);
+header {
+	--header-link-color: white;
+	--header-link-hover-color: rgba(255, 255, 255, 0.8);
+
+	.navbar-brand {
+		transition: color var(--transition-standard);
+		color: var(--header-link-color);
+
+		@include m.interaction() {
+			color: var(--header-link-hover-color);
+		}
 	}
+
+	.nav-link {
+		--bs-nav-link-color: var(--header-link-color);
+		--bs-nav-link-hover-color: var(--header-link-hover-color);
+	}
+
+	.active .nav-link {
+		color: var(--bs-nav-link-hover-color);
+	}
+}
+
+@media (min-width: 979px) {
 	ul.nav li.dropdown:hover > ul.dropdown-menu {
 		display: block !important;
 		visibility: visible !important;
