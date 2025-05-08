@@ -36,6 +36,6 @@ $is_even_index = true;
 			<a class="read-more btn btn-primary btn-lg text-light mt-auto stretched-link" href="<?php the_permalink(); ?>">Read More</a>
 		</div>
 	</li>
-	<?php $is_even_index = ! $is_even_index; ?>
+		<?php $is_even_index = ! $is_even_index; ?>
 	<?php endwhile; ?>
 </ul>
