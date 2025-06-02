@@ -6,6 +6,8 @@
  * @since 1.3
  */
 
+namespace ChoctawNation;
+
 /** Builds the Theme */
 class CNO_Theme_Init {
 	/** Constructor */
@@ -20,7 +22,7 @@ class CNO_Theme_Init {
 
 	/** Load required files. */
 	private function load_required_files() {
-
+		$base_path = get_template_directory() . '/inc';
 		$this->load_acf_classes(
 			array(
 				'generator',
@@ -28,10 +30,43 @@ class CNO_Theme_Init {
 				'hero',
 			)
 		);
+		$bootscore_files = array(
+			'class-wp-bootstrap-navwalker',
+			'bootscore-functions',
+		);
+		foreach ( $bootscore_files as $file ) {
+			require_once $base_path . "/bootscore/{$file}.php";
+		}
 
-		require_once __DIR__ . '/asset-loader/enum-enqueue-type.php';
-		require_once __DIR__ . '/asset-loader/class-asset-loader.php';
-		require_once __DIR__ . '/navwalkers/class-cno-navwalker.php';
+		$asset_loaders = array(
+			'enum-enqueue-type',
+			'class-asset-loader',
+		);
+
+		foreach ( $asset_loaders as $asset_loader ) {
+			require_once $base_path . "/theme/asset-loader/{$asset_loader}.php";
+		}
+
+		$navwalkers = array(
+			'cno-navwalker',
+		);
+
+		foreach ( $navwalkers as $navwalker ) {
+			require_once $base_path . "/theme/navwalkers/class-{$navwalker}.php";
+		}
+
+		$utility_files = array(
+			'gravity-forms-handler' => 'Gravity_Forms_Handler',
+		);
+
+		foreach ( $utility_files as $utility_file => $class_name ) {
+			require_once $base_path . "/theme/class-{$utility_file}.php";
+			if ( is_null( $class_name ) ) {
+				continue;
+			}
+			$class = __NAMESPACE__ . '\\' . $class_name;
+			new $class();
+		}
 		require_once __DIR__ . '/theme-functions.php';
 		require_once __DIR__ . '/preload-fix.php';
 	}
@@ -164,8 +199,9 @@ class CNO_Theme_Init {
 	public function cno_theme_support() {
 		add_theme_support( 'post-thumbnails' );
 		add_theme_support( 'title-tag' );
+		add_post_type_support( 'page', 'excerpt' );
 		add_image_size( 'home-block', 720, 1200, false );
-		add_image_size( 'news-thumb', 696, 392, true ); // (cropped)
+		add_image_size( 'news-thumb', 696, 392, true );
 		add_image_size( 'staff-archive-thumb', 1200, 400, false );
 		add_image_size( 'staff-single-thumb', 1200, 500, false );
 		add_image_size( 'gallery-thumbnail', 516, 920, false );
@@ -175,6 +211,16 @@ class CNO_Theme_Init {
 				'primary_menu' => __( 'Primary Menu', 'cno' ),
 				'mobile_menu'  => __( 'Mobile Menu', 'cno' ),
 				'footer_menu'  => __( 'Footer Menu', 'cno' ),
+			)
+		);
+
+		add_theme_support(
+			'html5',
+			array(
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
 			)
 		);
 	}
@@ -193,7 +239,6 @@ class CNO_Theme_Init {
 	 */
 	private function disable_post_type_support( string $post_type ) {
 		$supports = array( 'editor', 'comments' );
-		// $supports = array( 'editor', 'comments', 'trackbacks', 'revisions', 'author' );
 		foreach ( $supports as $support ) {
 			if ( post_type_supports( $post_type, $support ) ) {
 				remove_post_type_support( $post_type, $support );

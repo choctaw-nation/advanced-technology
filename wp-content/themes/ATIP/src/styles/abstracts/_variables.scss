@@ -1,14 +1,16 @@
-// COLORS
+$transition-standard: 0.15s ease-in-out;
 
+// COLORS
 $color-primary: #075541;
 $color-primary--light: #007b5f;
 $color-grey: #d7d2cc;
 $color-black: #0f0f0f;
 $color-copy-black: #212529;
 
-$font-headings: "pill-gothic-300mg", "Helvetica Neue", "Noto Sans",
+// FONTS
+$font-headings: pill-gothic-300mg, "Helvetica Neue", "Noto Sans",
 	"Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
 	"Segoe UI Symbol", "Noto Color Emoji";
-$font-body: "Gill Sans Nova", "Helvetica Neue", "Noto Sans", "Liberation Sans",
+$font-body: gill-sans-nova, "Helvetica Neue", "Noto Sans", "Liberation Sans",
 	Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
 	"Noto Color Emoji";
