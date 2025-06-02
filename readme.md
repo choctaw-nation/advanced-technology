@@ -4,6 +4,15 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v4.0.0
+
+-   Breaking: Namespaced classes
+-   Added: Gravity Forms Handler
+-   Updated: Files are all loaded via `theme-init` class
+-   Fixed: Gravity Forms Submit button has the correct styling
+-   Fixed: Overflow/gutter issues on mobile are corrected on `/news`
+-   Fixed: Bootstrap Buttons have expected hover effects
+
 ## v3.1.2
 
 -   Fixed: Breadcrumbs are now properly accessible

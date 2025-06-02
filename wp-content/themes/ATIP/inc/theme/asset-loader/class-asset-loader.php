@@ -6,6 +6,8 @@
  * @since 2.0
  */
 
+namespace ChoctawNation;
+
 /** On Construction, enqueues the assets
  *
  * @property string       $id the file id;
