@@ -3,8 +3,7 @@
  * Theme Functions
  */
 
-// Load Bootscore Functions
-require_once get_template_directory() . '/inc/bootscore/bootscore-functions.php';
+use ChoctawNation\CNO_Theme_Init;
 
 /** Get the theme init class */
 require_once get_template_directory() . '/inc/theme/class-cno-theme-init.php';

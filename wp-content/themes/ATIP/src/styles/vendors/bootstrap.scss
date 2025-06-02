@@ -97,6 +97,23 @@ $theme-colors: map.merge($theme-colors, $custom-colors);
 
 // Useful Bootstrap Utilities (Optional)
 @import "bootstrap/scss/buttons";
+
+// Override Bootstrap Buttons
+@each $color, $value in $theme-colors {
+	.btn-#{$color} {
+		@include button-variant(
+			$value,
+			$value,
+			$hover-background: transparent,
+			$active-background: transparent,
+			$hover-border: $value,
+			$active-border: $value,
+			$hover-color: $value,
+			$active-color: $value
+		);
+	}
+}
+
 @import "bootstrap/scss/transitions";
 @import "bootstrap/scss/close";
 @import "bootstrap/scss/containers";

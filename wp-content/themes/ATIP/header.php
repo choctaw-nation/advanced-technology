@@ -29,7 +29,7 @@
 	<?php wp_body_open(); ?>
 	<div id="to-top"></div>
 	<div id="page" class="site position-relative">
-		<header id="masthead" class="site-header text-bg-black z-2 position-sticky sticky-top start-0 end-0 py-3">
+		<header id="masthead" class="site-header text-bg-black z-2 position-sticky sticky-top start-0 end-0 py-3 container-fluid">
 			<nav id="nav-main" class="navbar navbar-expand-lg container">
 				<a class="navbar-brand mx-0" href="<?php echo esc_url( home_url() ); ?>">
 					<strong>Choctaw Nation</strong>

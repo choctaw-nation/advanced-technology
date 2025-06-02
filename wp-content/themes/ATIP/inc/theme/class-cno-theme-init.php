@@ -6,6 +6,8 @@
  * @since 1.3
  */
 
+namespace ChoctawNation;
+
 /** Builds the Theme */
 class CNO_Theme_Init {
 	/** Constructor */
@@ -20,7 +22,7 @@ class CNO_Theme_Init {
 
 	/** Load required files. */
 	private function load_required_files() {
-
+		$base_path = get_template_directory() . '/inc';
 		$this->load_acf_classes(
 			array(
 				'generator',
@@ -28,13 +30,45 @@ class CNO_Theme_Init {
 				'hero',
 			)
 		);
+		$bootscore_files = array(
+			'class-wp-bootstrap-navwalker',
+			'bootscore-functions',
+		);
+		foreach ( $bootscore_files as $file ) {
+			require_once $base_path . "/bootscore/{$file}.php";
+		}
 
-		require_once __DIR__ . '/asset-loader/enum-enqueue-type.php';
-		require_once __DIR__ . '/asset-loader/class-asset-loader.php';
-		require_once __DIR__ . '/navwalkers/class-cno-navwalker.php';
+		$asset_loaders = array(
+			'enum-enqueue-type',
+			'class-asset-loader',
+		);
+
+		foreach ( $asset_loaders as $asset_loader ) {
+			require_once $base_path . "/theme/asset-loader/{$asset_loader}.php";
+		}
+
+		$navwalkers = array(
+			'cno-navwalker',
+		);
+
+		foreach ( $navwalkers as $navwalker ) {
+			require_once $base_path . "/theme/navwalkers/class-{$navwalker}.php";
+		}
+
+		$utility_files = array(
+			'gravity-forms-handler' => 'Gravity_Forms_Handler',
+		);
+
+		foreach ( $utility_files as $utility_file => $class_name ) {
+			require_once $base_path . "/theme/class-{$utility_file}.php";
+			if ( is_null( $class_name ) ) {
+				continue;
+			}
+			$class = __NAMESPACE__ . '\\' . $class_name;
+			new $class();
+		}
 		require_once __DIR__ . '/theme-functions.php';
 		require_once __DIR__ . '/preload-fix.php';
-		require_once get_template_directory() . '/inc/bootscore/class-wp-bootstrap-navwalker.php';
 	}
 
 	/** Takes an array of file names to load
