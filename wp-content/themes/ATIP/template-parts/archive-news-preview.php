@@ -11,35 +11,29 @@ if ( ! have_posts() ) {
 }
 $is_even_index = true;
 ?>
-<ul class="container list-unstyled">
+<ul class="container list-unstyled d-flex flex-column row-gap-5 align-items-stretch mb-5" style="padding-left:calc(var(--bs-gutter-x)*.5);">
 	<?php while ( have_posts() ) : ?>
 	<?php the_post(); ?>
-	<li class="row mb-5" data-aos="<?php echo $is_even_index ? 'zoom-out-left' : 'zoom-out-right'; ?>">
+	<li class="row position-relative row-gap-4 align-items-stretch" data-aos="<?php echo $is_even_index ? 'zoom-out-left' : 'zoom-out-right'; ?>">
 		<?php if ( has_post_thumbnail() ) : ?>
-		<div class="col-lg-5 mb-4">
-			<a href="<?php the_permalink(); ?>">
-				<?php
+		<div class="col-lg-5">
+			<?php
 				the_post_thumbnail(
 					'news-thumb',
 					array(
-						'class'   => 'mb-3 object-fit-cover',
+						'class'   => 'mb-2 object-fit-cover w-100 h-auto',
 						'loading' => 'lazy',
 					)
 				);
-				?>
-			</a>
+			?>
 		</div>
 		<?php endif; ?>
-		<div class="col">
-			<h2 class="blog-post-title fs-1 news-content-preview">
-				<a href="<?php the_permalink(); ?>">
-					<?php the_title(); ?>
-				</a>
-			</h2>
+		<div class="col d-flex flex-column align-items-stretch">
+			<?php the_title( '<h2 class="text-transform-none">', '</h2>' ); ?>
 			<p class="text-body mb-3">
 				<?php the_field( 'archive_content' ); ?>
 			</p>
-			<a class="read-more btn btn-green btn-lg text-light mt-auto" href="<?php the_permalink(); ?>">Read More</a>
+			<a class="btn btn-primary btn-lg mt-auto align-self-start stretched-link" href="<?php the_permalink(); ?>">Read More</a>
 		</div>
 	</li>
 	<?php $is_even_index = ! $is_even_index; ?>

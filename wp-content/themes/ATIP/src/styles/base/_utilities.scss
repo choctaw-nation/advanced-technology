@@ -1,27 +1,4 @@
 /* 
-Add width-100 class to element to stretch it to the entire width 
-of the screen when element is in .container.
-https://bootscore.me/documentation/width-height-classes/
-*/
-
-.width-100 {
-	position: relative;
-	width: 100vw;
-	margin-left: -50vw;
-	left: 50%;
-}
-
-/* 
-Add underline-0 class to <a>..</a> to disable underline on hover
-*/
-
-.underline-0,
-.underline-0:hover,
-.underline-0:focus {
-	text-decoration: none !important;
-}
-
-/* 
 Hide racaptcha v3 badge 
 */
 
@@ -30,47 +7,23 @@ Hide racaptcha v3 badge
 }
 
 /* 
-Clear
-*/
-
-.clear-both {
-	clear: both;
-}
-
-/* 
 z-index
 */
 
-.zi-1000 {
-	z-index: 1000 !important;
-}
+$z-index-map: (
+	1000: 1000,
+	1020: 1020,
+	1030: 1030,
+	1040: 1040,
+	1050: 1050,
+	1060: 1060,
+	1070: 1070,
+);
 
-.zi-1020 {
-	z-index: 1020 !important;
-}
-
-.zi-1030 {
-	z-index: 1030 !important;
-}
-
-.zi-1040 {
-	z-index: 1040 !important;
-}
-
-.zi-1050 {
-	z-index: 1050 !important;
-}
-
-.zi-1060 {
-	z-index: 1060 !important;
-}
-
-.zi-1070 {
-	z-index: 1070 !important;
-}
-
-.zi-n1 {
-	z-index: -1 !important;
+@each $key, $value in $z-index-map {
+	.zi-#{$key} {
+		z-index: #{$value} !important;
+	}
 }
 
 /*
@@ -89,82 +42,21 @@ Focus
 	box-shadow: none !important;
 }
 
-/* 
-Hover 
-*/
-
-.hover {
-	transition: filter 0.3s;
-
-	&:hover {
-		filter: brightness(0.95);
-	}
+.fs-base {
+	font-size: 1.35rem;
 }
 
-.embed-container {
-	position: relative;
-	max-width: 100%;
-	height: auto;
-	aspect-ratio: 16/9;
-
-	& iframe,
-	& object,
-	& embed {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-	}
-}
-
-.bg-dark {
-	background-color: black !important;
-}
-
-.bg-green {
-	background-color: var(--color-primary) !important;
-}
-
-.bg-lightgreen {
-	background-color: var(--color-primary--light) !important;
-}
-
-.bg-tan {
-	background-color: var(--color-grey) !important;
-}
-
-.btn-green {
-	color: white;
-	background-color: var(--color-primary--light);
-	border-color: var(--color-primary--light);
-	transition: 0.3s;
-
-	&:hover,
-	&:focus {
-		background-color: var(--bs-link-hover-color);
-	}
-}
-
-.text-green {
-	color: var(--color-primary--light) !important;
-}
-
-.text-lightgreen {
-	color: var(--color-primary--light) !important;
-}
-
-.text-sm {
-	font-size: 1.6rem;
+.fs-root {
+	font-size: 1rem;
 }
 
 .folded-block {
 	position: relative;
-	width: 48rem;
+	width: 30rem;
 	padding: 1em 1.5em;
 	margin: 2em auto;
 	color: white;
-	background: var(--color-primary);
+	background: var(--bs-primary);
 	overflow: hidden;
 
 	&:before {
@@ -172,28 +64,36 @@ Hover
 		position: absolute;
 		bottom: 0;
 		left: 0;
-		border-width: 0 3rem 3rem 0;
+		border-width: 0 1.875rem 1.875rem 0;
 		border-style: solid;
-		border-color: var(--color-primary) var(--color-primary) white white;
-		background: var(--color-primary);
+		border-color: var(--bs-primary) var(--bs-primary) white white;
+		background: var(--bs-primary);
 		display: block;
 		width: 0;
 	}
 }
 
 .tab-top {
-	padding: 1rem;
-	width: 20rem;
-	height: 3rem;
+	padding: 0.625rem;
+	width: 12.5rem;
+	height: 1.875rem;
 	margin-bottom: -1px;
 	clip-path: polygon(100% 0%, 100% 0%, 100% 100%, 0 100%, 30px 0);
 }
 
 .tab-bottom {
-	padding: 1rem;
-	width: 20rem;
-	height: 3rem;
+	padding: 0.625rem;
+	width: 12.5rem;
+	height: 1.875rem;
 	margin-top: -1px;
 	clip-path: polygon(100% 0, 100% 0, 170px 100%, 0 100%, 0 0);
-	background-color: var(--color-black);
+	background-color: var(--bs-black);
+}
+
+.text-transform-none {
+	text-transform: none !important;
+}
+
+.sticky-top {
+	top: var(--wp-admin--admin-bar--height, 0) !important;
 }

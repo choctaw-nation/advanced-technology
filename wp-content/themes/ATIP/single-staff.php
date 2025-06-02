@@ -12,7 +12,7 @@ get_header();
 	<div id="primary" class="content-area">
 		<div class="row">
 			<div class="col-12">
-				<div class="col-md-7 col-sm-6 my-5 news-breadcrumbs"> <a href="/about/">About</a> <i class="fas fa-caret-right"></i> <a href="/staff/">Staff</a></div>
+				<?php get_template_part( 'template-parts/nav', 'breadcrumbs' ); ?>
 				<main id="main" class="site-main">
 					<header class="entry-header">
 						<?php the_title( '<h1>', '</h1>' ); ?>
@@ -25,7 +25,9 @@ get_header();
 									the_post_thumbnail(
 										'staff-single-thumb',
 										array(
-											'class' => 'object-fit-cover',
+											'class'   => 'object-fit-cover w-100 h-auto mb-3',
+											'loading' => 'eager',
+											'data-spai-eager' => 'true',
 										)
 									);
 									?>
