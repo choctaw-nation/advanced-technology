@@ -4,6 +4,11 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v4.0.1
+
+-   Fixed: Staff CTA button
+-   Fixed: Set the `is_even_index` variable with modulo operator instead of toggling a boolean value
+
 ## v4.0.0
 
 -   Breaking: Namespaced classes
