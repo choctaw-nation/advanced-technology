@@ -1,6 +1,8 @@
 <?php
 /**
  * Theme Functions
+ *
+ * @package ChoctawNation
  */
 
 use ChoctawNation\CNO_Theme_Init;

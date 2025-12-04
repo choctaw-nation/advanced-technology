@@ -1,6 +1,8 @@
 <?php
 /**
  * Theme Functions
+ *
+ * @package ChoctawNation
  */
 
 // Add <link rel=preload> to Fontawesome
