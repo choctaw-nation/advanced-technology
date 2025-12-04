@@ -2,7 +2,6 @@
 
 :root {
 	--transition-standard: #{v.$transition-standard};
-
 	--font-headings: #{v.$font-headings};
 	--font-body: #{v.$font-body};
 }
@@ -22,7 +21,5 @@ q {
 :focus {
 	outline: none !important;
 	outline: -webkit-focus-ring-color none !important;
-	outline-color: -webkit-focus-ring-color none !important;
-	outline-style: none !important;
-	outline-width: 0 !important;
+	outline: -webkit-focus-ring-color none none 0 !important;
 }

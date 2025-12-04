@@ -12,8 +12,8 @@ if ( ! have_posts() ) {
 ?>
 <ul class="container list-unstyled d-flex flex-column row-gap-5 align-items-stretch mb-5" style="padding-left:calc(var(--bs-gutter-x)*.5);">
 	<?php while ( have_posts() ) : ?>
-	<?php the_post(); ?>
-	<?php $is_even_index = 0 === $wp_query->current_post % 2; ?>
+		<?php the_post(); ?>
+		<?php $is_even_index = 0 === $wp_query->current_post % 2; ?>
 	<li class="row position-relative row-gap-4 align-items-stretch" data-aos="<?php echo $is_even_index ? 'zoom-out-left' : 'zoom-out-right'; ?>">
 		<?php if ( has_post_thumbnail() ) : ?>
 		<div class="col-lg-5">

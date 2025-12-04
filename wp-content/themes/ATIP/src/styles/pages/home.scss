@@ -1,7 +1,8 @@
 @use "../abstracts/mixins" as m;
-/*--------------------------------------------------------------
+
+/* --------------------------------------------------------------
 Home
---------------------------------------------------------------*/
+-------------------------------------------------------------- */
 #particles-js {
 	height: calc(100% + 12.5rem);
 }
@@ -26,6 +27,7 @@ Home
 
 		&__title {
 			align-self: flex-start;
+
 			@include m.media-breakpoint-up(lg) {
 				grid-column: 1 / 2;
 				grid-row: 1 / 2;
@@ -34,6 +36,7 @@ Home
 
 		&__more {
 			align-self: flex-end;
+
 			@include m.media-breakpoint-up(lg) {
 				grid-column: 1 / 2;
 				grid-row: 2 / 3;

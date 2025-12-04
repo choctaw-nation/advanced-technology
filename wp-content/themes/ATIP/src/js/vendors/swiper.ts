@@ -7,7 +7,7 @@ import 'swiper/scss/pagination';
 import { SwiperOptions } from 'swiper/types/swiper-options';
 
 const defaultArgs = {
-	modules: [Navigation, Pagination],
+	modules: [ Navigation, Pagination ],
 	direction: 'horizontal',
 	loop: false,
 
@@ -33,12 +33,12 @@ const defaultArgs = {
 /**
  * Simple API to init new Swiper object with default and overridable args
  *
- * @param {HTMLElement} el the element to create a slider on
+ * @param {HTMLElement}   el   the element to create a slider on
  * @param {SwiperOptions} args the Swiper Options arg to override
- * @returns swiper instance
+ * @return swiper instance
  */
-export function newSlider(el: HTMLElement, args: SwiperOptions = {}): Swiper {
-	const newArgs = Object.assign({}, defaultArgs, args);
-	const swiper = new Swiper(el, newArgs);
+export function newSlider( el: HTMLElement, args: SwiperOptions = {} ): Swiper {
+	const newArgs = Object.assign( {}, defaultArgs, args );
+	const swiper = new Swiper( el, newArgs );
 	return swiper;
 }

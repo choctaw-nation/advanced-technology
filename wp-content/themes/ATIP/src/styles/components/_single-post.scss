@@ -11,10 +11,10 @@
 	background-repeat: no-repeat;
 }
 
-[rel="prev"]:before {
+[rel="prev"]::before {
 	content: "« ";
 }
 
-[rel="next"]:after {
+[rel="next"]::after {
 	content: " »";
 }

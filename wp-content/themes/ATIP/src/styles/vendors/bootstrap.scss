@@ -1,5 +1,8 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
+
 @use "../abstracts/variables" as v;
 @use "sass:map";
+
 // Required
 @import "bootstrap/scss/functions";
 
@@ -10,7 +13,6 @@ $primary: v.$color-primary;
 $secondary: v.$color-grey;
 $dark: v.$color-copy-black;
 $success: v.$color-primary--light;
-
 $custom-colors: (
 	"black": black,
 	"white": white,
@@ -22,22 +24,19 @@ $custom-colors: (
 
 $font-family-sans-serif: v.$font-body;
 $font-family-monospace:
-	Monaspace Neon,
-	SFMono-Regular,
-	Menlo,
-	Monaco,
-	Consolas,
+	monaspace neon,
+	sfmono-regular,
+	menlo,
+	monaco,
+	consolas,
 	"Liberation Mono",
 	"Courier New",
 	monospace;
-
 $font-size-base: 1rem; // Sets the base font size to 16px
 
 $dropdown-font-size: 1.35rem;
-
 $link-color: $success;
 $link-hover-color: rgba($success, 0.8);
-
 $headings-font-family: v.$font-headings;
 $headings-font-weight: 600;
 $headings-color: $success;
@@ -66,12 +65,9 @@ $display-font-sizes: (
 	5: 1.777rem,
 	6: 1.333rem,
 );
-
 $display-font-family: v.$font-headings;
 $display-font-weight: 600;
-
 $body-color: $dark;
-
 $btn-transition: all var(--transition-standard);
 
 /**
@@ -83,6 +79,7 @@ $enable-rounded: false;
 $enable-dark-mode: false;
 
 @import "bootstrap/scss/variables";
+
 // @import "bootstrap/scss/variables-dark";
 
 // Map Overrides Here (Optional)
@@ -123,6 +120,7 @@ $theme-colors: map.merge($theme-colors, $custom-colors);
 
 // Optional Bootstrap Modules (w/ Dependencies)
 @import "bootstrap/scss/type";
+
 // @import "bootstrap/scss/images";
 // @import "bootstrap/scss/tables";
 // @import "bootstrap/scss/forms";
@@ -131,12 +129,15 @@ $theme-colors: map.merge($theme-colors, $custom-colors);
 @import "bootstrap/scss/navbar"; // Requires nav
 @import "bootstrap/scss/card";
 @import "bootstrap/scss/breadcrumb";
+
 // @import "bootstrap/scss/accordion";
 @import "bootstrap/scss/pagination";
+
 // @import "bootstrap/scss/badge";
 // @import "bootstrap/scss/alert";
 // @import "bootstrap/scss/progress";
 @import "bootstrap/scss/list-group";
+
 // @import "bootstrap/scss/toasts";
 @import "bootstrap/scss/modal"; // Requires transitions
 // @import "bootstrap/scss/tooltip";

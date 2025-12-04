@@ -1,8 +1,9 @@
 @use "../abstracts/mixins" as m;
 @use "../abstracts/variables" as v;
-/*--------------------------------------------------------------
+
+/* --------------------------------------------------------------
 3. Header
---------------------------------------------------------------*/
+-------------------------------------------------------------- */
 
 #nav-main .menu-item:last-child .nav-link {
 	padding-right: 0;
@@ -36,14 +37,14 @@
 	display: none !important;
 }
 
-@media (max-width: 991px) {
+@media (width <= 991px) {
 	.btn-dropdown.right {
 		padding-right: 0;
 		border: none;
 	}
 
 	#dropdown-search:hover {
-		color: currentColor;
+		color: currentcolor;
 		background-color: transparent;
 		border-color: transparent;
 	}
@@ -55,13 +56,13 @@
 
 header {
 	--header-link-color: white;
-	--header-link-hover-color: rgba(255, 255, 255, 0.8);
+	--header-link-hover-color: rgb(255 255 255 / 80%);
 
 	.navbar-brand {
 		transition: color var(--transition-standard);
 		color: var(--header-link-color);
 
-		@include m.interaction() {
+		@include m.interaction {
 			color: var(--header-link-hover-color);
 		}
 	}
@@ -76,7 +77,7 @@ header {
 	}
 }
 
-@media (min-width: 979px) {
+@media (width >= 979px) {
 	ul.nav li.dropdown:hover > ul.dropdown-menu {
 		display: block !important;
 		visibility: visible !important;

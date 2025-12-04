@@ -1,7 +1,8 @@
 @use "../abstracts/mixins" as m;
-/*--------------------------------------------------------------
+
+/* --------------------------------------------------------------
 Footer
---------------------------------------------------------------*/
+-------------------------------------------------------------- */
 .footer-logo img {
 	max-width: 400px;
 }
@@ -10,7 +11,7 @@ Footer
 	color: white;
 	text-decoration: none;
 
-	@include m.interaction() {
+	@include m.interaction {
 		text-decoration: underline;
 	}
 }
@@ -18,6 +19,7 @@ Footer
 .bs-footer-menu {
 	& > .nav {
 		gap: 2rem;
+
 		> li {
 			width: 50%;
 			text-transform: uppercase;

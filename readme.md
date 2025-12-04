@@ -4,6 +4,12 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v4.0.2 - [December 4, 2025]
+
+-   Tweak: Add Core Web Vitals Configs to Theme_Init
+-   Chore: Add Lints and Configs
+-   Chore: Update Packages
+
 ## v4.0.1
 
 -   Fixed: Staff CTA button
