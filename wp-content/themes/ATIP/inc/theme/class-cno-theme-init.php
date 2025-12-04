@@ -18,6 +18,7 @@ class CNO_Theme_Init {
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_cno_scripts' ) );
 		add_action( 'after_setup_theme', array( $this, 'cno_theme_support' ) );
 		add_action( 'init', array( $this, 'alter_post_types' ) );
+		add_action( 'plugins_loaded', array( $this, 'disable_plugins_per_environment' ) );
 		add_filter( 'allowed_redirect_hosts', array( $this, 'add_allowed_redirect_hosts' ) );
 		add_filter( 'wp_speculation_rules_configuration', array( $this, 'handle_speculative_loading' ) );
 		add_filter( 'auto_update_plugin', array( $this, 'handle_auto_update_plugin' ) );
