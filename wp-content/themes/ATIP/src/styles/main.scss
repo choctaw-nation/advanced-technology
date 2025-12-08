@@ -1,18 +1,12 @@
 @use "./base/base";
 @use "./base/typography";
 @use "./base/utilities";
-
 @use "./components/offcanvas"; // done enough
-
 @use "./components/header";
 @use "./components/footer"; // done
-
 @use "./components/breadcrumbs";
 @use "./components/to-top";
 @use "./components/single-post";
-
 @use "./components/archive";
-
 @use "./components/html-markups"; // done
-
-@use "./pages/home.scss";
+@use "./pages/home";

@@ -59,7 +59,7 @@ Focus
 	background: var(--bs-primary);
 	overflow: hidden;
 
-	&:before {
+	&::before {
 		content: "";
 		position: absolute;
 		bottom: 0;
