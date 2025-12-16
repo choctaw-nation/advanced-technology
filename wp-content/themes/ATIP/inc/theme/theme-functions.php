@@ -5,19 +5,6 @@
  * @package ChoctawNation
  */
 
-// Add <link rel=preload> to Fontawesome
-add_filter( 'style_loader_tag', 'cno_style_loader_tag' );
-/** Add `rel='preload' to fontawesome css
- *
- * @param string $tag The link tag for the enqueued style.
- */
-function cno_style_loader_tag( $tag ) {
-	$tag = preg_replace( "/id='font-awesome-css'/", "id='font-awesome-css' online=\"if(media!='all')media='all'\"", $tag );
-
-	return $tag;
-}
-// Add <link rel=preload> to Fontawesome End
-
 /**
  * Move Yoast to bottom
  */

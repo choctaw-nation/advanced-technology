@@ -74,7 +74,6 @@ class CNO_Theme_Init {
 			new $class();
 		}
 		require_once __DIR__ . '/theme-functions.php';
-		require_once __DIR__ . '/preload-fix.php';
 	}
 
 	/** Takes an array of file names to load
@@ -335,7 +334,7 @@ class CNO_Theme_Init {
 		if ( 'preconnect' === $relation_type ) {
 			$hints[] = array(
 				'href'        => 'https://use.typekit.net',
-				'crossorigin' => true,
+				'crossorigin' => 'anonymous',
 			);
 		}
 		return $hints;
@@ -351,16 +350,21 @@ class CNO_Theme_Init {
 	 */
 	public function preload_stylesheets( string $html, string $handle, string $href ): string {
 		$preload_handles = array(
-			'typekit'   => 'external',
-			'bootstrap' => null,
+			'typekit'     => 'external',
+			'bootstrap'   => null,
+			'fontawesome' => null,
 		);
 		if ( in_array( $handle, array_keys( $preload_handles ), true ) ) {
-			$preload = sprintf(
+			$is_crossorigin = 'external' === $preload_handles[ $handle ];
+			$preload        = sprintf(
 				"<link rel='preload' as='style' href='%s' %s />\n",
 				$href,
-				'external' === $preload_handles[ $handle ] ? 'crossorigin' : ''
+				$is_crossorigin ? 'crossorigin' : ''
 			);
-			$html    = $preload . $html;
+			if ( $is_crossorigin && ! str_contains( $html, 'crossorigin' ) ) {
+				$html = str_replace( '/>', 'crossorigin="anonymous" />', $html );
+			}
+			$html = $preload . $html;
 		}
 		return $html;
 	}
