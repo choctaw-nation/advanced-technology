@@ -4,6 +4,10 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v4.0.3 - [December 16, 2025]
+
+-   Fixed: Removed conflicting asset loading and added appropriate `crossorigin` attribute
+
 ## v4.0.2 - [December 4, 2025]
 
 -   Tweak: Add Core Web Vitals Configs to Theme_Init
