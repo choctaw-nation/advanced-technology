@@ -4,6 +4,12 @@ The Repo for the theme (based on bootscore).
 
 # Changelog
 
+## v5.0.0 - [April, 2026]
+
+-   Breaking: Block theme!
+-   Breaking: Composer `autoload` feature!
+-   Chore: Update npm packages
+
 ## v4.0.3 - [December 16, 2025]
 
 -   Fixed: Removed conflicting asset loading and added appropriate `crossorigin` attribute

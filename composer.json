@@ -1,7 +1,13 @@
 {
 	"name": "choctaw-nation/advanced-technology",
-	"description": "a template theme to fork",
-	"type": "library",
+	"description": "a block theme for the CNOAA (ATI) site",
+	"type": "project",
+	"version": "1.1.0",
+	"autoload": {
+		"classmap": [
+			"wp-content/themes/advanced-technology/inc"
+		]
+	},
 	"repositories": [
 		{
 			"type": "composer",
@@ -19,8 +25,8 @@
 		}
 	},
 	"scripts": {
-		"phpcs": "phpcs wp-content/themes/ATIP/ --extensions=php --ignore=wp-content/themes/ATIP/dist/,wp-content/themes/ATIP/inc/bootscore/",
-		"phpcbf": "phpcbf wp-content/themes/ATIP/ --extensions=php --ignore=wp-content/themes/ATIP/dist/"
+		"phpcs": "phpcs wp-content/themes/advanced-technology/ --extensions=php --ignore=wp-content/themes/advanced-technology/dist/,wp-content/themes/advanced-technology/inc/bootscore/",
+		"phpcbf": "phpcbf wp-content/themes/advanced-technology/ --extensions=php --ignore=wp-content/themes/advanced-technology/dist/"
 	},
 	"require-dev": {
 		"wp-coding-standards/wpcs": "*"

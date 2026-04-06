@@ -1,0 +1,152 @@
+/* stylelint-disable no-invalid-position-at-import-rule */
+@use "../abstracts/variables" as v;
+@use "sass:map";
+
+// Required
+@import "bootstrap/scss/functions";
+
+/**
+* Colors
+*/
+$primary: v.$color-primary;
+$secondary: v.$color-grey;
+$dark: v.$color-copy-black;
+$success: v.$color-primary--light;
+$custom-colors: (
+	"black": black,
+	"white": white,
+);
+
+/**
+* Typography
+*/
+
+$font-family-sans-serif: v.$font-body;
+$font-family-monospace:
+	monaspace neon,
+	sfmono-regular,
+	menlo,
+	monaco,
+	consolas,
+	"Liberation Mono",
+	"Courier New",
+	monospace;
+$font-size-base: 1rem; // Sets the base font size to 16px
+
+$dropdown-font-size: 1.35rem;
+$link-color: $success;
+$link-hover-color: rgba($success, 0.8);
+$headings-font-family: v.$font-headings;
+$headings-font-weight: 600;
+$headings-color: $success;
+
+/**
+* Minor Third Type Scale
+* @see https://typescale.com/
+*/
+$h1-font-size: $font-size-base * 2.986;
+$h2-font-size: $font-size-base * 2.488;
+$h3-font-size: $font-size-base * 2.074;
+$h4-font-size: $font-size-base * 1.728;
+$h5-font-size: $font-size-base * 1.44;
+$h6-font-size: $font-size-base * 1.2;
+
+/**
+* Display Type Scale
+* Perfect Fourth Typescale
+* @see https://typescale.com
+*/
+$display-font-sizes: (
+	1: 5.61rem,
+	2: 4.209rem,
+	3: 3.157rem,
+	4: 2.369rem,
+	5: 1.777rem,
+	6: 1.333rem,
+);
+$display-font-family: v.$font-headings;
+$display-font-weight: 600;
+$body-color: $dark;
+$btn-transition: all var(--transition-standard);
+
+/**
+* Options
+* @see https://getbootstrap.com/docs/5.3/customize/options/
+*/
+// $enable-shadows: true;
+$enable-rounded: false;
+$enable-dark-mode: false;
+
+@import "bootstrap/scss/variables";
+
+// @import "bootstrap/scss/variables-dark";
+
+// Map Overrides Here (Optional)
+$theme-colors: map.merge($theme-colors, $custom-colors);
+
+// Required Bootstrap Modules
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+
+// Useful Bootstrap Utilities (Optional)
+@import "bootstrap/scss/buttons";
+
+// Override Bootstrap Buttons
+@each $color, $value in $theme-colors {
+	.btn-#{$color} {
+		@include button-variant(
+			$value,
+			$value,
+			$hover-background: transparent,
+			$active-background: transparent,
+			$hover-border: $value,
+			$active-border: $value,
+			$hover-color: $value,
+			$active-color: $value
+		);
+	}
+}
+
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/close";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/offcanvas";
+@import "bootstrap/scss/dropdown";
+
+// Optional Bootstrap Modules (w/ Dependencies)
+@import "bootstrap/scss/type";
+
+// @import "bootstrap/scss/images";
+// @import "bootstrap/scss/tables";
+// @import "bootstrap/scss/forms";
+@import "bootstrap/scss/button-group";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar"; // Requires nav
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/breadcrumb";
+
+// @import "bootstrap/scss/accordion";
+@import "bootstrap/scss/pagination";
+
+// @import "bootstrap/scss/badge";
+// @import "bootstrap/scss/alert";
+// @import "bootstrap/scss/progress";
+@import "bootstrap/scss/list-group";
+
+// @import "bootstrap/scss/toasts";
+@import "bootstrap/scss/modal"; // Requires transitions
+// @import "bootstrap/scss/tooltip";
+// @import "bootstrap/scss/popover";
+// @import "bootstrap/scss/carousel";
+// @import "bootstrap/scss/spinners";
+// @import "bootstrap/scss/placeholders";
+
+// Helpers
+@import "bootstrap/scss/helpers";
+
+// Utilities
+@import "bootstrap/scss/utilities/api";
