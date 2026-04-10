@@ -37,7 +37,7 @@ $featured_link          = esc_url( $featured_content_group['link'] );
 				the_post_thumbnail(
 					'full',
 					array(
-						'class'           => 'w-100 object-fit-cover',
+						'class'           => 'w-100 h-auto object-fit-cover',
 						'loading'         => 'eager',
 						'data-spai-eager' => 'true',
 					)

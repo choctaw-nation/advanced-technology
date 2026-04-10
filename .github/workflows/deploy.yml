@@ -32,4 +32,5 @@ jobs:
             WPE_ENV: advancedtecdev # WP Engine environment name
             theme_name: advanced-technology
             with_autoload: true
+            flags: "-azvr --delete"
         secrets: inherit

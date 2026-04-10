@@ -29,6 +29,8 @@ header {
 		}
 
 		&.dropdown-item {
+			--bs-nav-link-padding-x: var(--bs-dropdown-item-padding-x);
+
 			color: var(--wp--preset--color--dark);
 
 			@include m.interaction {

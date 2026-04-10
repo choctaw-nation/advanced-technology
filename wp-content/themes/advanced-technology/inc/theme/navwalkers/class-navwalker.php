@@ -170,21 +170,26 @@ class Navwalker extends Walker_Nav_Menu {
 	 */
 	protected function get_the_anchor_element(): string {
 		$attributes = $this->get_the_attributes();
-
+		$nav_el = ( $this->has_children && 0 === $this->depth ) ? 'button' : 'a';
+		if ('button' === $nav_el ) {
+			$attributes['role'] = 'button';
+			unset( $attributes['href'] );
+		}
+		$attributes_string = $this->build_atts( $attributes );
 		$title = apply_filters( 'the_title', $this->current_item->title, $this->current_item->ID );
 		$title = apply_filters( 'nav_menu_item_title', $title, $this->current_item, $this->args, $this->depth );
 
 		$item_output  = $this->args->before;
-		$item_output .= "<a {$attributes}>";
+		$item_output .= "<{$nav_el} {$attributes_string}>";
 		$item_output .= $this->args->link_before . $title . $this->args->link_after;
-		$item_output .= '</a>';
+		$item_output .= "</{$nav_el}>";
 		$item_output .= $this->args->after;
 		$item_output  = apply_filters( 'walker_nav_menu_start_el', $item_output, $this->current_item, $this->depth, $this->args );
 		return $item_output;
 	}
 
 	/** Builds the anchor attributes */
-	protected function get_the_attributes(): string {
+	protected function get_the_attributes(): array {
 		$active_class = ( $this->current_item->current || $this->current_item->current_item_ancestor || in_array( 'current_page_parent', (array) $this->current_item->classes, true ) || in_array( 'current-post-ancestor', (array) $this->current_item->classes, true ) ) ? 'active' : '';
 		$attributes   = array(
 			'title'  => $this->current_item->attr_title,
@@ -195,13 +200,13 @@ class Navwalker extends Walker_Nav_Menu {
 		);
 
 		if ( $this->has_children ) {
-			$attributes['data-toggle'] = 'dropdown';
+			$attributes['data-bs-toggle'] = 'dropdown';
 			$attributes['class']      .= ' dropdown-toggle';
 		} elseif ( $this->depth > 0 ) {
 			$attributes['class'] .= ' dropdown-item';
 		}
 
 		$attributes['class'] .= ' nav-link';
-		return $this->build_atts( $attributes );
+		return $attributes;
 	}
 }

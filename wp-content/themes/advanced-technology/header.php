@@ -38,11 +38,10 @@ use ChoctawNation\Theme\Navwalkers\Navwalker;
 					<span class="ms-3 d-none d-md-inline">Advanced Technology Initiatives</span>
 					<span class="ms-3 d-inline d-md-none">ATI</span>
 				</a>
-				<button class="navbar-toggler border-0 focus-0 py-2 pe-0 ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar"
-					aria-label="Menu">
-					<i class="text-secondary fas fa-bars"></i>
+				<button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
 				</button>
-
 				<div class="offcanvas offcanvas-end flex-lg-grow-0" tabindex="-1" data-bs-hideresize="true" id="offcanvas-navbar">
 					<div class="offcanvas-header hover cursor-pointer" data-bs-dismiss="offcanvas">
 						<i class="fas fa-chevron-left"></i> <?php esc_html_e( 'Close menu', 'bootscore' ); ?>

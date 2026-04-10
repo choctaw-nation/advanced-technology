@@ -106,6 +106,17 @@ $dropdown-link-hover-bg: var(--wp--preset--color--primary-light);
 $navbar-light-active-color: white;
 $navbar-light-hover-color: white;
 $navbar-light-color: white;
+$navbar-light-icon-color: white;
+
+// =================================================
+
+/**
+* Offcanvas
+* @see https://getbootstrap.com/docs/5.3/components/offcanvas/#sass-variables
+*/
+
+$offcanvas-bg-color: black;
+$offcanvas-horizontal-width: min(400px, 90vw);
 
 // =================================================
 
