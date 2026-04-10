@@ -24,8 +24,8 @@ export default {
 		],
 	},
 	ignoreFiles: [
-		'wp-content/themes/ATIP/src/styles/abstracts/_bs_breakpoints.scss',
-		'wp-content/themes/ATIP/css/lib/fontawesome.min.css',
+		'wp-content/themes/advanced-technology/src/styles/abstracts/_bs-breakpoints.scss',
+		'wp-content/themes/advanced-technology/css/lib/fontawesome.min.css',
 	],
 	overrides: [
 		{

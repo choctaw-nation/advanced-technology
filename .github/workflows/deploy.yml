@@ -10,7 +10,8 @@ jobs:
         uses: choctaw-nation/shared-github-actions/.github/workflows/deploy.yml@main
         with:
             WPE_ENV: advancedtechno # WP Engine environment name
-            theme_name: ATIP
+            theme_name: advanced-technology
+            with_autoload: true
         secrets: inherit
 
     deploy-stg:
@@ -19,7 +20,8 @@ jobs:
         uses: choctaw-nation/shared-github-actions/.github/workflows/deploy.yml@main
         with:
             WPE_ENV: advancedtecstg # WP Engine environment name
-            theme_name: ATIP
+            theme_name: advanced-technology
+            with_autoload: true
         secrets: inherit
 
     deploy-dev:
@@ -28,5 +30,6 @@ jobs:
         uses: choctaw-nation/shared-github-actions/.github/workflows/deploy.yml@main
         with:
             WPE_ENV: advancedtecdev # WP Engine environment name
-            theme_name: ATIP
+            theme_name: advanced-technology
+            with_autoload: true
         secrets: inherit

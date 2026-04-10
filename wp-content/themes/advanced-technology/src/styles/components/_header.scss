@@ -1,0 +1,51 @@
+@use "../abstracts/mixins" as m;
+@use "../abstracts/variables" as v;
+@use "../abstracts/functions" as fn;
+
+header {
+	--header-link-color: white;
+	--header-link-hover-color: rgb(255 255 255 / 80%);
+
+	.navbar-brand {
+		transition: color var(--transition-standard);
+		color: var(--header-link-color);
+
+		@include m.interaction {
+			color: var(--header-link-hover-color);
+		}
+	}
+
+	.nav-link {
+		text-decoration: solid underline transparent;
+		transition: fn.transition(
+			color,
+			text-decoration-color,
+			background-color
+		);
+
+		&:not(.dropdown-item) {
+			--bs-nav-link-color: var(--header-link-color);
+			--bs-nav-link-hover-color: var(--header-link-hover-color);
+		}
+
+		&.dropdown-item {
+			color: var(--wp--preset--color--dark);
+
+			@include m.interaction {
+				color: var(--wp--preset--color--white);
+				text-decoration-color: var(--wp--preset--color--white);
+			}
+		}
+
+		&:not(.dropdown-toggle).active {
+			text-decoration: underline;
+		}
+	}
+}
+
+@media (width >= 979px) {
+	ul.nav li.dropdown:hover > ul.dropdown-menu {
+		display: block !important;
+		visibility: visible !important;
+	}
+}

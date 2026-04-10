@@ -1,6 +1,7 @@
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config.js' );
+const path = require( 'path' );
 
-const THEME_NAME = 'ATIP';
+const THEME_NAME = 'advanced-technology';
 const THEME_DIR = `/wp-content/themes/${ THEME_NAME }`;
 
 /**
@@ -15,18 +16,26 @@ const appNames = [ 'front-page', 'gallery' ];
  * Array of strings modeled after scss names (e.g. 'we-are-choctaw')
  */
 const styleSheets = []; // for scss only
+const blockEditor = [ 'editDefaultBlocks' ];
 
 module.exports = {
 	...defaultConfig,
 	...{
+		resolve: {
+			...defaultConfig.resolve,
+			alias: {
+				'@': path.resolve( __dirname, `${ THEME_DIR }/src/` ),
+			},
+		},
 		entry() {
 			/** Custom entry points */
 			const entries = {
 				...defaultConfig.entry(),
-				global: `.${ THEME_DIR }/src/index.js`,
+				global: `.${ THEME_DIR }/src/index.ts`,
 				'vendors/bootstrap': `.${ THEME_DIR }/src/js/vendors/bootstrap.js`,
 				...addEntries( appNames, 'pages' ),
 				...addEntries( styleSheets, 'styles' ),
+				...addEntries( blockEditor, 'admin' ),
 			};
 			return entries;
 		},
@@ -51,19 +60,32 @@ function addEntries( array, type ) {
 		return {};
 	}
 	const entries = {};
+	const typeOutput = {
+		styles: {
+			outputDir: ( assetOutput ) => `pages/${ assetOutput }`,
+			path: ( asset ) =>
+				`.${ THEME_DIR }/src/styles/pages/${ asset }.scss`,
+		},
+		pages: {
+			outputDir: ( assetOutput ) => `pages/${ assetOutput }`,
+			path: ( asset ) => `.${ THEME_DIR }/src/js/${ asset }/index.ts`,
+		},
+		admin: {
+			outputDir: ( assetOutput ) => `admin/${ assetOutput }`,
+			path: ( asset ) => `.${ THEME_DIR }/src/js/gutenberg/${ asset }.ts`,
+		},
+	};
 	array.forEach( ( asset ) => {
 		const assetOutput = snakeToCamel( asset );
-		if ( type === 'styles' ) {
-			entries[
-				`pages/${ assetOutput }`
-			] = `.${ THEME_DIR }/src/styles/pages/${ asset }.scss`;
-		} else if ( type === 'pages' ) {
-			entries[
-				`pages/${ assetOutput }`
-			] = `.${ THEME_DIR }/src/js/${ asset }/index.js`;
+
+		if ( Object.hasOwn( typeOutput, type ) ) {
+			const output = typeOutput[ type ];
+			entries[ output.outputDir( assetOutput ) ] = output.path( asset );
 		} else {
 			throw new Error(
-				`Invalid type! Expected "styles" or "pages", received "${ type }"`
+				`Invalid type! Expected one of ${ Object.keys(
+					typeOutput
+				).join( ', ' ) }, received "${ type }"`
 			);
 		}
 	} );
