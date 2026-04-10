@@ -42,7 +42,7 @@ get_header();
 			<?php endif; ?>
 			<!-- Pagination -->
 		</main><!-- #main -->
-		<aside class="container my-5">
+		<aside class="container d-flex justify-content-center my-5">
 			<?php $pagination = new Bootstrap_Pagination(); ?>
 			<?php $pagination->the_pagination(); ?>
 		</aside>

@@ -87,9 +87,9 @@ $featured_link          = esc_url( $featured_content_group['link'] );
 						</div>
 						<div class="col-lg-6 text-bg-black d-flex flex-column align-items-stretch">
 							<?php $featured_image->the_image( 'w-100' ); ?>
-							<a href="<?php echo $featured_link; ?>" class="align-self-center w-auto d-flex justify-content-center m-auto p-5 text-decoration-none">
+							<a href="<?php echo $featured_link; ?>" class="align-self-center w-auto d-flex justify-content-center m-auto p-5 text-decoration-none gap-4">
 								<i class="far fa-2x fa-arrow-alt-circle-right text-success"></i>
-								<span class="text-light fs-root w-50 ps-4"><?php echo $featured_link_text; ?></span>
+								<span class="text-light fs-root w-50"><?php echo $featured_link_text; ?></span>
 							</a>
 						</div>
 					</div>

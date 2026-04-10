@@ -29,7 +29,15 @@ $images          = get_field( 'images' );
 				<?php
 				foreach ( $images as $image ) {
 					$gallery_content  = '<div class="col-md-6 col-xl-4 mb-4">';
-					$gallery_content .= wp_get_attachment_image( $image['ID'], 'gallery-thumbnail' );
+					$gallery_content .= wp_get_attachment_image(
+						$image['ID'],
+						'full',
+						false,
+						array(
+							'class'   => 'w-100 h-auto object-fit-cover',
+							'loading' => 'lazy',
+						)
+					);
 					$gallery_content .= '</a>';
 					$gallery_content .= '</div>';
 					echo $gallery_content;
