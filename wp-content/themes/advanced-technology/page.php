@@ -33,7 +33,7 @@ get_header();
 							echo '<h2>' . esc_textarea( get_sub_field( 'title' ) ) . '</h2>';
 						if ( 'image_content' === get_row_layout() ) {
 							$image = get_sub_field( 'image' );
-							echo wp_get_attachment_image( $image, 'full', '', array( 'class' => 'mb-3' ) );
+							echo wp_get_attachment_image( $image, 'full', '', array( 'class' => 'mb-3 w-100 h-auto object-fit-cover','loading'=>'lazy' ) );
 						} elseif ( 'video_content' === get_row_layout() ) {
 							$video = get_sub_field( 'video' );
 							echo '<div class="ratio ratio-16x9 mb-3">';
