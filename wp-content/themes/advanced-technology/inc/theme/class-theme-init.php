@@ -14,6 +14,23 @@ use ChoctawNation\Theme\Assets\Enqueue_Type;
 
 /** Builds the Theme */
 class Theme_Init {
+	/** The type of site
+	 *
+	 * @var 'nation'|'commerce' $theme_type
+	 */
+	private string $theme_type;
+
+	/** Constructor Function that also loads the proper favicon package
+	 *
+	 * @param 'nation'|'commerce'|null $type the type of site to load favicons for.
+	 */
+	public function __construct( ?string $type ) {
+		if ( is_null( $type ) ) {
+			wp_die( 'Theme type must be specified as either “nation” or “commerce”! Have you gone through the theme’s README instructions?' );
+		}
+		$this->theme_type = $type;
+	}
+
 	/** Setup Theme */
 	public function setup_theme() {
 		$this->disable_discussion();
@@ -22,6 +39,7 @@ class Theme_Init {
 		$this->allow_svgs();
 		$this->cno_theme_support();
 		require_once __DIR__ . '/theme-functions.php';
+		$this->load_favicons();
 		$this->alter_plugins();
 		add_action( 'enqueue_block_assets', array( $this, 'enqueue_block_assets' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_cno_scripts' ) );
@@ -99,6 +117,34 @@ class Theme_Init {
 			'https://use.typekit.net/jky5sek.css',
 			array(),
 			null // phpcs:ignore
+		);
+	}
+
+
+	/**
+	 * Load favicons based on the type of site
+	 */
+	private function load_favicons() {
+		add_action(
+			'wp_head',
+			function () {
+				$href = get_stylesheet_directory_uri() . '/img/favicons';
+				switch ( $this->theme_type ) {
+					case 'commerce':
+						$href .= '/commerce';
+						break;
+					case 'nation':
+						$href .= '/nation';
+						break;
+					default:
+				}
+				echo "<link rel='apple-touch-icon' sizes='180x180' href='{$href}/apple-touch-icon.png'>
+				<link rel='icon' type='image/png' sizes='192x192' href='{$href}/android-chrome-192x192.png'>
+				<link rel='icon' type='image/png' sizes='512x512' href='{$href}/android-chrome-512x512.png'>
+				<link rel='icon' type='image/png' sizes='32x32' href='{$href}/favicon-32x32.png'>
+				<link rel='icon' type='image/png' sizes='16x16' href='{$href}/favicon-16x16.png'>
+                <link rel='mask-icon' href='{$href}/safari-pinned-tab.svg' color='#000000'>";
+			}
 		);
 	}
 

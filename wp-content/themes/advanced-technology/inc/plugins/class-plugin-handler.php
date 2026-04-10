@@ -16,7 +16,7 @@ class Plugin_Handler {
 	 */
 	public function disable_plugins_per_environment() {
 		$env = wp_get_environment_type();
-		if ( 'production' === $env ) {
+		if ( 'production' === $env || ! is_admin() ) {
 			return;
 		}
 

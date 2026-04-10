@@ -16,12 +16,11 @@ if ( file_exists( $autoload_path ) ) {
 } else {
 	wp_die(
 		'Autoload file not found. Please run composer install inside the theme directory.',
-		'Error',
 		'ATI Theme Error',
 		array( 'response' => 500 )
 	);
 }
 
 /** Get the theme init class */
-$theme = new Theme_Init( 'commerce' );
+$theme = new Theme_Init( 'nation' );
 add_action( 'after_setup_theme', array( $theme, 'setup_theme' ) );
