@@ -37,7 +37,7 @@ $featured_link          = esc_url( $featured_content_group['link'] );
 				the_post_thumbnail(
 					'full',
 					array(
-						'class'           => 'w-100',
+						'class'           => 'w-100 object-fit-cover',
 						'loading'         => 'eager',
 						'data-spai-eager' => 'true',
 					)
@@ -74,10 +74,10 @@ $featured_link          = esc_url( $featured_content_group['link'] );
 					<div class="row g-0">
 						<div class="col-lg-6 text-light">
 							<div class="text-bg-black py-3 px-5" style="height: 200px;">
-								<span class="h4 mb-3 d-block fw-medium">
+								<span class="h5 mb-3 d-block fw-medium">
 									<?php echo $featured_subtitle; ?>
 								</span>
-								<p class="text-light h1 mb-0">
+								<p class="text-light h2 mb-0">
 									<?php echo $featured_title; ?>
 								</p>
 							</div>
@@ -103,7 +103,7 @@ $featured_link          = esc_url( $featured_content_group['link'] );
 				<div class="bg-secondary py-5">
 					<div class="container">
 						<div class="grid" data-aos="zoom-out-left">
-							<h2 class="grid__title text-success fs-4 fw-medium text-center mb-0 text-uppercase">NEWS</h2>
+							<h2 class="grid__title text-success fs-5 fw-medium text-center mb-0 text-uppercase">NEWS</h2>
 							<div class="grid__content">
 								<div class="container">
 									<?php
@@ -168,7 +168,7 @@ $featured_link          = esc_url( $featured_content_group['link'] );
 								</div>
 							</div>
 							<a class='grid__more d-flex flex-column justify-content-center text-center text-decoration-none' href="/news/">
-								<i class="far fa-2x fa-arrow-alt-circle-right text-success"></i>
+								<i class="far fa-2x fa-arrow-alt-circle-right text-success mx-auto"></i>
 								<div class="fs-root text-dark">Read more news</div>
 							</a>
 						</div>

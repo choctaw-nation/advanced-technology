@@ -22,7 +22,7 @@ $video         = get_field( 'video' );
 						<div class="container">
 							<div class="row">
 								<?php
-								the_title( '<h1 class="text-white text-transform-none">', '</h1>' );
+								the_title( '<h1 class="text-white">', '</h1>' );
 								echo $subheading ? "<h2>{$subheading}</h2>" : '';
 								the_post_thumbnail(
 									'full',
@@ -35,8 +35,8 @@ $video         = get_field( 'video' );
 								?>
 								<div class="mb-4">
 									<?php
-									echo $photo_credit ? "<p class='caption-title text-uppercase fs-6 mb-1'>{$photo_credit}</p>" : '';
-									echo $photo_caption ? "<p class='fs-6 lh-sm'>{$photo_caption}</p>" : '';
+									echo $photo_credit ? "<p class='caption-title text-uppercase fs-small mb-1'>{$photo_credit}</p>" : '';
+									echo $photo_caption ? "<p class='fs-small lh-sm'>{$photo_caption}</p>" : '';
 									?>
 								</div>
 							</div>
@@ -50,16 +50,14 @@ $video         = get_field( 'video' );
 						<div class="row">
 							<div class="col-12">
 								<?php get_template_part( 'template-parts/nav-breadcrumbs' ); ?>
-								<p class="entry-meta mb-5">
-									<small>
-										Published <?php the_date(); ?>
-									</small>
+								<p class="entry-meta mb-5 fs-root">
+									Published <?php the_date(); ?>
 								</p>
 								<?php the_content(); ?>
 								<?php echo $article; ?>
 
 								<?php if ( have_rows( 'full_article' ) ) : ?>
-									<?php
+								<?php
 									while ( have_rows( 'full_article' ) ) :
 										the_row();
 										$article_name   = get_sub_field( 'article_name' );
@@ -67,7 +65,7 @@ $video         = get_field( 'video' );
 										$article_author = get_sub_field( 'article_author' );
 										$article_date   = get_sub_field( 'article_date' );
 										?>
-										<?php if ( $article_name ) : ?>
+								<?php if ( $article_name ) : ?>
 								<div class="col-12 col-lg-6 p-4 mt-4 mb-5 full-article position-relative">
 									<a class="stretched-link" href="<?php echo $article_link; ?>" target="_blank" rel="noopener noreferrer">
 										<div class="container g-0">
@@ -152,7 +150,7 @@ $video         = get_field( 'video' );
 									?>
 							<hr />
 							<div class="row py-3">
-									<?php
+								<?php
 									echo "<h3>About {$boilerplate_title}</h3>";
 									echo "<p>{$about_company}</p>";
 									echo $media_inquiry ? "<h3>Media Inquiries</h3><p>{$media_inquiry}</p>" : '';

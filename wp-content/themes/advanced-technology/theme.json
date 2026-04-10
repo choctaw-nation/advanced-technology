@@ -215,7 +215,11 @@
 		"blocks": {
 			"core/heading": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|headings"
+					"fontFamily": "var:preset|font-family|headings",
+					"fontWeight": "600"
+				},
+				"color": {
+					"text": "var:preset|color|primary-light"
 				},
 				"spacing": {
 					"margin": {
@@ -317,7 +321,11 @@
 			},
 			"heading": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|headings"
+					"fontFamily": "var:preset|font-family|headings",
+					"fontWeight": "600"
+				},
+				"color": {
+					"text": "var:preset|color|primary-light"
 				},
 				"spacing": {
 					"margin": {
@@ -330,6 +338,11 @@
 			"link": {
 				"color": {
 					"text": "var:preset|color|primary"
+				},
+				":hover": {
+					"color": {
+						"text": "var:preset|color|primary-light"
+					}
 				},
 				":visited": {
 					"color": {

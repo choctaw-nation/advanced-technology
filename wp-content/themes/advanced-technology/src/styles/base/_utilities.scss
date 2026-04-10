@@ -34,6 +34,10 @@ Cursor
 	font-size: var(--wp--preset--font-size--root);
 }
 
+.fs-small {
+	font-size: var(--font-size-sm);
+}
+
 .folded-block {
 	position: relative;
 	width: 30rem;

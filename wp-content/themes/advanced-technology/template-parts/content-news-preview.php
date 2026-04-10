@@ -14,7 +14,7 @@ $archive_content = get_field( 'archive_content' );
 			the_post_thumbnail(
 				'home-block',
 				array(
-					'class'   => 'w-100 h-auto mb-2',
+					'class'   => 'w-100 h-auto mb-2 object-fit-cover',
 					'loading' => 'lazy',
 				)
 			);
@@ -22,7 +22,7 @@ $archive_content = get_field( 'archive_content' );
 	</div>
 	<div class="col-lg-9">
 		<a href="<?php the_permalink(); ?>" class="text-decoration-none stretched-link">
-			<?php the_title( '<h3 class="text-success fw-bold">', '</h3>' ); ?>
+			<?php the_title( '<h3 class="fw-bold fs-4">', '</h3>' ); ?>
 		</a>
 		<p><?php echo $archive_content; ?></p>
 	</div>

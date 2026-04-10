@@ -12,15 +12,15 @@ if ( ! have_posts() ) {
 <section class="container">
 	<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-3 justify-content-center align-items-stretch row-gap-4 mb-5">
 		<?php while ( have_posts() ) : ?>
-			<?php the_post(); ?>
-			<?php $is_even_index = 0 === $wp_query->current_post % 2; ?>
+		<?php the_post(); ?>
+		<?php $is_even_index = 0 === $wp_query->current_post % 2; ?>
 		<div class="col d-flex flex-column align-items-stretch position-relative" data-aos="<?php echo $is_even_index ? 'zoom-out-left' : 'zoom-out-right'; ?>">
 			<?php
 			if ( has_post_thumbnail() ) {
 				the_post_thumbnail(
 					'staff-archive-thumb',
 					array(
-						'class'   => 'mb-2 object-fit-cover',
+						'class'   => 'mb-2 object-fit-cover w-100',
 						'loading' => 'lazy',
 						'height'  => '400',
 					)
