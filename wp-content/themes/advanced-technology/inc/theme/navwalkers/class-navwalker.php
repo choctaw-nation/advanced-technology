@@ -170,14 +170,14 @@ class Navwalker extends Walker_Nav_Menu {
 	 */
 	protected function get_the_anchor_element(): string {
 		$attributes = $this->get_the_attributes();
-		$nav_el = ( $this->has_children && 0 === $this->depth ) ? 'button' : 'a';
-		if ('button' === $nav_el ) {
+		$nav_el     = ( $this->has_children && 0 === $this->depth ) ? 'button' : 'a';
+		if ( 'button' === $nav_el ) {
 			$attributes['role'] = 'button';
 			unset( $attributes['href'] );
 		}
 		$attributes_string = $this->build_atts( $attributes );
-		$title = apply_filters( 'the_title', $this->current_item->title, $this->current_item->ID );
-		$title = apply_filters( 'nav_menu_item_title', $title, $this->current_item, $this->args, $this->depth );
+		$title             = apply_filters( 'the_title', $this->current_item->title, $this->current_item->ID );
+		$title             = apply_filters( 'nav_menu_item_title', $title, $this->current_item, $this->args, $this->depth );
 
 		$item_output  = $this->args->before;
 		$item_output .= "<{$nav_el} {$attributes_string}>";
@@ -201,7 +201,7 @@ class Navwalker extends Walker_Nav_Menu {
 
 		if ( $this->has_children ) {
 			$attributes['data-bs-toggle'] = 'dropdown';
-			$attributes['class']      .= ' dropdown-toggle';
+			$attributes['class']         .= ' dropdown-toggle';
 		} elseif ( $this->depth > 0 ) {
 			$attributes['class'] .= ' dropdown-item';
 		}

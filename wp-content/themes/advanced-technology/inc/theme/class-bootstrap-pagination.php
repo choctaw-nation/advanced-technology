@@ -182,7 +182,7 @@ class Bootstrap_Pagination {
 		}
 		$link_el = $link->is_current ? 'span' : 'a';
 		$markup .= "<li class='{$link_class}'" . ( $link->is_current ? ' aria-current="page"' : '' ) . '>';
-		$markup .= "<{$link_el} " . ( ! $link->is_current ? "href='{$link->url}'" : '' ) . "class='page-link'>{$link->page}</{$link_el}></li>";
+		$markup .= "<{$link_el} " . ( ! $link->is_current ? "href='{$link->url}' " : '' ) . "class='page-link'>{$link->page}</{$link_el}></li>";
 		return $markup;
 	}
 
@@ -262,7 +262,7 @@ class Bootstrap_Pagination {
 	public function get_first_page_link(): string {
 		$first_page      = 1;
 		$first_page_link = get_pagenum_link( $first_page );
-		$is_disabled     = is_null( $this->get_current_page() );
+		$is_disabled     = $this->get_current_page() === 1;
 		return $this->get_page_link_markup( $is_disabled, '<<', 'First page', $first_page_link );
 	}
 }
