@@ -46,20 +46,20 @@ $video         = get_field( 'video' );
 			<article class="entry-content container">
 				<?php get_template_part( 'template-parts/nav-breadcrumbs' ); ?>
 				<p class="entry-meta mb-5 fs-root">
-					Published <?php the_date( 'F j, Y' ); ?>
+					Published <?php the_time( 'F j, Y' ); ?>
 				</p>
 				<?php the_content(); ?>
 				<?php echo $article; ?>
 
 				<?php if ( have_rows( 'full_article' ) ) : ?>
 				<?php
-							while ( have_rows( 'full_article' ) ) :
-								the_row();
-								$article_name   = get_sub_field( 'article_name' );
-								$article_link   = get_sub_field( 'article_link' );
-								$article_author = get_sub_field( 'article_author' );
-								$article_date   = get_sub_field( 'article_date' );
-								?>
+					while ( have_rows( 'full_article' ) ) :
+						the_row();
+						$article_name   = get_sub_field( 'article_name' );
+						$article_link   = get_sub_field( 'article_link' );
+						$article_author = get_sub_field( 'article_author' );
+						$article_date   = get_sub_field( 'article_date' );
+						?>
 				<?php if ( $article_name ) : ?>
 				<div class="col-12 col-lg-6 p-4 mt-4 mb-5 full-article position-relative">
 					<a class="stretched-link" href="<?php echo $article_link; ?>" target="_blank" rel="noopener noreferrer">
@@ -72,7 +72,7 @@ $video         = get_field( 'video' );
 										<br />
 										<?php
 												echo $article_author ? "<span class='text-dark'>By {$article_author}<br /></span>" : '';
-												?>
+										?>
 										<span class="text-dark"><?php echo $article_date; ?>
 										</span>
 									</p>
