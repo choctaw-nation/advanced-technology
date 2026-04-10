@@ -12,15 +12,6 @@ namespace ChoctawNation\Plugins;
  */
 class Yoast_Handler {
 	/**
-	 * Constructor function that initializes the Yoast Handler.
-	 */
-	public function __construct() {
-		if ( ! defined( 'WPSEO_VERSION' ) ) {
-			return;
-		}
-	}
-
-	/**
 	 * Use the excerpt as the meta description if none is set.
 	 * Alternatively, use the ACF brief description if available.
 	 *

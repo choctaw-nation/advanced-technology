@@ -8,30 +8,28 @@
 
 namespace ChoctawNation\Theme;
 
+use ChoctawNation\Plugins\Plugin_Handler;
 use ChoctawNation\Theme\Assets\Asset_Loader;
 use ChoctawNation\Theme\Assets\Enqueue_Type;
 
 /** Builds the Theme */
 class Theme_Init {
-	/** Constructor */
-	public function __construct() {
-		$this->load_required_files();
+	/** Setup Theme */
+	public function setup_theme() {
 		$this->disable_discussion();
 		$this->edit_roles();
 		$this->init_block_editor();
 		$this->allow_svgs();
+		$this->cno_theme_support();
+		require_once __DIR__ . '/theme-functions.php';
+		$this->alter_plugins();
+		add_action( 'enqueue_block_assets', array( $this, 'enqueue_block_assets' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_cno_scripts' ) );
-		add_action( 'after_setup_theme', array( $this, 'cno_theme_support' ) );
 		add_action( 'init', array( $this, 'alter_post_types' ) );
 		add_filter( 'allowed_redirect_hosts', array( $this, 'add_allowed_redirect_hosts' ) );
 		add_filter( 'wp_speculation_rules_configuration', array( $this, 'handle_speculative_loading' ) );
 		add_filter( 'wp_resource_hints', array( $this, 'add_resource_hints' ), 10, 2 );
 		add_filter( 'style_loader_tag', array( $this, 'preload_stylesheets' ), 10, 3 );
-	}
-
-	/** Load required files. */
-	private function load_required_files() {
-		require __DIR__ . '/theme-functions.php';
 	}
 
 	/** Remove comments, pings and trackbacks support from posts types. */
@@ -75,9 +73,9 @@ class Theme_Init {
 	 */
 	private function init_block_editor() {
 		$gutenberg_handler = new Gutenberg_Handler();
+		$gutenberg_handler->cno_block_theme_support();
 		add_action( 'init', array( $gutenberg_handler, 'init_block_theme' ) );
-		add_action( 'enqueue_block_editor_assets', array( $gutenberg_handler, 'enqueue_block_assets' ) );
-		add_action( 'after_setup_theme', array( $gutenberg_handler, 'cno_block_theme_support' ), 50 );
+		add_action( 'enqueue_block_editor_assets', array( $gutenberg_handler, 'enqueue_block_editor_assets' ) );
 		add_filter( 'block_editor_settings_all', array( $gutenberg_handler, 'restrict_gutenberg_ui' ), 10, 1 );
 		add_filter( 'allowed_block_types_all', array( $gutenberg_handler, 'restrict_block_types' ), 10, 2 );
 		add_filter( 'use_block_editor_for_post_type', array( $gutenberg_handler, 'handle_page_templates' ) );
@@ -93,16 +91,34 @@ class Theme_Init {
 	}
 
 	/**
-	 * Adds scripts with the appropriate dependencies
+	 * Enqueue the theme's scripts and styles for both the front-end and the editor.
 	 */
-	public function enqueue_cno_scripts() {
+	public function enqueue_block_assets() {
 		wp_enqueue_style(
 			'typekit',
 			'https://use.typekit.net/jky5sek.css',
 			array(),
 			null // phpcs:ignore
 		);
+	}
 
+	/**
+	 * Handle plugin modifications such as disabling plugins in certain environments, managing auto-updates, and integrating with specific plugins like ACF, Gravity Forms, and Yoast.
+	 */
+	public function alter_plugins() {
+		/** Init Plugins */
+		$plugin_handler = new Plugin_Handler();
+		add_action( 'init', array( $plugin_handler, 'disable_plugins_per_environment' ) );
+		add_filter( 'auto_update_plugin', array( $plugin_handler, 'handle_auto_update_plugin' ) );
+		$plugin_handler->handle_acf();
+		$plugin_handler->handle_gravity_forms();
+		$plugin_handler->handle_yoast();
+	}
+
+	/**
+	 * Add front-end scripts with the appropriate dependencies
+	 */
+	public function enqueue_cno_scripts() {
 		new Asset_Loader( 'bootstrap', Enqueue_Type::both, 'vendors' );
 		new Asset_Loader( 'global', Enqueue_Type::both, null, array( 'bootstrap' ) );
 		wp_add_inline_script( 'global', 'window.cnoSiteData = ' . wp_json_encode( array( 'rootUrl' => home_url() ) ) . ';' );

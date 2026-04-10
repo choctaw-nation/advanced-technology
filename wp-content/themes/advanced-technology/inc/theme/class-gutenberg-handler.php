@@ -39,7 +39,7 @@ class Gutenberg_Handler {
 	/**
 	 * Enqueue the block editor assets that control the layout of the Block Editor.
 	 */
-	public function enqueue_block_assets() {
+	public function enqueue_block_editor_assets() {
 		new Asset_Loader( 'editDefaultBlocks', Enqueue_Type::script, 'admin', array() );
 	}
 
@@ -176,7 +176,7 @@ class Gutenberg_Handler {
 		$current_template     = get_page_template_slug( $post );
 		$homepage_id          = (int) get_option( 'page_on_front' );
 		$is_homepage          = ( $homepage_id && $homepage_id === $post->ID );
-		$disallowed_templates = array();
+		$disallowed_templates = array( 'page-templates/page-home.php', 'page-templates/page-gallery.php' );
 		if ( in_array( $current_template, $disallowed_templates, true ) ) {
 			// could also use $is_homepage check here if needed
 			return false;

@@ -16,10 +16,9 @@ if ( file_exists( ABSPATH . 'vendor/autoload.php' ) ) {
 }
 
 /** Get the theme init class */
-new Theme_Init( 'commerce' );
+$theme = new Theme_Init( 'commerce' );
+add_action( 'after_setup_theme', array( $theme, 'setup_theme' ) );
 
-/** Init Plugins */
-new Plugin_Handler();
 
 /**
  * Adds dnt parameter to Vimeo oEmbed
