@@ -11,8 +11,15 @@ use ChoctawNation\Theme\Theme_Init;
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
-if ( file_exists( ABSPATH . 'vendor/autoload.php' ) ) {
-	require ABSPATH . 'vendor/autoload.php';
+$autoload_path = get_stylesheet_directory() . '/vendor/autoload.php';
+if ( file_exists( $autoload_path ) ) {
+	require $autoload_path;
+} else {
+	wp_die(
+		'Autoload file not found. Please run composer install inside the theme directory.',
+		'Error', 'ATI Theme Error', 
+		array( 'response' => 500 )
+	);
 }
 
 /** Get the theme init class */
