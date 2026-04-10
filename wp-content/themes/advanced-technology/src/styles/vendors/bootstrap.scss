@@ -69,6 +69,8 @@ $display-font-weight: 600;
 $body-color: $dark;
 $btn-transition: all var(--transition-standard);
 
+// =================================================
+
 /**
 * Options
 * @see https://getbootstrap.com/docs/5.3/customize/options/
@@ -76,6 +78,36 @@ $btn-transition: all var(--transition-standard);
 // $enable-shadows: true;
 $enable-rounded: false;
 $enable-dark-mode: false;
+
+// =================================================
+
+/**
+* Dropdowns
+* @see https://getbootstrap.com/docs/5.3/components/dropdowns/#sass-variables
+*/
+
+$dropdown-border-color: black;
+$dropdown-border-width: 1px;
+$dropdown-border-radius: 0;
+$dropdown-bg: white;
+$dropdown-padding-y: 0;
+$dropdown-padding-x: 0;
+$dropdown-link-color: var(--wp--preset--color--dark);
+$dropdown-link-hover-color: white;
+$dropdown-link-active-color: white;
+$dropdown-link-hover-bg: var(--wp--preset--color--primary-light);
+
+// =================================================
+
+/**
+* Navbar
+* @see https://getbootstrap.com/docs/5.3/components/navbar/#sass-variables
+*/
+$navbar-light-active-color: white;
+$navbar-light-hover-color: white;
+$navbar-light-color: white;
+
+// =================================================
 
 @import "bootstrap/scss/variables";
 

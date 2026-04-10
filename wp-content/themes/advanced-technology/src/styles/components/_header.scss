@@ -1,58 +1,6 @@
 @use "../abstracts/mixins" as m;
 @use "../abstracts/variables" as v;
-
-/* --------------------------------------------------------------
-3. Header
--------------------------------------------------------------- */
-
-#nav-main .menu-item:last-child .nav-link {
-	padding-right: 0;
-}
-
-.dropdown-search {
-	&.dropdown-menu[data-bs-popper] {
-		top: 5.4px;
-		margin-top: 0;
-	}
-
-	&.show .searchform {
-		opacity: 1;
-	}
-
-	.searchform {
-		opacity: 0;
-		transition: opacity 0.8s;
-		transition-delay: 0.3s;
-	}
-}
-
-.dropdown-menu {
-	padding: 0;
-	border-radius: 0;
-	border: 1px solid #000;
-}
-
-.top-nav-search-md.hide,
-.top-nav-search-lg.hide {
-	display: none !important;
-}
-
-@media (width <= 991px) {
-	.btn-dropdown.right {
-		padding-right: 0;
-		border: none;
-	}
-
-	#dropdown-search:hover {
-		color: currentcolor;
-		background-color: transparent;
-		border-color: transparent;
-	}
-
-	#dropdown-search:focus {
-		box-shadow: none;
-	}
-}
+@use "../abstracts/functions" as fn;
 
 header {
 	--header-link-color: white;
@@ -68,12 +16,30 @@ header {
 	}
 
 	.nav-link {
-		--bs-nav-link-color: var(--header-link-color);
-		--bs-nav-link-hover-color: var(--header-link-hover-color);
-	}
+		text-decoration: solid underline transparent;
+		transition: fn.transition(
+			color,
+			text-decoration-color,
+			background-color
+		);
 
-	.active .nav-link {
-		color: var(--bs-nav-link-hover-color);
+		&:not(.dropdown-item) {
+			--bs-nav-link-color: var(--header-link-color);
+			--bs-nav-link-hover-color: var(--header-link-hover-color);
+		}
+
+		&.dropdown-item {
+			color: var(--wp--preset--color--dark);
+
+			@include m.interaction {
+				color: var(--wp--preset--color--white);
+				text-decoration-color: var(--wp--preset--color--white);
+			}
+		}
+
+		&:not(.dropdown-toggle).active {
+			text-decoration: underline;
+		}
 	}
 }
 

@@ -32,7 +32,7 @@ use ChoctawNation\Theme\Navwalkers\Navwalker;
 	<div id="to-top"></div>
 	<div id="page" class="site position-relative">
 		<header id="masthead" class="site-header text-bg-black z-2 position-sticky sticky-top start-0 end-0 py-3 container-fluid">
-			<nav id="nav-main" class="navbar navbar-expand-lg container">
+			<nav id="nav-main" class="navbar navbar-expand-lg container-xxl justify-content-lg-between">
 				<a class="navbar-brand mx-0" href="<?php echo esc_url( home_url() ); ?>">
 					<strong>Choctaw Nation</strong>
 					<span class="ms-3 d-none d-md-inline">Advanced Technology Initiatives</span>
@@ -43,24 +43,21 @@ use ChoctawNation\Theme\Navwalkers\Navwalker;
 					<i class="text-secondary fas fa-bars"></i>
 				</button>
 
-				<div class="offcanvas offcanvas-end" tabindex="-1" data-bs-hideresize="true" id="offcanvas-navbar">
+				<div class="offcanvas offcanvas-end flex-lg-grow-0" tabindex="-1" data-bs-hideresize="true" id="offcanvas-navbar">
 					<div class="offcanvas-header hover cursor-pointer" data-bs-dismiss="offcanvas">
 						<i class="fas fa-chevron-left"></i> <?php esc_html_e( 'Close menu', 'bootscore' ); ?>
 					</div>
-					<div class="offcanvas-body">
-						<?php
-						wp_nav_menu(
-							array(
-								'theme_location'  => 'primary_menu',
-								'container'       => 'div',
-								'container_class' => 'ms-auto',
-								'container_id'    => 'bootscore-navbar',
-								'menu_class'      => 'nav navbar-nav justify-content-end',
-								'walker'          => new Navwalker(),
-							)
-						);
-						?>
-					</div>
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location'  => 'primary_menu',
+							'container'       => 'div',
+							'container_class' => 'offcanvas-body',
+							'menu_class'      => 'nav navbar-nav justify-content-end',
+							'walker'          => new Navwalker(),
+						)
+					);
+					?>
 				</div>
 			</nav>
 		</header><!-- #masthead -->
