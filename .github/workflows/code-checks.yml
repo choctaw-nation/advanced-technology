@@ -11,7 +11,9 @@ concurrency:
 jobs:
     phpcs:
         if: github.event.pull_request.draft == false
-        uses: choctaw-nation/shared-github-actions/.github/workflows/phpcs.yml@main
+        uses: choctaw-nation/shared-github-actions/.github/workflows/phpcs.yml@1.8.0
+        with:
+            working_directory: "wp-content/themes/advanced-technology/"
 
     lint-style:
         if: github.event.pull_request.draft == false
