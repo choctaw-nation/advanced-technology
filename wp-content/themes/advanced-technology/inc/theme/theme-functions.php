@@ -25,3 +25,16 @@ function cno_extract_vimeo_id( ?string $url ): string|false {
 		return "<lite-vimeo videoid='{$vimeo_id}' enableTracking></lite-vimeo>";
 	}
 }
+
+
+/**
+ * Adds dnt parameter to Vimeo oEmbed
+ *
+ * @param string $provider The provider URL.
+ */
+function dl_oembed( $provider ) {
+	if ( strpos( $provider, 'vimeo.com' ) !== false ) {
+		return add_query_arg( array( 'dnt' => false ), $provider );
+	}
+}
+add_filter( 'oembed_fetch_url', 'dl_oembed', 10, 3 );
