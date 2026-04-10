@@ -11,7 +11,7 @@ concurrency:
 jobs:
     phpcs:
         if: github.event.pull_request.draft == false
-        uses: choctaw-nation/shared-github-actions/.github/workflows/phpcs.yml@1.4.0
+        uses: choctaw-nation/shared-github-actions/.github/workflows/phpcs.yml@main
 
     lint-style:
         if: github.event.pull_request.draft == false

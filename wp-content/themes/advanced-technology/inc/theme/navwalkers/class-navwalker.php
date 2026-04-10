@@ -197,7 +197,7 @@ class Navwalker extends Walker_Nav_Menu {
 		if ( $this->has_children ) {
 			$attributes['data-toggle'] = 'dropdown';
 			$attributes['class']      .= ' dropdown-toggle';
-		} elseif ( $this->depth > 0) {
+		} elseif ( $this->depth > 0 ) {
 			$attributes['class'] .= ' dropdown-item';
 		}
 

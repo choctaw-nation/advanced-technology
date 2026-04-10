@@ -16,7 +16,8 @@ if ( file_exists( $autoload_path ) ) {
 } else {
 	wp_die(
 		'Autoload file not found. Please run composer install inside the theme directory.',
-		'Error', 'ATI Theme Error', 
+		'Error',
+		'ATI Theme Error',
 		array( 'response' => 500 )
 	);
 }
