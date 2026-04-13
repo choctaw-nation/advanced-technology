@@ -24,7 +24,7 @@ wp-config.php
 local-xdebuginfo.php
 /_wpeprivate
 node_modules/
-vendor/
+
 .DS_Store
 
 # WP Content
@@ -36,6 +36,7 @@ vendor/
 /wp-content/plugins/
 /wp-content/themes/twenty*/
 /wp-content/themes/*/dist/
+/wp-content/themes/*/vendor/
 /wp-content/upgrade/
 /wp-content/upgrade-temp-backup/
 /wp-content/uploads/

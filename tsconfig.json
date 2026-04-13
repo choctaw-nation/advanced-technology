@@ -9,21 +9,19 @@
 		"forceConsistentCasingInFileNames": true,
 		"noEmit": true,
 		"esModuleInterop": true,
-		"module": "esnext",
-		"moduleResolution": "node",
+		"module": "es6",
 		"noImplicitAny": false,
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"jsx": "preserve",
 		"typeRoots": [
 			"./node_modules/@types",
-			"./wp-content/themes/ATIP/src/js/**/types"
+			"./wp-content/themes/advanced-technology/src/js/**/types"
 		],
 		"paths": {
-			"@": [ "./wp-content/themes/ATIP/src" ],
-			"@/styles": [ "./wp-content/themes/ATIP/src/styles" ]
+			"@": [ "./wp-content/themes/advanced-technology/src/" ]
 		}
 	},
-	"include": [ "./wp-content/themes/ATIP/src/js/**/*" ],
+	"include": [ "./wp-content/themes/advanced-technology/src/js/**/*" ],
 	"exclude": [ "node_modules" ]
 }

@@ -5,6 +5,7 @@ import { globalIgnores, defineConfig } from 'eslint/config';
 import { FlatCompat } from '@eslint/eslintrc';
 import path from 'path';
 import { fileURLToPath, URL } from 'url';
+
 const gitignorePath = fileURLToPath( new URL( '.gitignore', import.meta.url ) );
 const __filename = fileURLToPath( import.meta.url );
 const __dirname = path.dirname( __filename );
@@ -15,9 +16,9 @@ const compat = new FlatCompat( {
 
 export default defineConfig( [
 	globalIgnores( [
-		'wp-content/themes/ATIP/src/js/**/*.d.ts',
-		'wp-content/themes/ATIP/src/js/vendors/particles.js',
-		'wp-content/themes/ATIP/src/js/vendors/bootstrap.js',
+		'wp-content/themes/advanced-technology/src/js/**/*.d.ts',
+		'wp-content/themes/advanced-technology/src/js/vendors/particles.js',
+		'wp-content/themes/advanced-technology/src/js/vendors/bootstrap.js',
 	] ),
 	includeIgnoreFile( gitignorePath, 'Ignore .gitignore files' ),
 	...fixupConfigRules(
@@ -26,7 +27,7 @@ export default defineConfig( [
 		)
 	),
 	{
-		files: [ 'wp-content/themes/ATIP/src/**/*.{js,ts,jsx,tsx}' ],
+		files: [ 'wp-content/themes/advanced-technology/src/**/*.{js,ts,jsx,tsx}' ],
 		languageOptions: {
 			globals: globals.browser,
 		},

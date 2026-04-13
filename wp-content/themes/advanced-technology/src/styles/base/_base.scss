@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as v;
+
+:root {
+	--transition-standard: #{v.$transition-standard};
+	--font-headings: #{v.$font-headings};
+	--font-body: #{v.$font-body};
+}
+
+::selection {
+	color: white;
+	text-shadow: none;
+	background-color: var(--bs-primary);
+}
+
+pre,
+blockquote,
+q {
+	background-color: var(--bs-light);
+}
