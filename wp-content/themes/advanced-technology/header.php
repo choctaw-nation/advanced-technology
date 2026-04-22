@@ -31,7 +31,7 @@ use ChoctawNation\Theme\Navwalkers\Navwalker;
 	<?php wp_body_open(); ?>
 	<div id="to-top"></div>
 	<div id="page" class="site position-relative">
-		<header id="masthead" class="site-header text-bg-black z-2 position-sticky sticky-top start-0 end-0 py-3 container-fluid">
+		<header id="masthead" class="site-header text-primary z-2 position-sticky sticky-top start-0 end-0 py-3 container-fluid">
 			<nav id="nav-main" class="navbar navbar-expand-lg container-xxl justify-content-lg-between">
 				<a class="d-block col-9 col-md-6 col-lg-4 navbar-brand me-0 px-xxl-0 align-items-md-center" href="<?php echo esc_url( site_url() ); ?>" class="logo d-block"
 				   aria-label="to Home Page">

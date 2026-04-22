@@ -14,27 +14,22 @@
 			"gradients": [],
 			"palette": [
 				{
-					"color": "#075541",
+					"color": "#A72C28",
 					"name": "Primary",
 					"slug": "primary"
 				},
 				{
-					"color": "#007b5f",
-					"name": "Primary Light",
-					"slug": "primary-light"
+					"color": "#C8CAAA",
+					"name": "Secondary",
+					"slug": "secondary"
 				},
 				{
-					"color": "#d7d2cc",
+					"color": "#767676",
 					"name": "Gray",
 					"slug": "gray"
 				},
 				{
-					"color": "#212529",
-					"name": "Dark",
-					"slug": "dark"
-				},
-				{
-					"color": "white",
+					"color": "#FFFFFF",
 					"name": "White",
 					"slug": "white"
 				},
@@ -42,6 +37,11 @@
 					"color": "#000000",
 					"name": "Black",
 					"slug": "black"
+				},
+				{
+					"color": "#F0F0F0",
+					"name": "Light Gray",
+					"slug": "light-gray"
 				}
 			]
 		},
