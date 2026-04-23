@@ -85,3 +85,58 @@ Cursor
 .sticky-top {
 	top: var(--wp-admin--admin-bar--height, 0) !important;
 }
+
+.bg-primary {
+	background-color: var(--bs-primary) !important;
+}
+
+.bg-secondary {
+	background-color: var(--bs-secondary) !important;
+}
+
+.bg-grey {
+	background-color: var(--bs-grey) !important;
+}
+
+.bg-black {
+	background-color: var(--bs-black) !important;
+}
+
+.columns-short-border {
+	position: relative;
+}
+
+/* md and up (≥768px) — vertical divider */
+@media (width >= 768px) {
+	.columns-short-border::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translateY(-50%);
+		width: 3px;
+		height: 350px;
+		background-color: #a52323;
+	}
+}
+
+@media (width <= 768px) {
+	.columns-short-border {
+		padding-right: 30px; /* space between text and divider */
+	}
+
+	.columns-short-border::after {
+		content: "";
+		position: absolute;
+		bottom: -15px;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 50%;
+		height: 3px;
+		background-color: #a52323;
+	}
+
+	.columns-short-border {
+		margin-bottom: 30px;
+	}
+}

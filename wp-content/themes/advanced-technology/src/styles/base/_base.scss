@@ -17,3 +17,17 @@ blockquote,
 q {
 	background-color: var(--bs-light);
 }
+
+.btn-menu {
+	background-color: var(--wp--preset--color--black);
+	border-radius: 0;
+	border-color: var(--wp--preset--color--primary);
+	border-width: 2px;
+	color: var(--wp--preset--color--white);
+	font-family: var(--wp--preset--font-family--body);
+	padding: var(--wp--preset--spacing--xs) var(--wp--preset--spacing--base)
+		var(--wp--preset--spacing--xs) var(--wp--preset--spacing--base);
+	margin-right: var(--wp--preset--spacing--base);
+	border: 2px solid var(--wp--preset--color--gray);
+	font-size: var(--wp--preset--font-size--medium);
+}

@@ -8,7 +8,7 @@
 ?>
 
 <footer class="bootscore-footer pt-5 bg-success">
-	<div class="container-fluid gx-5">
+	<div class="container gx-5">
 		<div class="row justify-content-between">
 			<div class="col-md-3 text-center mb-5">
 				<a class="navbar-brand footer-logo" href="<?php echo esc_url( home_url() ); ?>">
