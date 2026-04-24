@@ -215,7 +215,7 @@
 		"blocks": {
 			"core/heading": {
 				"typography": {
-					"fontFamily": "var:preset|font-family|headings",
+					"fontFamily": "var:preset|font-family|body",
 					"fontWeight": "600"
 				},
 				"color": {
