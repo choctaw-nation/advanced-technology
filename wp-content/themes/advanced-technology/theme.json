@@ -267,7 +267,8 @@
 				"border": {
 					"radius": "0",
 					"width": "2px",
-					"color": "var:preset|color|primary"
+					"style": "solid",
+					"color": "var:preset|color|gray"
 				},
 				"spacing": {
 					"padding": {
@@ -283,7 +284,7 @@
 					"fontSize": "var:preset|font-size|base"
 				},
 				"color": {
-					"background": "var:preset|color|primary",
+					"background": "var:preset|color|black",
 					"text": "var:preset|color|white"
 				}
 			}

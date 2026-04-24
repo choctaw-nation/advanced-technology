@@ -21,8 +21,6 @@ q {
 .btn-menu {
 	background-color: var(--wp--preset--color--black);
 	border-radius: 0;
-	border-color: var(--wp--preset--color--primary);
-	border-width: 2px;
 	color: var(--wp--preset--color--white);
 	font-family: var(--wp--preset--font-family--body);
 	padding: var(--wp--preset--spacing--xs) var(--wp--preset--spacing--base)
@@ -30,4 +28,33 @@ q {
 	margin-right: var(--wp--preset--spacing--base);
 	border: 2px solid var(--wp--preset--color--gray);
 	font-size: var(--wp--preset--font-size--medium);
+
+	&:hover,
+	&:focus {
+		color: var(--wp--preset--color--black) !important;
+		background-color: white;
+	}
+
+	&:active,
+	&:focus-visible,
+	&:focus-within {
+		color: var(--wp--preset--color--black) !important;
+		background-color: var(--wp--preset--color--light-gray);
+	}
+}
+
+/* stylelint-disable-next-line selector-class-pattern */
+:root :where(.wp-block-button .wp-block-button__link) {
+	&:hover,
+	&:focus {
+		color: var(--wp--preset--color--black) !important;
+		background-color: white !important;
+	}
+
+	&:active,
+	&:focus-visible,
+	&:focus-within {
+		color: var(--wp--preset--color--black) !important;
+		background-color: var(--wp--preset--color--light-gray) !important;
+	}
 }

@@ -3,9 +3,6 @@
 @use "../abstracts/functions" as fn;
 
 header {
-	--header-link-color: white;
-	--header-link-hover-color: rgb(255 255 255 / 80%);
-
 	.navbar-brand {
 		transition: color var(--transition-standard);
 		color: var(--header-link-color);
