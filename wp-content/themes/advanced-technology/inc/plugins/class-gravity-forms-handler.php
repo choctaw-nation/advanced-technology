@@ -23,7 +23,7 @@ class Gravity_Forms_Handler {
 		$dom->loadHTML( $button );
 		$input   = $dom->getElementsByTagName( 'input' )->item( 0 );
 		$classes = $input->getAttribute( 'class' );
-		$classes = 'btn btn-primary';
+		$classes = 'btn-menu';
 		$input->setAttribute( 'class', $classes );
 		return $dom->saveHtml( $input );
 	}
