@@ -62,3 +62,13 @@ header {
 		}
 	}
 }
+
+.active {
+	&:hover,
+	&:focus,
+	&:active,
+	&:focus-visible,
+	&:focus-within {
+		color: black !important;
+	}
+}
