@@ -31,15 +31,13 @@ use ChoctawNation\Theme\Navwalkers\Navwalker;
 	<?php wp_body_open(); ?>
 	<div id="to-top"></div>
 	<div id="page" class="site position-relative">
-		<header id="masthead" class="site-header text-bg-black z-2 position-sticky sticky-top start-0 end-0 py-3 container-fluid">
+		<header id="masthead" class="site-header bg-secondary z-2 start-0 end-0 py-3 container-fluid">
 			<nav id="nav-main" class="navbar navbar-expand-lg container-xxl justify-content-lg-between">
-				<a class="navbar-brand mx-0" href="<?php echo esc_url( home_url() ); ?>">
-					<strong>Choctaw Nation</strong>
-					<span class="ms-3 d-none d-md-inline">Advanced Technology Initiatives</span>
-					<span class="ms-3 d-inline d-md-none">ATI</span>
+				<a class="navbar-brand footer-logo" href="<?php echo esc_url( home_url() ); ?>">
+					<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/logo/ati-logo.svg" alt="logo" class="logo w-100 text-black" style="filter: invert(1);">
 				</a>
 				<button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar" aria-expanded="false"
-					aria-label="Toggle navigation">
+						aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="offcanvas offcanvas-end flex-lg-grow-0" tabindex="-1" data-bs-hideresize="true" id="offcanvas-navbar">

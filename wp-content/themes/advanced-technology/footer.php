@@ -7,15 +7,17 @@
 
 ?>
 
-<footer class="bootscore-footer pt-5 bg-success">
-	<div class="container-fluid gx-5">
-		<div class="row justify-content-between">
-			<div class="col-md-3 text-center mb-5">
+<footer class="bootscore-footer py-5 bg-success ">
+	<div class="container gx-5">
+		<div class="row align-items-start">
+			<div class="col-12 col-md-auto text-start mb-4 mb-md-0">
 				<a class="navbar-brand footer-logo" href="<?php echo esc_url( home_url() ); ?>">
-					<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/logo/ati-logo.svg" alt="logo" class="logo md">
+					<img src="<?php echo esc_url( get_theme_file_uri( '/img/logo/ati-logo-stacked.svg' ) ); ?>" alt="Choctaw Nation Advanced Technology Initiatives logo"
+						 class="img-fluid d-block w-100">
 				</a>
 			</div>
-			<div class="col-md-8 footer-nav mb-3">
+			<div class="col-12 col-md-auto ms-md-auto footer-nav mb-3">
+				<h2 class="text-white h6">Resources</h2>
 				<!-- Footer Menu -->
 				<?php
 				wp_nav_menu(
@@ -25,7 +27,7 @@
 						'container'       => 'nav',
 						'container_class' => 'bs-footer-menu',
 						'container_id'    => 'footer-menu',
-						'menu_class'      => 'nav ms-0',
+						'menu_class'      => 'nav flex-column ms-0 text-capitalize text-nowrap',
 					)
 				);
 				?>

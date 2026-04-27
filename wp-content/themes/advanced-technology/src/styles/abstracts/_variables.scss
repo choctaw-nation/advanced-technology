@@ -1,11 +1,13 @@
 $transition-standard: 0.15s ease-in-out;
 
 // COLORS
-$color-primary: #075541;
-$color-primary--light: #007b5f; // stylelint-disable-line scss/dollar-variable-pattern
-$color-grey: #d7d2cc;
-$color-black: #0f0f0f;
-$color-copy-black: #212529;
+$color-primary: #a72c28;
+$color-secondary: #c8caaa;
+$color-grey: #767676;
+$color-black: black;
+$color-copy-black: black;
+$color-light-gray: #f0f0f0;
+$color-white: white;
 
 // FONTS
 $font-headings: pill-gothic-300mg, "Helvetica Neue", "Noto Sans",

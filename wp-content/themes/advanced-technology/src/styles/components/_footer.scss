@@ -4,7 +4,7 @@
 Footer
 -------------------------------------------------------------- */
 .footer-logo img {
-	max-width: 400px;
+	max-width: 200px;
 }
 
 .footer-nav a {
@@ -18,15 +18,10 @@ Footer
 
 .bs-footer-menu {
 	& > .nav {
-		gap: 2rem;
+		gap: 1rem;
 
 		> li {
-			width: 50%;
-			text-transform: uppercase;
-
-			@include m.media-breakpoint-up(xl) {
-				width: 20%;
-			}
+			width: auto;
 
 			& > ul {
 				list-style: none;
