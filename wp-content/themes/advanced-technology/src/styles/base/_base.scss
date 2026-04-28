@@ -64,7 +64,7 @@ q {
 	&:focus-visible,
 	&:focus-within {
 		color: var(--wp--preset--color--black) !important;
-		background-color: var(--wp--preset--color--light-gray) !important;
+		background-color: var(--wp--preset--color--white) !important;
 		transition: all 0.3s ease-in-out;
 		border: 2px var(--wp--preset--color--black) solid !important;
 	}
