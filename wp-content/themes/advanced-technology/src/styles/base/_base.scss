@@ -24,7 +24,7 @@ q {
 	color: var(--wp--preset--color--white);
 	font-family: var(--wp--preset--font-family--body);
 	margin-right: var(--wp--preset--spacing--base);
-	border: 2px solid var(--wp--preset--color--gray);
+	border: 2px transparent solid;
 	font-size: var(--wp--preset--font-size--medium);
 
 	a {
@@ -37,11 +37,13 @@ q {
 		color: var(--wp--preset--color--black) !important;
 		background-color: white;
 		transition: all 0.3s ease-in-out;
+		border: 2px var(--wp--preset--color--black) solid;
 	}
 
 	&:active,
 	&:focus-visible,
 	&:focus-within {
+		border: 2px var(--wp--preset--color--black) solid;
 		color: var(--wp--preset--color--black) !important;
 		background-color: var(--wp--preset--color--light-gray);
 		transition: all 0.3s ease-in-out;
