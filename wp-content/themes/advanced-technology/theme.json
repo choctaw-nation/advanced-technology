@@ -268,7 +268,7 @@
 					"radius": "0",
 					"width": "2px",
 					"style": "solid",
-					"color": "var:preset|color|gray"
+					"color": "transparent"
 				},
 				"spacing": {
 					"padding": {
