@@ -10,13 +10,13 @@
 <footer class="bootscore-footer py-5 bg-success ">
 	<div class="container gx-5">
 		<div class="row align-items-start">
-			<div class="col-12 col-md-auto text-start mb-4 mb-md-0">
+			<div class="col-12 col-md-auto text-start mb-4 mb-md-0 justify-content-center justify-content-md-start d-flex">
 				<a class="navbar-brand footer-logo" href="<?php echo esc_url( home_url() ); ?>">
 					<img src="<?php echo esc_url( get_theme_file_uri( '/img/logo/ati-logo-stacked.svg' ) ); ?>" alt="Choctaw Nation Advanced Technology Initiatives logo"
 						 class="img-fluid d-block w-100">
 				</a>
 			</div>
-			<div class="col-12 col-md-auto ms-md-auto footer-nav mb-3">
+			<div class="col-12 col-md-auto ms-md-auto footer-nav my-3 me-md-5">
 				<h2 class="text-white h6">Resources</h2>
 				<!-- Footer Menu -->
 				<?php

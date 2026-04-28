@@ -106,8 +106,8 @@ Cursor
 	position: relative;
 }
 
-/* md and up (≥768px) — vertical divider */
-@media (width >= 768px) {
+/* md and up (≥782px) — vertical divider */
+@media (width >= 782px) {
 	.columns-short-border::after {
 		content: "";
 		position: absolute;
@@ -117,26 +117,5 @@ Cursor
 		width: 3px;
 		height: 350px;
 		background-color: #a52323;
-	}
-}
-
-@media (width <= 768px) {
-	.columns-short-border {
-		padding-right: 30px; /* space between text and divider */
-	}
-
-	.columns-short-border::after {
-		content: "";
-		position: absolute;
-		bottom: -15px;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 50%;
-		height: 3px;
-		background-color: #a52323;
-	}
-
-	.columns-short-border {
-		margin-bottom: 30px;
 	}
 }

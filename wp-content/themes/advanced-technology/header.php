@@ -33,7 +33,7 @@ use ChoctawNation\Theme\Navwalkers\Navwalker;
 	<div id="page" class="site position-relative">
 		<header id="masthead" class="site-header bg-secondary z-2 start-0 end-0 py-3 container-fluid">
 			<nav id="nav-main" class="navbar navbar-expand-lg container-xxl justify-content-lg-between">
-				<a class="navbar-brand footer-logo" href="<?php echo esc_url( home_url() ); ?>">
+				<a class="navbar-brand header-logo" href="<?php echo esc_url( home_url() ); ?>">
 					<img src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/img/logo/ati-logo.svg" alt="logo" class="logo w-100 text-black" style="filter: invert(1);">
 				</a>
 				<button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar" aria-expanded="false"
