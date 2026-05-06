@@ -27,7 +27,8 @@ q {
 	border: 2px transparent solid;
 	font-size: var(--wp--preset--font-size--medium);
 
-	a {
+	a,
+	button {
 		padding: var(--wp--preset--spacing--base) var(--wp--preset--spacing--lg)
 			var(--wp--preset--spacing--base) var(--wp--preset--spacing--lg) !important;
 	}
