@@ -118,36 +118,36 @@ import './styles/main.scss';
 	window.addEventListener( 'hashchange', openContactUsModal );
 }() );
 
-// Listen for any click on the page
-document.addEventListener( 'click', function( e ) {
-	// Find if the click happened inside a modal trigger link
-	// (your Gutenberg button lives inside .cno-modal-trigger)
-	const trigger = e.target.closest( '.cno-modal-trigger a' );
+( function() {
+	let scrollBeforeModal = 0;
 
-	// If the click wasn't on a modal trigger link, do nothing
-	if ( ! trigger ) {
-		return;
-	}
+	document.addEventListener( 'show.bs.modal', function( event ) {
+		if ( ! event.target.matches( '.modal' ) ) {
+			return;
+		}
 
-	// Get the href value from the link
-	const href = trigger.getAttribute( 'href' );
+		// Save where the user was before the modal opened
+		scrollBeforeModal = window.scrollY || window.pageYOffset;
+	} );
 
-	// Check if the link is an anchor (starts with "#")
-	// Example: "#modal-contact-us"
-	if ( href && href.startsWith( '#' ) ) {
-		// 🔥 THIS IS THE IMPORTANT PART
-		// Prevent the browser from performing its default behavior:
-		// scrolling/jumping to the anchor target on the page
-		//
-		// Without this:
-		// - Modal opens (Bootstrap)
-		// - BUT browser also scrolls to the modal's DOM position
-		// - When modal closes → page jumps to that location
-		//
-		// With this:
-		// - Modal still opens (handled by Bootstrap JS)
-		// - BUT page scroll behavior is suppressed
-		// - No jump when closing modal
-		e.preventDefault();
-	}
-} );
+	document.addEventListener( 'hidden.bs.modal', function( event ) {
+		if ( ! event.target.matches( '.modal' ) ) {
+			return;
+		}
+
+		// Remove hash like #contact-us or #modal-contact-us without scrolling
+		if ( window.location.hash ) {
+			history.replaceState(
+				null,
+				document.title,
+				window.location.pathname + window.location.search
+			);
+		}
+
+		// Restore the original scroll position after Bootstrap closes
+		window.scrollTo( {
+			top: scrollBeforeModal,
+			left: 0,
+		} );
+	} );
+}() );
