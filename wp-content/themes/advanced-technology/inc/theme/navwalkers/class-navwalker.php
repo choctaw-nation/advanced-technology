@@ -170,8 +170,9 @@ class Navwalker extends Walker_Nav_Menu {
 	 */
 	protected function get_the_anchor_element(): string {
 		$attributes = $this->get_the_attributes();
-		$nav_el     = ( $this->has_children && 0 === $this->depth ) ? 'button' : 'a';
+		$nav_el     = ( $this->has_children && 0 === $this->depth ) || $this->is_modal_trigger_item() ? 'button' : 'a';
 		if ( 'button' === $nav_el ) {
+			$attributes['type'] = 'button';
 			$attributes['role'] = 'button';
 			unset( $attributes['href'] );
 		}
@@ -206,7 +207,26 @@ class Navwalker extends Walker_Nav_Menu {
 			$attributes['class'] .= ' dropdown-item';
 		}
 
+		$item_url          = (string) $this->current_item->url;
+		$is_modal_trigger  = ! $this->has_children && ( $this->is_modal_trigger_item() || in_array( $item_url, array( '', '#' ), true ) );
+		if ( $is_modal_trigger ) {
+			$attributes['data-bs-toggle'] = 'modal';
+			$attributes['data-bs-target'] = '#modal-' . sanitize_title( $this->current_item->title );
+			if ( ! in_array( 'cno-modal-trigger', (array) $this->current_item->classes, true ) ) {
+				$attributes['class'] .= ' cno-modal-trigger';
+			}
+		}
+
 		$attributes['class'] .= ' nav-link';
 		return $attributes;
+	}
+
+	/**
+	 * Determine whether a menu item should act as a modal trigger.
+	 *
+	 * @return bool
+	 */
+	protected function is_modal_trigger_item(): bool {
+		return in_array( 'cno-modal-trigger', (array) $this->current_item->classes, true );
 	}
 }
