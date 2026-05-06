@@ -93,7 +93,30 @@ const RANGE_TIME_INQUIRY_VALUE = 'Range Time Inquiry';
 	document.addEventListener( 'DOMContentLoaded', openRangeTimeModal );
 	window.addEventListener( 'hashchange', openRangeTimeModal );
 }() );
+( function() {
+	/**
+	 * Opens the `#modal-contact-us` Bootstrap modal when the URL hash is `#contact-us`.
+	 * Runs on `DOMContentLoaded` and on every `hashchange` event.
+	 */
+	function openContactUsModal() {
+		if ( window.location.hash !== '#contact-us' ) {
+			return;
+		}
 
+		const trigger = document.querySelector(
+			'.cno-modal-trigger[data-bs-target="#modal-contact-us"]'
+		);
+
+		if ( ! trigger ) {
+			return;
+		}
+
+		( trigger as HTMLElement ).click();
+	}
+
+	document.addEventListener( 'DOMContentLoaded', openContactUsModal );
+	window.addEventListener( 'hashchange', openContactUsModal );
+}() );
 ( function() {
 	let scrollBeforeModal = 0;
 
