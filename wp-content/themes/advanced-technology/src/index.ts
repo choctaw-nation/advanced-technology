@@ -117,3 +117,37 @@ import './styles/main.scss';
 	document.addEventListener( 'DOMContentLoaded', openContactUsModal );
 	window.addEventListener( 'hashchange', openContactUsModal );
 }() );
+
+( function() {
+	let scrollBeforeModal = 0;
+
+	document.addEventListener( 'show.bs.modal', function( event ) {
+		if ( ! event.target.matches( '.modal' ) ) {
+			return;
+		}
+
+		// Save where the user was before the modal opened
+		scrollBeforeModal = window.scrollY || window.pageYOffset;
+	} );
+
+	document.addEventListener( 'hidden.bs.modal', function( event ) {
+		if ( ! event.target.matches( '.modal' ) ) {
+			return;
+		}
+
+		// Remove hash like #contact-us or #modal-contact-us without scrolling
+		if ( window.location.hash ) {
+			history.replaceState(
+				null,
+				document.title,
+				window.location.pathname + window.location.search
+			);
+		}
+
+		// Restore the original scroll position after Bootstrap closes
+		window.scrollTo( {
+			top: scrollBeforeModal,
+			left: 0,
+		} );
+	} );
+}() );
