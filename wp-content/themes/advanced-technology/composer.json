@@ -2,7 +2,7 @@
 	"name": "choctaw-nation/advanced-technology",
 	"description": "a block theme for the CNOAA (ATI) site",
 	"type": "project",
-	"version": "1.1.0",
+	"version": "5.0.0",
 	"autoload": {
 		"classmap": [
 			"inc/"

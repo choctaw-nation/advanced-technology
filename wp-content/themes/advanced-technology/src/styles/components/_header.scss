@@ -3,9 +3,6 @@
 @use "../abstracts/functions" as fn;
 
 header {
-	--header-link-color: white;
-	--header-link-hover-color: rgb(255 255 255 / 80%);
-
 	.navbar-brand {
 		transition: color var(--transition-standard);
 		color: var(--header-link-color);
@@ -49,5 +46,19 @@ header {
 	ul.nav li.dropdown:hover > ul.dropdown-menu {
 		display: block !important;
 		visibility: visible !important;
+	}
+}
+
+.offcanvas-header {
+	background-color: var(--bs-secondary);
+}
+
+.offcanvas-body {
+	background-color: var(--bs-secondary);
+
+	@media (width <= 992px) {
+		.menu-item {
+			margin-bottom: 20px;
+		}
 	}
 }
