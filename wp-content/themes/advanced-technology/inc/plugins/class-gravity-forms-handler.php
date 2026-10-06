@@ -19,12 +19,9 @@ class Gravity_Forms_Handler {
 	 * @return string The modified button HTML.
 	 */
 	public function add_bootstrap_classes( string $button ): string {
-		$dom = new \DOMDocument();
-		$dom->loadHTML( $button );
-		$input   = $dom->getElementsByTagName( 'input' )->item( 0 );
-		$classes = $input->getAttribute( 'class' );
-		$classes = 'btn btn-primary';
-		$input->setAttribute( 'class', $classes );
-		return $dom->saveHtml( $input );
+		$fragment = \WP_HTML_Processor::create_fragment( $button );
+		$fragment->next_token();
+		$fragment->add_class( 'btn-menu' );
+		return $fragment->get_updated_html();
 	}
 }

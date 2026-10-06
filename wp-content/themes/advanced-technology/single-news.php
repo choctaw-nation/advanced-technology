@@ -52,7 +52,7 @@ $video         = get_field( 'video' );
 				<?php echo $article; ?>
 
 				<?php if ( have_rows( 'full_article' ) ) : ?>
-				<?php
+					<?php
 					while ( have_rows( 'full_article' ) ) :
 						the_row();
 						$article_name   = get_sub_field( 'article_name' );
@@ -60,7 +60,7 @@ $video         = get_field( 'video' );
 						$article_author = get_sub_field( 'article_author' );
 						$article_date   = get_sub_field( 'article_date' );
 						?>
-				<?php if ( $article_name ) : ?>
+						<?php if ( $article_name ) : ?>
 				<div class="col-12 col-lg-6 p-4 mt-4 mb-5 full-article position-relative">
 					<a class="stretched-link" href="<?php echo $article_link; ?>" target="_blank" rel="noopener noreferrer">
 						<div class="container g-0">
